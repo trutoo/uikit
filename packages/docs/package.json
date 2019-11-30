@@ -1,0 +1,30 @@
+{
+  "name": "@trutoo/docs",
+  "version": "1.1.0",
+  "private": true,
+  "keywords": [
+    "trutoo",
+    "uikit",
+    "wcag",
+    "whitelabel"
+  ],
+  "description": "Basic whitelabled interactive elements following strict code quality and accessibility",
+  "author": "Trutoo AB",
+  "license": "GPL-3.0",
+  "contributors": [
+    {
+      "name": "Erik Hughes",
+      "email": "erik.hughes@outlook.com",
+      "url": "https://github.com/swiftwork"
+    }
+  ],
+  "scripts": {
+    "docs": "start-storybook --ci --quiet -p 2999",
+    "docs:deploy": "storybook-to-ghpages"
+  },
+  "dependencies": {
+    "@trutoo/ui-core": "^1.1.0",
+    "@trutoo/ui-datepicker": "^1.1.0",
+    "@trutoo/ui-typeahead": "^1.1.0"
+  }
+}

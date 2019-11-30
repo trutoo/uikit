@@ -4,7 +4,6 @@
 node_modules
 dist
 dist.tgz
-docs
 
 # Logs
 *.log
