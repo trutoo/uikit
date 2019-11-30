@@ -24,6 +24,7 @@
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "docs": "lerna run docs --stream",
+    "docs:deploy": "lerna run docs:deploy --stream",
     "version": "lerna version --conventional-commits --no-changelog --yes",
     "release": "npm run test && npm run version && npm run build && lerna publish from-git --yes"
   },
