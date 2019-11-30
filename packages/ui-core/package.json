@@ -11,8 +11,12 @@
   "main": "dist/index.js",
   "author": "Trutoo AB",
   "license": "GPL-3.0",
-  "repository": "git://github.com/trutoo/uiki.git",
   "bugs": "https://github.com/trutoo/uikit/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trutoo/uiki.git",
+    "directory": "packages/ui-core"
+  },
   "contributors": [
     {
       "name": "Erik Hughes",
@@ -27,5 +31,6 @@
   "scripts": {
     "build": "node ../../scripts/build.js",
     "postinstall": "node banner.js || echo \"ignore\""
-  }
+  },
+  "gitHead": "772a4c9e6afc4e9adbcaf99dd09f97ad85362c5d"
 }

@@ -11,8 +11,12 @@
   "description": "Basic whitelabled interactive elements following strict code quality and accessibility",
   "author": "Trutoo AB",
   "license": "GPL-3.0",
-  "repository": "git://github.com/trutoo/uiki.git",
   "bugs": "https://github.com/trutoo/uikit/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trutoo/uiki.git",
+    "directory": "packages/docs"
+  },
   "contributors": [
     {
       "name": "Erik Hughes",

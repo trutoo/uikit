@@ -11,8 +11,12 @@
   "main": "dist/index.js",
   "author": "Trutoo AB",
   "license": "GPL-3.0",
-  "repository": "git://github.com/trutoo/uiki.git",
   "bugs": "https://github.com/trutoo/uikit/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trutoo/uiki.git",
+    "directory": "packages/ui-datepicker"
+  },
   "contributors": [
     {
       "name": "Erik Hughes",
@@ -30,5 +34,6 @@
     "@trutoo/ui-core": "^1.2.0",
     "moment": "2.24.0",
     "scroll-into-view-if-needed": "^2.2.20"
-  }
+  },
+  "gitHead": "772a4c9e6afc4e9adbcaf99dd09f97ad85362c5d"
 }
