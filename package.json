@@ -9,9 +9,10 @@
     "whitelabel"
   ],
   "description": "Whitelabled interactive elements following strict code quality and accessibility",
-  "main": "index.js",
   "author": "Trutoo AB",
   "license": "GPL-3.0",
+  "repository": "git://github.com/trutoo/uiki.git",
+  "bugs": "https://github.com/trutoo/uikit/issues",
   "contributors": [
     {
       "name": "Erik Hughes",

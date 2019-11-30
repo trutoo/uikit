@@ -11,6 +11,8 @@
   "main": "dist/index.js",
   "author": "Trutoo AB",
   "license": "GPL-3.0",
+  "repository": "git://github.com/trutoo/uiki.git",
+  "bugs": "https://github.com/trutoo/uikit/issues",
   "contributors": [
     {
       "name": "Erik Hughes",
