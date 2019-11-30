@@ -1,0 +1,265 @@
+.e-datepicker {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+
+  /* FLOATING LABEL
+  ================================================================================ */
+
+  &--label {
+    position: absolute;
+    top: -0.35rem;
+    left: 0.5rem;
+    padding-right: 0.5rem;
+    font-style: italic;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all calc(var(--t_animation) * 0.5) linear;
+    transform: translateY(0.85rem);
+
+    &:empty {
+      display: none;
+    }
+
+    &.floating {
+      font-style: normal;
+      font-size: 0.75em;
+      transform: translateY(0.35rem);
+    }
+  }
+
+  &--label.floating + &::placeholder {
+    color: black; /* IE Fix */
+    color: initial;
+  }
+
+  /* INPUT FIELD
+  ================================================================================ */
+
+  &--input {
+    padding: 0.5rem;
+    width: 100%;
+    height: 2rem;
+    line-height: 1rem;
+    appearance: none;
+    outline: none;
+    border: 1px solid var(--c_light_beta);
+    background-color: white;
+    background-image: svg-load('./assets/select-date.svg', fill: var(--c_text));
+    background-position: right 0.5rem center;
+    background-size: 1.6em;
+    background-repeat: no-repeat;
+
+    &.labelled {
+      padding: 0.85rem 0.5rem 0.15rem;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0);
+      }
+    }
+
+    &[aria-label] {
+      padding-right: 1.5rem;
+    }
+
+    &::placeholder {
+      transition: color calc(var(--t_animation) * 0.5) linear;
+    }
+
+    &:focus {
+      padding-left: calc(0.5rem - 2px);
+      border-left-width: 3px;
+      border-left-color: var(--c_color_alpha);
+    }
+  }
+
+  /* CLEAR
+  ================================================================================ */
+
+  &--clear {
+    position: absolute;
+    right: 0;
+    padding: 0 0.5rem;
+    width: auto;
+    line-height: 2rem;
+
+    &::before {
+      @mixin iconBase;
+
+      display: inline-block;
+      content: var(--i_close);
+    }
+  }
+
+  /* DESCRIPTION
+  ================================================================================ */
+
+  &--description {
+    padding: 0.5rem;
+    display: block;
+    background-color: var(--c_light_alpha);
+    border: 1px solid var(--c_light_beta);
+    border-top: none;
+
+    &-toggler {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1.5rem;
+      line-height: 2rem;
+      color: var(--c_color_alpha);
+      text-align: center;
+
+      &::before {
+        @mixin iconBase;
+
+        content: var(--i_info);
+      }
+    }
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_info);
+      margin-right: 0.25em;
+      color: var(--c_color_alpha);
+    }
+  }
+
+  /* RESULT
+  ================================================================================ */
+
+  &--select {
+    margin: 0;
+    padding: 0.25rem;
+    background-color: white;
+    border: 1px solid var(--c_light_beta);
+    display: none;
+
+    &-month {
+      min-width: calc(100% / 3 * 2 - 0.01rem);
+    }
+
+    &-button {
+      min-width: calc(100% / 6 - 0.01rem);
+      cursor: pointer;
+    }
+
+    &-month,
+    &-button {
+      text-align: center;
+      margin: 0;
+      padding: 0.25rem;
+    }
+
+    &-dates {
+      cursor: pointer;
+    }
+
+    &-days {
+      font-weight: bold;
+    }
+
+    &-dates,
+    &-days {
+      margin: 0;
+      padding: 0.25rem;
+      min-width: calc(100% / 7 - 0.01rem);
+      text-align: center;
+
+      &.dimmed {
+        color: var(--c_light_gamma);
+      }
+
+      &.disabled {
+        color: var(--c_light_gamma);
+        cursor: default;
+      }
+
+      &.today {
+        border: 2px dashed var(--c_color_alpha);
+      }
+
+      &.span {
+        background-color: var(--c_light_gamma);
+      }
+
+      &[aria-selected='true'] {
+        color: white;
+        border-color: var(--c_color_alpha);
+        background-color: var(--c_color_alpha);
+      }
+
+      &.focused {
+        color: white;
+        background-color: var(--c_color_beta);
+      }
+    }
+  }
+
+  /* ERROR
+  ================================================================================ */
+
+  &--error {
+    position: relative;
+    display: inline-flex;
+    padding: 0.25rem 0;
+    color: var(--c_invalid);
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_warning);
+      margin-right: 0.25em;
+      width: 1em;
+      line-height: 1em;
+      flex-shrink: 0;
+      font-size: 1.5em;
+      text-align: center;
+      vertical-align: middle; /* IE10 Fix */
+    }
+  }
+
+  /* STATES
+  ================================================================================ */
+
+  @define-mixin state $color {
+    & .e-datepicker--label {
+      color: $color;
+    }
+
+    & .e-datepicker--input {
+      border-left-color: $color;
+      background-image: svg-load('./assets/select-date.svg', fill: $color);
+    }
+  }
+
+  &.focused {
+    @mixin state var(--c_color_alpha);
+
+    & .e-datepicker--select {
+      display: flex;
+    }
+  }
+
+  &.disabled {
+    @mixin state rgba(0, 0, 0, 0.5);
+
+    & .e-datepicker--input {
+      cursor: not-allowed;
+      color: rgba(0, 0, 0, 0.5);
+      border-color: rgba(0, 0, 0, 0.5);
+      border-style: dashed;
+    }
+  }
+
+  &.valid {
+    @mixin state var(--c_valid);
+  }
+
+  &.invalid {
+    @mixin state var(--c_invalid);
+  }
+}

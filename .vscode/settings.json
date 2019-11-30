@@ -1,0 +1,20 @@
+{
+  "css.validate": false,
+  "docthis.includeMemberOfOnClassMembers": false,
+  "docthis.includeMemberOfOnInterfaceMembers": false,
+  "files.insertFinalNewline": true,
+  "html.format.wrapAttributes": "force",
+  "scss.validate": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/docs": true
+  },
+  "stylelint.enable": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "cSpell.words": ["trutoo", "typeahead", "typeaheads"],
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifier": "relative"
+}

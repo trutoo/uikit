@@ -1,0 +1,37 @@
+/* BUTTON
+================================================================================ */
+.e-button {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 3em;
+  color: var(--c_color_alpha);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  vertical-align: middle;
+  border-radius: 0;
+  background-color: var(--c_background);
+  transition: color 0.15s ease, background-color 0.15s ease;
+  box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.2);
+
+  &:hover,
+  &:focus {
+    background-color: white;
+  }
+
+  &:active {
+    margin-top: 3px;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}

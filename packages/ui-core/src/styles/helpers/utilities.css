@@ -1,0 +1,53 @@
+/* HIDDEN DOWN
+================================================================================ */
+
+.hidden-xs {
+  @media (--b_xs) {
+    display: none !important;
+  }
+}
+
+.hidden-sm {
+  @media (--b_sm_max) {
+    display: none !important;
+  }
+}
+
+.hidden-md {
+  @media (--b_md_max) {
+    display: none !important;
+  }
+}
+
+.hidden-lg {
+  @media (--b_lg_max) {
+    display: none !important;
+  }
+}
+
+/* HIDDEN UP
+================================================================================ */
+
+.hidden-sm-up {
+  @media (--b_sm) {
+    display: none !important;
+  }
+}
+
+.hidden-md-up {
+  @media (--b_md) {
+    display: none !important;
+  }
+}
+
+.hidden-lg-up {
+  @media (--b_lg) {
+    display: none !important;
+  }
+}
+
+.hidden-xl-up {
+  @media (--b_xl) {
+    display: none !important;
+  }
+}

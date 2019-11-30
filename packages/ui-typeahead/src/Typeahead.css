@@ -1,0 +1,253 @@
+.e-typeahead {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+
+  &[aria-busy='true'] &--clear::before {
+    content: var(--i_refresh);
+    animation: spin 2s infinite linear;
+  }
+
+  &[aria-busy='true']::after {
+    content: none;
+  }
+
+  /* FLOATING LABEL
+  ================================================================================ */
+
+  &--label {
+    position: absolute;
+    top: -0.35rem;
+    left: 0.5rem;
+    padding-right: 0.5rem;
+    font-style: italic;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all calc(var(--t_animation) * 0.5) linear;
+    transform: translateY(0.85rem);
+
+    &:empty {
+      display: none;
+    }
+
+    &.floating {
+      font-style: normal;
+      font-size: 0.75em;
+      transform: translateY(0.35rem);
+    }
+  }
+
+  &--label.floating + &::placeholder {
+    color: black; /* IE Fix */
+    color: initial;
+  }
+
+  /* WRAPPER
+  ================================================================================ */
+
+  &--wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  /* INPUT FIELD
+  ================================================================================ */
+
+  &--input {
+    padding: 0.5rem;
+    width: 100%;
+    height: 2rem;
+    line-height: 1rem;
+    appearance: none;
+    outline: none;
+    border: 1px solid var(--c_light_beta);
+    background-color: white;
+
+    &.labelled {
+      padding: 0.85rem 0.5rem 0.15rem;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0);
+      }
+    }
+
+    &[aria-label] {
+      padding-right: 1.5rem;
+    }
+
+    &::placeholder {
+      transition: color calc(var(--t_animation) * 0.5) linear;
+    }
+
+    &:focus {
+      padding-left: calc(0.5rem - 2px);
+      border-left-width: 3px;
+      border-left-color: var(--c_color_alpha);
+    }
+
+    /* Removes the clear button for IE */
+    &::-ms-clear {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    /* Removes the clear button */
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+
+  /* CLEAR
+  ================================================================================ */
+
+  &--clear {
+    position: absolute;
+    right: 0;
+    padding: 0 0.5rem;
+    width: auto;
+    line-height: 2rem;
+
+    &::before {
+      @mixin iconBase;
+
+      display: inline-block;
+      content: var(--i_close);
+    }
+  }
+
+  /* DESCRIPTION
+  ================================================================================ */
+
+  &--description {
+    padding: 0.5rem;
+    display: block;
+    background-color: var(--c_light_alpha);
+    border: 1px solid var(--c_light_beta);
+    border-top: none;
+
+    &-toggler {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1.5rem;
+      line-height: 2rem;
+      color: var(--c_color_alpha);
+      text-align: center;
+
+      &::before {
+        @mixin iconBase;
+
+        content: var(--i_info);
+      }
+    }
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_info);
+      margin-right: 0.25em;
+      color: var(--c_color_alpha);
+    }
+  }
+
+  /* RESULT
+  ================================================================================ */
+
+  &--results {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    list-style: none;
+    background-color: var(--c_background);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+    &[aria-hidden='true'] {
+      display: none;
+    }
+
+    &-item {
+      margin: 0;
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-top: none;
+
+      em {
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      &[aria-selected='true'] {
+        color: white;
+        border-color: var(--c_color_alpha);
+        background-color: var(--c_color_alpha);
+      }
+    }
+  }
+
+  /* ERROR
+  ================================================================================ */
+
+  &--error {
+    position: relative;
+    display: inline-flex;
+    padding: 0.25rem 0;
+    color: var(--c_invalid);
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_warning);
+      margin-right: 0.25em;
+      width: 1em;
+      line-height: 1em;
+      flex-shrink: 0;
+      font-size: 1.5em;
+      text-align: center;
+      vertical-align: middle; /* IE10 Fix */
+    }
+  }
+
+  /* STATES
+  ================================================================================ */
+
+  @define-mixin state $color {
+    & .e-typeahead--label {
+      color: $color;
+    }
+
+    & .e-typeahead--input {
+      border-left-color: $color;
+    }
+  }
+
+  &.focused {
+    @mixin state var(--c_color_alpha);
+  }
+
+  &.disabled {
+    @mixin state rgba(0, 0, 0, 0.5);
+
+    & .e-typeahead--input {
+      cursor: not-allowed;
+      color: rgba(0, 0, 0, 0.5);
+      border-color: rgba(0, 0, 0, 0.5);
+      border-style: dashed;
+    }
+  }
+
+  &.valid {
+    @mixin state var(--c_valid);
+  }
+
+  &.invalid {
+    @mixin state var(--c_invalid);
+  }
+}

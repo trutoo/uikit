@@ -1,0 +1,135 @@
+.e-checkbox {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+
+  /* CHECKBOX
+  ================================================================================ */
+
+  &--input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  /* LABEL
+  ================================================================================ */
+
+  &--label {
+    position: relative;
+    display: flex;
+    margin-bottom: 0;
+    cursor: pointer;
+    align-items: center;
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_checkbox);
+      margin-right: 0.25em;
+      width: 1em;
+      line-height: 1em;
+      flex-shrink: 0;
+      color: var(--c_color_alpha);
+      font-size: 1.5em;
+      text-align: center;
+      vertical-align: middle; /* IE10 Fix */
+      border-radius: 50%;
+      background-color: transparent;
+      transition: background-color var(--t_animation);
+    }
+  }
+
+  &--input:checked + &--label::before {
+    content: var(--i_checkbox_checked);
+  }
+
+  /* DESCRIPTION
+  ================================================================================ */
+
+  &--description {
+    padding: 0.5rem;
+    display: block;
+    background-color: var(--c_light_alpha);
+    border: 1px solid var(--c_light_beta);
+
+    &-toggler {
+      padding: 0.25rem 0.5rem;
+      color: var(--c_color_alpha);
+
+      &::before {
+        @mixin iconBase;
+
+        content: var(--i_info);
+      }
+    }
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_info);
+      margin-right: 0.25em;
+      color: var(--c_color_alpha);
+    }
+  }
+
+  /* ERROR
+  ================================================================================ */
+
+  &--error {
+    position: relative;
+    display: flex;
+    padding: 0.25rem 0;
+    color: var(--c_invalid);
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_warning);
+      margin-right: 0.25em;
+      width: 1em;
+      line-height: 1em;
+      flex-shrink: 0;
+      font-size: 1.5em;
+      text-align: center;
+      vertical-align: middle; /* IE10 Fix */
+    }
+  }
+
+  /* STATES
+  ================================================================================ */
+
+  @define-mixin state $color {
+    & .e-checkbox--input + .e-checkbox--label::before {
+      color: $color;
+    }
+
+    & .e-checkbox--input:focus + .e-checkbox--label {
+      color: $color;
+
+      &::before {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  &.focused {
+    @mixin state var(--c_color_alpha);
+  }
+
+  &.valid {
+    @mixin state var(--c_valid);
+  }
+
+  &.invalid {
+    @mixin state var(--c_invalid);
+  }
+
+  &.disabled {
+    @mixin state rgba(0, 0, 0, 0.5);
+
+    & .e-checkbox--label {
+      cursor: not-allowed;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

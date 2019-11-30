@@ -1,0 +1,133 @@
+/* FONT BASE
+================================================================================ */
+
+html {
+  @mixin fontScaling var(--d_lh), var(--d_lh_delta);
+}
+
+body {
+  @mixin fontScaling var(--d_fs), var(--d_fs_delta);
+  @mixin lineScaling var(--d_lh), var(--d_lh_delta);
+
+  font-family: var(--f_stack);
+  color: var(--c_text);
+}
+
+/* HEADERS
+================================================================================ */
+
+h1 {
+  @mixin fontScaling 32px, 16;
+  @mixin lineScaling 48px, 16;
+}
+
+h2 {
+  @mixin fontScaling 26px, 10;
+  @mixin lineScaling 36px, 12;
+}
+
+h3 {
+  @mixin fontScaling 22px, 6;
+  @mixin lineScaling 28px, 12;
+}
+
+h4 {
+  @mixin fontScaling 18px, 0;
+  @mixin lineScaling 24px, 0;
+}
+
+h5 {
+  @mixin fontScaling 18px, 0;
+  @mixin lineScaling 24px, 0;
+}
+
+h6 {
+  @mixin fontScaling 18px, 0;
+  @mixin lineScaling 24px, 0;
+}
+
+/*
+h1 { font-size: 3em; line-height: 2.25rem; }
+h2 { font-size: 2.626em; line-height: 2rem; }
+h3 { font-size: 2.25em; line-height: 1.75rem; }
+h4 { font-size: 1.875em; line-height: 1.5rem; }
+h5 { font-size: 1.5em; line-height: 1.25rem; }
+h6 { font-size: 1.125em; line-height: 1rem; }
+*/
+
+/* HEADER COLORS
+================================================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+i,
+em,
+li,
+th,
+td,
+label,
+legend {
+  &.primary {
+    color: var(--c_color_alpha) !important;
+
+    &.inverted {
+      color: inherit !important;
+
+      &:hover {
+        color: var(--c_color_alpha) !important;
+      }
+    }
+  }
+
+  &.secondary {
+    color: var(--c_color_beta) !important;
+
+    &.inverted {
+      color: inherit !important;
+
+      &:hover {
+        color: var(--c_color_beta) !important;
+      }
+    }
+  }
+}
+
+/* LINKS
+================================================================================ */
+
+a {
+  cursor: pointer;
+  color: var(--c_color_alpha);
+  transition: all 200ms;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #000;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: white;
+    outline: none;
+    background-color: var(--c_color_alpha);
+  }
+}
+
+a[href]:focus {
+  outline: none;
+}
+
+/* TEXTAREA
+================================================================================ */
+
+textarea {
+  font-family: var(--f_stack);
+}

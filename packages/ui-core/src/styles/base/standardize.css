@@ -1,0 +1,180 @@
+/* BASE STYLES & VERTICAL RHYTHM
+================================================================================ */
+
+/* Base */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  background: var(--c_background);
+}
+
+/* Box Sizing */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Margins and Height */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+ol,
+ul,
+dl,
+table,
+form,
+menu,
+blockquote,
+pre,
+address {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+/* Proximity */
+
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+  margin-top: 1.5rem;
+}
+
+/* Lists */
+
+ol,
+ul,
+dl {
+  padding-left: 0.75rem;
+}
+
+li {
+  margin-top: 0.25rem;
+
+  > ol,
+  > ul,
+  > dl {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  list-style: circle inside;
+}
+
+ol {
+  list-style: decimal inside;
+}
+
+dd {
+  margin-left: 0.75rem;
+}
+
+/* Tables */
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--c_color_alpha);
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+tfoot {
+  th,
+  td {
+    border-bottom: none;
+  }
+}
+
+/* Forms */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  line-height: 1rem;
+  font-size: 100%;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0 1rem 1rem;
+  border: none;
+
+  legend {
+    margin-left: -0.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+hr {
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid var(--c_color_alpha);
+}
+
+/* Quotes and Code */
+
+blockquote {
+  margin-left: 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--c_color_alpha);
+}
+
+pre {
+  display: block;
+  padding: 0.5rem;
+  overflow: auto;
+  color: var(--c_color_beta);
+  white-space: pre;
+  border: 1px solid white;
+  background: var(--c_code);
+  border-radius: 4px;
+}
+
+code {
+  margin: 0 0.2em;
+  padding: 0.2em 0.5em;
+  color: var(--c_color_beta);
+  font-size: 0.875em;
+  border: 1px solid var(--c_color_alpha);
+  background: var(--c_code);
+}
+
+pre > code {
+  padding: 0;
+  border: none;
+}

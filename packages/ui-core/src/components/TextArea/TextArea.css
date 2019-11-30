@@ -1,0 +1,168 @@
+.e-textarea {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+
+  /* FLOATING LABEL
+  ================================================================================ */
+
+  &--label {
+    position: absolute;
+    top: -0.35rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    font-style: italic;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all calc(var(--t_animation) * 0.5) linear;
+    transform: translateY(0.85rem);
+
+    &:empty {
+      display: none;
+    }
+
+    &.floating {
+      font-style: normal;
+      font-size: 0.75em;
+      transform: translateY(0.35rem);
+    }
+  }
+
+  &--label.floating + &--input::placeholder {
+    color: black; /* IE Fix */
+    color: initial;
+  }
+
+  /* TEXTAREA FIELD
+  ================================================================================ */
+
+  &--input {
+    padding: 0.5rem;
+    width: 100%;
+    min-height: 6rem;
+    line-height: 1rem;
+    appearance: none;
+    outline: none;
+    border: 1px solid var(--c_light_beta);
+    background-color: white;
+    resize: vertical;
+
+    &.labelled {
+      padding: 0.85rem 0.5rem 0.15rem;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0);
+      }
+    }
+
+    &[aria-label] {
+      padding-right: 1.5rem;
+    }
+
+    &::placeholder {
+      transition: color calc(var(--t_animation) * 0.5) linear;
+    }
+
+    &:focus {
+      padding-left: calc(0.5rem - 2px);
+      border-left-width: 3px;
+      border-left-color: var(--c_color_alpha);
+    }
+  }
+
+  /* DESCRIPTION
+  ================================================================================ */
+
+  &--description {
+    padding: 0.5rem;
+    display: block;
+    background-color: var(--c_light_alpha);
+    border: 1px solid var(--c_light_beta);
+    border-top: none;
+
+    &-toggler {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1.5rem;
+      line-height: 2rem;
+      color: var(--c_color_alpha);
+      text-align: center;
+
+      &::before {
+        @mixin iconBase;
+
+        content: var(--i_info);
+      }
+    }
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_info);
+      margin-right: 0.25em;
+      color: var(--c_color_alpha);
+    }
+  }
+
+  /* ERROR
+  ================================================================================ */
+
+  &--error {
+    position: relative;
+    display: inline-flex;
+    padding: 0.25rem 0;
+    color: var(--c_invalid);
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_warning);
+      margin-right: 0.25em;
+      width: 1em;
+      line-height: 1em;
+      flex-shrink: 0;
+      font-size: 1.5em;
+      text-align: center;
+      vertical-align: middle; /* IE10 Fix */
+    }
+  }
+
+  /* STATES
+  ================================================================================ */
+
+  @define-mixin state $color {
+    & .e-textarea--label {
+      color: $color;
+    }
+
+    & .e-textarea--input {
+      border-left-color: $color;
+    }
+  }
+
+  &.focused {
+    @mixin state var(--c_color_alpha);
+  }
+
+  &.valid {
+    @mixin state var(--c_valid);
+  }
+
+  &.invalid {
+    @mixin state var(--c_invalid);
+  }
+
+  &.disabled {
+    @mixin state rgba(0, 0, 0, 0.5);
+
+    & .e-textarea--input {
+      cursor: not-allowed;
+      color: rgba(0, 0, 0, 0.5);
+      border-color: rgba(0, 0, 0, 0.5);
+      border-style: dashed;
+    }
+  }
+}

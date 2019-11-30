@@ -1,0 +1,6 @@
+[class^='icon-'],
+[class*=' icon-'] {
+  @mixin iconBase;
+}
+
+@mixin genIcons;

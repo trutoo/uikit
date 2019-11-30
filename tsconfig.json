@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "pretty": true,
+    "types": [],
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": ["types.d.ts"],
+  "exclude": ["node_modules"]
+}

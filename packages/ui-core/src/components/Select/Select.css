@@ -1,0 +1,163 @@
+.e-select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+
+  /* FLOATING LABEL
+  ================================================================================ */
+
+  &--label {
+    position: absolute;
+    top: -0.35rem;
+    left: 0.5rem;
+    font-style: normal;
+    font-size: 0.75em;
+    pointer-events: none;
+    transition: all calc(var(--t_animation) * 0.5) linear;
+    transform: translateY(0.35rem);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  /* SELECT FIELD
+  ================================================================================ */
+
+  &--input {
+    padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+    width: 100%;
+    height: 2rem;
+    line-height: 1rem;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid var(--c_light_beta);
+    background-color: white;
+    background-image: svg-load('../../assets/select-arrows.svg', fill: var(--c_text));
+    background-position: right 0.5rem center;
+    background-size: 0.8em;
+    background-repeat: no-repeat;
+    border-radius: 0;
+
+    &.labelled {
+      padding: 0.85rem 0.5rem 0.15rem;
+    }
+
+    &[aria-label] {
+      background-position: right 1.5rem center;
+    }
+
+    &:focus {
+      border-bottom-width: 3px;
+      border-bottom-color: var(--c_color_alpha);
+    }
+
+    &&::-ms-expand {
+      display: none;
+    }
+  }
+
+  /* OPTIONS
+  ================================================================================ */
+
+  &--option,
+  &--optgroup {
+    background: white;
+  }
+
+  /* DESCRIPTION
+  ================================================================================ */
+
+  &--description {
+    padding: 0.5rem;
+    display: block;
+    background-color: var(--c_light_alpha);
+    border: 1px solid var(--c_light_beta);
+    border-top: none;
+
+    &-toggler {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1.5rem;
+      line-height: 2rem;
+      color: var(--c_color_alpha);
+      text-align: center;
+
+      &::before {
+        @mixin iconBase;
+
+        content: var(--i_info);
+      }
+    }
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_info);
+      margin-right: 0.25em;
+      color: var(--c_color_alpha);
+    }
+  }
+
+  /* ERROR
+  ================================================================================ */
+
+  &--error {
+    position: relative;
+    display: inline-flex;
+    padding: 0.25rem 0;
+    color: var(--c_invalid);
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_warning);
+      margin-right: 0.25em;
+      width: 1em;
+      line-height: 1em;
+      flex-shrink: 0;
+      font-size: 1.5em;
+      text-align: center;
+      vertical-align: middle; /* IE10 Fix */
+    }
+  }
+
+  /* STATES
+  ================================================================================ */
+
+  @define-mixin state $color {
+    & .e-select--label {
+      color: $color;
+    }
+
+    & .e-select--input {
+      border-bottom-color: $color;
+      background-image: svg-load('../../assets/select-arrows.svg', fill: $color);
+    }
+  }
+
+  &.focused {
+    @mixin state var(--c_color_alpha);
+  }
+
+  &.disabled {
+    @mixin state rgba(0, 0, 0, 0.5);
+
+    & .e-select--input {
+      cursor: not-allowed;
+      color: rgba(0, 0, 0, 0.5);
+      border-color: rgba(0, 0, 0, 0.5);
+      border-style: dashed;
+    }
+  }
+
+  &.valid {
+    @mixin state var(--c_valid);
+  }
+
+  &.invalid {
+    @mixin state var(--c_invalid);
+  }
+}
