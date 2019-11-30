@@ -1,6 +1,6 @@
 {
   "name": "@trutoo/ui-typeahead",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "keywords": [
     "trutoo",
     "uikit",
@@ -31,7 +31,7 @@
     "build": "node ../../scripts/build.js"
   },
   "dependencies": {
-    "@trutoo/ui-core": "^1.2.0",
+    "@trutoo/ui-core": "^1.2.1",
     "scroll-into-view-if-needed": "^2.2.20"
   },
   "gitHead": "772a4c9e6afc4e9adbcaf99dd09f97ad85362c5d"
