@@ -1,0 +1,47 @@
+.e-elevation-1 {
+  @mixin elevation 1;
+}
+
+.e-elevation-2 {
+  @mixin elevation 2;
+}
+
+.e-elevation-3 {
+  @mixin elevation 3;
+}
+
+.e-elevation-4 {
+  @mixin elevation 4;
+}
+
+.e-elevation-5 {
+  @mixin elevation 5;
+}
+
+.e-elevation-6 {
+  @mixin elevation 6;
+}
+
+.e-elevation-7 {
+  @mixin elevation 7;
+}
+
+.e-elevation-8 {
+  @mixin elevation 8;
+}
+
+.e-elevation-9 {
+  @mixin elevation 9;
+}
+
+.e-elevation-10 {
+  @mixin elevation 10;
+}
+
+.e-elevation-11 {
+  @mixin elevation 11;
+}
+
+.e-elevation-12 {
+  @mixin elevation 12;
+}

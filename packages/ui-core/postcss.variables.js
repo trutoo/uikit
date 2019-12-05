@@ -1,6 +1,8 @@
 /* UPDATES TO THIS FILE REQUIRES A FULL REBUILD */
 
 module.exports.base = {
+  'color-scheme': 'light dark',
+
   /* COLOR */
   '--c_color_alpha': '#b27100', // Quality Gold
   '--c_color_beta': '#ffab19', // Shiny Gold

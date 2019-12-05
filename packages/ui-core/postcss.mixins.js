@@ -1,3 +1,5 @@
+const exponent = (base, exponent, level) => Math.round(base * Math.pow(exponent, level));
+
 module.exports = variables => ({
   iconBase: mixin => {
     return {
@@ -20,6 +22,7 @@ module.exports = variables => ({
   },
 
   /* GENERATORS */
+
   genVariables: mixin => {
     return {
       ':root': {
@@ -98,7 +101,32 @@ module.exports = variables => ({
     };
   },
 
-  /* GRID COLUMNS */
+  /* ELEVATION */
+
+  elevation: (mixin, level) => {
+    return {
+      'background-color': 'var(--c_background)',
+      'box-shadow': `0 ${exponent(1, 1.38, level)}px ${exponent(1, 1.44, level)}px ${exponent(
+        1,
+        1.1,
+        level,
+      )}px rgba(0,0,0,0.14), 0 ${exponent(1, 1.25, level)}px ${exponent(1, 1.46, level)}px ${exponent(
+        1,
+        1.25,
+        level,
+      )}px rgba(0,0,0,0.12), 0 ${exponent(1, 1.28, level)}px ${exponent(3, 1.18, level)}px ${exponent(
+        -1,
+        1.22,
+        level,
+      )}px rgba(0,0,0,0.20)`,
+
+      '[data-theme=dark] &': {
+        'background-color': `rgba(255, 255, 255, ${exponent(4, 1.15, level) / 100})`,
+      },
+    };
+  },
+
+  /* GRID */
 
   columns: (mixin, device) => {
     const columns = {};
