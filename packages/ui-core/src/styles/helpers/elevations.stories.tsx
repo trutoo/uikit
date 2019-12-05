@@ -1,9 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withKnobs, number } from '@storybook/addon-knobs';
 
 import './elevations.css';
 
 storiesOf('Elevation', module)
+  .addDecorator(withKnobs)
   .add('default', () => (
     <div
       className="e-grid"
@@ -33,6 +35,21 @@ storiesOf('Elevation', module)
           culpa necessitatibus quidem, voluptatum veritatis et aut tempore dignissimos vel molestias hic architecto
           accusantium.
         </p>
+      </p>
+    </div>
+  ))
+  .add('dynamic', () => (
+    <div className="e-container">
+      <p
+        className={`e-elevation-${number('Elevation', 1, {
+          range: true,
+          min: 1,
+          max: 12,
+        })}`}
+        style={{ padding: 24, borderRadius: 4 }}>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima quasi eveniet corporis ipsum impedit nam ab
+        culpa necessitatibus quidem, voluptatum veritatis et aut tempore dignissimos vel molestias hic architecto
+        accusantium.
       </p>
     </div>
   ));
