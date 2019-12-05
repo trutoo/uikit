@@ -21,7 +21,6 @@
     }
   ],
   "scripts": {
-    "postinstall": "lerna bootstrap --hoist",
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "docs": "lerna run docs --stream",
@@ -39,6 +38,7 @@
     "@storybook/addon-a11y": "5.2.6",
     "@storybook/addon-actions": "5.2.6",
     "@storybook/addon-centered": "5.2.6",
+    "@storybook/addon-knobs": "5.2.8",
     "@storybook/addon-links": "5.2.6",
     "@storybook/addon-notes": "5.2.6",
     "@storybook/addons": "5.2.6",
