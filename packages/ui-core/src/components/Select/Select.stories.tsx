@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { StateDecorator, Store } from '@sambego/storybook-state';
 
 import './Select.css';
@@ -44,14 +43,17 @@ const options = [
   },
 ];
 
-storiesOf('Select', module)
-  .addDecorator(StateDecorator(store) as any)
-  .add('default', () => (
-    <Select
-      label="Select me!"
-      options={options}
-      placeholder={'Choose option in list'}
-      onChange={state => store.set({ value: state })}
-      validators={[Validator.required()]}
-    />
-  ));
+export default {
+  title: 'Select',
+  decorators: [StateDecorator(store)],
+};
+
+export const basic = () => (
+  <Select
+    label="Select me!"
+    options={options}
+    placeholder={'Choose option in list'}
+    onChange={state => store.set({ value: state })}
+    validators={[Validator.required()]}
+  />
+);

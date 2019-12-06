@@ -28,9 +28,6 @@ const setMode = isDark => {
 };
 channel.addListener('DARK_MODE', setMode);
 
-function loadStories() {
-  css.keys().forEach(filename => css(filename));
-  stories.keys().forEach(filename => stories(filename));
-}
-
-configure(loadStories, module);
+// Load Base CSS
+css.keys().forEach(filename => css(filename));
+configure(stories, module);

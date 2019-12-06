@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { State, Store } from '@sambego/storybook-state';
 
 import './RadioButton.css';
@@ -9,9 +8,13 @@ const store = new Store({
   value: 'value-2',
 });
 
+export default {
+  title: 'RadioButton',
+};
+
 /* Handle differently because radio buttons work as a group and checked must be conditional */
 let index = 0;
-storiesOf('RadioButton', module).add('default', () => {
+export const basic = () => {
   const value = 'value-' + index++;
   return (
     <State store={store}>
@@ -28,4 +31,4 @@ storiesOf('RadioButton', module).add('default', () => {
       )}
     </State>
   );
-});
+};

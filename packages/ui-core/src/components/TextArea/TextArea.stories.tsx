@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { StateDecorator, Store } from '@sambego/storybook-state';
 
 import './TextArea.css';
@@ -10,13 +9,16 @@ const store = new Store({
   value: '',
 });
 
-storiesOf('TextArea', module)
-  .addDecorator(StateDecorator(store) as any)
-  .add('default', () => (
-    <TextArea
-      label="Paragraph here!"
-      onChange={state => store.set({ value: state })}
-      validators={[Validator.required()]}
-      inputProps={{ 'aria-label': 'test' }}
-    />
-  ));
+export default {
+  title: 'TextArea',
+  decorators: [StateDecorator(store)],
+};
+
+export const basic = () => (
+  <TextArea
+    label="Paragraph here!"
+    onChange={state => store.set({ value: state })}
+    validators={[Validator.required()]}
+    inputProps={{ 'aria-label': 'test' }}
+  />
+);
