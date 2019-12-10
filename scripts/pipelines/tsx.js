@@ -109,7 +109,4 @@ module.exports.tsxPipeline = lazypipe()
   .pipe(function() {
     return gulpIf(/\.tsx?$/, tsProject());
   })
-  .pipe(
-    gulpSourcemaps.write,
-    '.',
-  );
+  .pipe(gulpSourcemaps.write, '.');

@@ -27,7 +27,6 @@ module.exports.build = () => {
     gulp
       .src(['postcss.*.js', 'src/**/*', '!src/**/*.stories.*'])
       .pipe(gulpPrint())
-      //.pipe(gulpIf(/package.json$/, packagePipeline()))
       .pipe(gulpIf(/postcss\.(\w+)\.js$/, configPipeline().on('error', reject)))
       .pipe(gulpIf(/\.tsx?$/, tsxPipeline().on('error', reject)))
       .pipe(gulpIf(/\.css$/, cssPipeline().on('error', reject)))

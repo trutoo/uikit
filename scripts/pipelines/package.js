@@ -5,9 +5,9 @@ const lazypipe = require('lazypipe');
 module.exports.packagePipe = () => {
   // return a `through2` stream for `pipe()` compatibility at the node level
   return through.obj((file, encoding, callback) => {
-    let transformedFile = file.clone();
+    const transformedFile = file.clone();
 
-    let metadata = JSON.parse(transformedFile.contents.toString());
+    const metadata = JSON.parse(transformedFile.contents.toString());
     delete metadata.scripts;
     delete metadata.devDepencencies;
     delete metadata.optionalDependencies;

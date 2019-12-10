@@ -7,11 +7,5 @@ const gulpIgnore = require('gulp-ignore');
 const DIST_DIR = path.resolve(process.cwd(), 'dist', 'config');
 
 module.exports.configPipeline = lazypipe()
-  .pipe(
-    gulp.dest,
-    DIST_DIR,
-  )
-  .pipe(
-    gulpIgnore.exclude,
-    true,
-  );
+  .pipe(gulp.dest, DIST_DIR)
+  .pipe(gulpIgnore.exclude, true);
