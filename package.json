@@ -21,6 +21,7 @@
     }
   ],
   "scripts": {
+    "postinstall": "lerna bootstrap",
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "docs": "lerna run docs --stream",
