@@ -3,28 +3,40 @@ name: Continuous Delivery
 on:
   push:
     branches:
-    - master
-    - release/*
+      - master
+      - release/*
 
 jobs:
-  release:
-
+  delivery:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - name: npm install, test, version, build, publish packages and docs
-      run: |
-        npm ci
-        npm test
-        npm run version
-        npm run build
-        lerna publish from-git --yes
-        npm run docs:deploy
-      env:
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        CI: true
+      - name: Checking out source code
+        uses: actions/checkout@v1
+
+      - name: Setting up Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies as CI
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run tests on packages
+        run: npm test
+
+      - name: Bump package versions
+        run: npm run version
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Publish public packages
+        run: lerna publish from-git --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy documentation package to GitHub Pages
+        run: npm run docs:deploy

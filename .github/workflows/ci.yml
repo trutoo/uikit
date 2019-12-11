@@ -3,11 +3,10 @@ name: Continuous Integration
 on:
   pull_request:
     branches:
-    - master
+      - master
 
 jobs:
-  build:
-
+  integration:
     runs-on: ubuntu-latest
 
     strategy:
@@ -15,16 +14,24 @@ jobs:
         node-version: [8.x, 10.x, 12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, test, and build
-      run: |
-        npm ci
-        npm test
-        npm run build
-      env:
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        CI: true
+      - name: Checking out source code
+        uses: actions/checkout@v1
+
+      - name: Setting up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies as CI
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run tests on packages
+        run: npm test
+
+      - name: Bump package versions
+        run: npm run version
+
+      - name: Build packages
+        run: npm run build
