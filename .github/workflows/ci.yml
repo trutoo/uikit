@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checking out source code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2-beta
 
       - name: Setting up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
