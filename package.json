@@ -20,17 +20,23 @@
       "url": "https://github.com/swiftwork"
     }
   ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "node scripts/commit-msg.js"
+    }
+  },
   "scripts": {
     "postinstall": "lerna bootstrap",
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "docs": "lerna run docs --stream",
     "docs:deploy": "lerna run docs:deploy --stream",
-    "version": "lerna version --conventional-commits --no-changelog --yes"
+    "version": "lerna version --conventional-commits --yes --changelog-preset scripts/changelog.js"
   },
   "dependencies": {
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "normalize.css": "8.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.7.5",
@@ -65,10 +71,10 @@
     "gulp-sourcemaps": "2.6.5",
     "gulp-stylelint": "10.0.0",
     "gulp-typescript": "5.0.1",
+    "husky": "3.1.0",
     "lazypipe": "1.0.2",
     "lerna": "3.19.0",
     "mini-css-extract-plugin": "0.8.0",
-    "normalize.css": "8.0.1",
     "postcss-import": "12.0.1",
     "postcss-inline-svg": "4.1.0",
     "postcss-lh": "2.0.2",
