@@ -22,7 +22,7 @@
   ],
   "husky": {
     "hooks": {
-      "commit-msg": "node scripts/commit-msg.js"
+      "commit-msg": "node ./scripts/commit-msg.js"
     }
   },
   "scripts": {
@@ -31,7 +31,8 @@
     "test": "lerna run test --stream",
     "docs": "lerna run docs --stream",
     "docs:deploy": "lerna run docs:deploy --stream",
-    "version": "lerna version --conventional-commits --yes --changelog-preset scripts/changelog.js"
+    "version": "lerna version --conventional-commits --changelog-preset ./scripts/changelog.js --yes",
+    "release": "lerna publish from-git --yes"
   },
   "dependencies": {
     "react": "^16.12.0",
