@@ -96,9 +96,9 @@ function getWriterOpts() {
         if (url) {
           url = `${url}`;
           // Issue URLs.
-          commit.subject = commit.subject.replace(/([A-Z0-9]{2,}-[0-9]+)/g, (_, issue) => {
+          commit.subject = commit.subject.replace(/#(\d+)/g, (_, issue) => {
             issues.push(issue);
-            return `[${issue}](${url}${issue})`;
+            return `[#${issue}](${url}${issue})`;
           });
         }
 

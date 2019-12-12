@@ -12,7 +12,7 @@ if (!/^(feat|fix|perf|revert|docs|style|refactor|test|build|ci)(?:\(.+\))?: /.te
 
   console.warn(`Valid types are feat|fix|perf|revert|docs|style|refactor|test|build|ci.`);
 
-  if (/^(feat|fix)(?:\(.+?\))?: /.test(commit) && !/(#\d+|[A-Z0-9]{2,}-[0-9]+)/.test(commit)) {
+  if (/^(feat|fix)(?:\(.+?\))?: /.test(commit) && !/#\d+/.test(commit)) {
     console.warn(`Features and fixes changes should include a task id.`);
     console.warn(`Example: "feat(typeahead): #1337 added keyboard interaction".`);
   } else {
