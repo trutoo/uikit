@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.3](https://github.com/trutoo/uikit/compare/v1.4.2...v1.4.3) (2019-12-14)
+
+
+### Continuous Integration
+
+* reverted protocol removal from reg-url ([8491283](https://github.com/trutoo/uikit/commit/849128384e16146b2ccda0c7083a04339cfc157c))
+
+
+
+
+
 ## [1.4.2](https://github.com/trutoo/uikit/compare/v1.4.1...v1.4.2) (2019-12-14)
 
 
