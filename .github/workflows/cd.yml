@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: Checking out source code
         uses: actions/checkout@v2-beta
+        with:
+          fetch-depth: 0
+
+      - name: Set git user and email
+        run: git -c user.name="GitHub Action" -c user.email="action@github.com"
 
       - name: Setting up Node.js 12.x
         uses: actions/setup-node@v1
