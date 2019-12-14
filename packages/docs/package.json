@@ -24,8 +24,12 @@
       "url": "https://github.com/swiftwork"
     }
   ],
+  "storybook-deployer": {
+    "gitUsername": "GitHub Action",
+    "gitEmail": "action@github.com"
+  },
   "scripts": {
-    "docs": "start-storybook --ci --quiet -p 2999",
+    "docs": "start-storybook --quiet -p 2999",
     "docs:deploy": "storybook-to-ghpages"
   },
   "dependencies": {
