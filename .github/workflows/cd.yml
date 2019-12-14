@@ -48,6 +48,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy documentation package to GitHub Pages
-        run: npm run docs:deploy -- -- -- --ci
+        run: npm run docs:deploy -- -- -- --ci --source-branch=HEAD
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
