@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.6](https://github.com/trutoo/uikit/compare/v1.4.5...v1.4.6) (2019-12-14)
+
+
+### Continuous Integration
+
+* attempt docs deploy fix by setting source branch to head ([093ee93](https://github.com/trutoo/uikit/commit/093ee93219afcffc2bc3b14839c15ffb8518e21b))
+
+
+
+
+
 ## [1.4.5](https://github.com/trutoo/uikit/compare/v1.4.4...v1.4.5) (2019-12-14)
 
 
