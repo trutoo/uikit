@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-'use strict';
+`use strict`;
 const Q = require(`q`);
 const compareFunc = require(`compare-func`);
 const readFile = Q.denodeify(require(`fs`).readFile);
@@ -8,7 +8,7 @@ const resolve = require(`path`).resolve;
 const parserOpts = {
   headerPattern: /^(\w*)(?:\((.*)\))?: (.*)$/,
   headerCorrespondence: [`type`, `scope`, `subject`],
-  noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING'],
+  noteKeywords: [`BREAKING CHANGE`, `BREAKING CHANGES`, `BREAKING`],
   revertPattern: /^revert:\s([\s\S]*?)\s*This reverts commit (\w*)\./,
   revertCorrespondence: [`header`, `hash`],
 };
@@ -92,9 +92,9 @@ function getWriterOpts() {
         if (context.packageData.bugs) url = context.packageData.bugs.url;
         else if (context.repository) url = `${context.host}/${context.owner}/${context.repository}/issues/`;
         else url = context.repoUrl;
+        if (!url.endsWith(`/`)) url += `/`;
 
         if (url) {
-          url = `${url}`;
           // Issue URLs.
           commit.subject = commit.subject.replace(/#(\d+)/g, (_, issue) => {
             issues.push(issue);
@@ -105,7 +105,7 @@ function getWriterOpts() {
         if (context.host) {
           // User URLs.
           commit.subject = commit.subject.replace(/\B@([a-z0-9](?:-?[a-z0-9/]){0,38})/g, (_, username) => {
-            if (username.includes('/')) {
+            if (username.includes(`/`)) {
               return `@${username}`;
             }
 
@@ -133,13 +133,13 @@ function getWriterOpts() {
   };
 }
 
-const templates = resolve(process.cwd(), 'node_modules', 'conventional-changelog-angular', 'templates');
+const templates = resolve(process.cwd(), `node_modules`, `conventional-changelog-angular`, `templates`);
 
 module.exports = Q.all([
-  readFile(resolve(templates, 'template.hbs'), `utf-8`),
-  readFile(resolve(templates, 'header.hbs'), `utf-8`),
-  readFile(resolve(templates, 'commit.hbs'), `utf-8`),
-  readFile(resolve(templates, 'footer.hbs'), `utf-8`),
+  readFile(resolve(templates, `template.hbs`), `utf-8`),
+  readFile(resolve(templates, `header.hbs`), `utf-8`),
+  readFile(resolve(templates, `commit.hbs`), `utf-8`),
+  readFile(resolve(templates, `footer.hbs`), `utf-8`),
 ]).spread((template, header, commit, footer) => {
   const writerOpts = getWriterOpts();
 
