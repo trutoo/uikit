@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = ({ config }) => {
   // Remove default PostCSS options allowing configs to be read from individual packages
   const cssRule = config.module.rules.find(r => r.test.toString() === /\.css$/.toString());
@@ -8,7 +10,7 @@ module.exports = ({ config }) => {
   const jsRule = config.module.rules.find(r => r.test.toString() === /\.(mjs|jsx?)$/.toString());
   const babelUse = jsRule.use.find(u => u.loader && u.loader.indexOf('babel-loader') > -1);
   jsRule.test = /\.(mjs|jsx?|tsx?)$/;
-  jsRule.exclude = /node_modules\/(?!@trutoo)/;
+  jsRule.exclude = new RegExp(`node_modules\\${path.sep}(?!@trutoo)`);
   delete jsRule.include;
   babelUse.options.presets.push([
     require.resolve('@babel/preset-typescript'),
