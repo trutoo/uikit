@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.4](https://github.com/trutoo/uikit/compare/v1.4.3...v1.4.4) (2019-12-14)
+
+
+### Build System
+
+* reverted settings to attempt fixing publish ([08c9266](https://github.com/trutoo/uikit/commit/08c92662c612fc6a2a5645f7846acf5cd796e8dd))
+
+
+
+
+
 ## [1.4.3](https://github.com/trutoo/uikit/compare/v1.4.2...v1.4.3) (2019-12-14)
 
 
