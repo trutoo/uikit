@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/trutoo/uikit/compare/v1.4.1...v1.4.2) (2019-12-14)
+
+
+### Build System
+
+* scoped registry in .npmrc ([f53cc60](https://github.com/trutoo/uikit/commit/f53cc60c24f1176f098f4499e094456a08c1433e))
+
+
+### Continuous Integration
+
+* removed illegal @ symbol ([0216924](https://github.com/trutoo/uikit/commit/02169241956f2d495995edc254299ab685a1d4ab))
+* simplified scope and registry options ([831b08d](https://github.com/trutoo/uikit/commit/831b08d49847ab13193660a2d2e37bea48034a32))
+
+
+### Documentation
+
+* fixed exclusion path for all OS ([ad47dd6](https://github.com/trutoo/uikit/commit/ad47dd6d19b1fc670fbce1c93610a7a4e8025abf))
+
+
+
+
+
 ## [1.4.1](https://github.com/trutoo/uikit/compare/v1.4.0...v1.4.1) (2019-12-14)
 
 
