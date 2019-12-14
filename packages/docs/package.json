@@ -1,6 +1,6 @@
 {
   "name": "@trutoo/docs",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "private": true,
   "keywords": [
     "trutoo",
@@ -33,8 +33,8 @@
     "docs:deploy": "storybook-to-ghpages"
   },
   "dependencies": {
-    "@trutoo/ui-core": "^1.4.4",
-    "@trutoo/ui-datepicker": "^1.4.4",
-    "@trutoo/ui-typeahead": "^1.4.4"
+    "@trutoo/ui-core": "^1.4.5",
+    "@trutoo/ui-datepicker": "^1.4.5",
+    "@trutoo/ui-typeahead": "^1.4.5"
   }
 }
