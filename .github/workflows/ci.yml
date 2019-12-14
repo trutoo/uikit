@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: //npm.pkg.github.com/
+          registry-url: https://npm.pkg.github.com
           scope: trutoo
 
       - name: Install dependencies as CI
