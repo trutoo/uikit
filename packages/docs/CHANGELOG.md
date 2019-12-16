@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/trutoo/uikit/compare/v1.4.6...v1.5.0) (2019-12-16)
+
+
+### Features
+
+* migrated to new github pages deploy solution ([3e4468f](https://github.com/trutoo/uikit/commit/3e4468f4e67be4296a3faa23942d1a8f503ca2db))
+
+
+
+
+
 ## [1.4.6](https://github.com/trutoo/uikit/compare/v1.4.5...v1.4.6) (2019-12-14)
 
 **Note:** Version bump only for package @trutoo/docs
