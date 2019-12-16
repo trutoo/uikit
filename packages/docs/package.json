@@ -24,13 +24,10 @@
       "url": "https://github.com/swiftwork"
     }
   ],
-  "storybook-deployer": {
-    "gitUsername": "GitHub Action",
-    "gitEmail": "action@github.com"
-  },
   "scripts": {
     "docs": "start-storybook --quiet -p 2999",
-    "docs:deploy": "storybook-to-ghpages"
+    "docs:build": "build-storybook -o dist --quiet",
+    "docs:deploy": "npm run docs:build && node .storybook/deploy.js"
   },
   "dependencies": {
     "@trutoo/ui-core": "^1.4.5",
