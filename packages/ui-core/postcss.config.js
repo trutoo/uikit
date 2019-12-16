@@ -50,6 +50,10 @@ module.exports = ({ options, env }) => {
       // https://github.com/TrySound/postcss-inline-svg
       'postcss-inline-svg': {},
 
+      // Add vendor prefixes to CSS rules using values = require(caniuse.com)
+      // https://github.com/postcss/autoprefixer
+      autoprefixer: {},
+
       // A modular minifier, built on top of the PostCSS ecosystem.
       // https://github.com/cssnano/cssnano
       cssnano:

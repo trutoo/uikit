@@ -53,6 +53,7 @@
     "@storybook/react": "5.2.8",
     "@typescript-eslint/eslint-plugin": "2.11.0",
     "@typescript-eslint/parser": "2.11.0",
+    "autoprefixer": "9.7.3",
     "babel-loader": "8.0.6",
     "css-loader": "3.3.0",
     "cssnano": "4.1.10",
