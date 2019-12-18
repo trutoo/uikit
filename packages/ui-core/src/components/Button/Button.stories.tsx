@@ -26,3 +26,9 @@ export const disabledLink = () => (
     Click me!
   </Button>
 );
+
+export const onDark = () => (
+  <div style={{ padding: '4rem', background: 'var(--c_light_alpha)' }}>
+    <Button onClick={console.log}>Click me!</Button>
+  </div>
+);

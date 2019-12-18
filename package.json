@@ -72,6 +72,8 @@
     "gulp-print": "5.0.2",
     "gulp-sourcemaps": "2.6.5",
     "gulp-stylelint": "10.0.0",
+    "gulp-svg-sprite": "1.5.0",
+    "gulp-svgo": "2.1.1",
     "gulp-typescript": "5.0.1",
     "husky": "3.1.0",
     "lazypipe": "1.0.2",

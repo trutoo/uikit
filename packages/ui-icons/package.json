@@ -1,0 +1,34 @@
+{
+  "name": "@trutoo/ui-icons",
+  "version": "1.5.0",
+  "keywords": [
+    "trutoo",
+    "uikit",
+    "wcag",
+    "whitelabel"
+  ],
+  "description": "Basic whitelabled interactive elements following strict code quality and accessibility",
+  "main": "dist/index.js",
+  "author": "Trutoo AB",
+  "license": "GPL-3.0",
+  "bugs": "https://github.com/trutoo/uikit/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/trutoo/uikit.git",
+    "directory": "packages/ui-icons"
+  },
+  "contributors": [
+    {
+      "name": "Erik Hughes",
+      "email": "erik.hughes@outlook.com",
+      "url": "https://github.com/swiftwork"
+    }
+  ],
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "node ../../scripts/build.js"
+  },
+  "dependencies": {}
+}

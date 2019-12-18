@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 const lazypipe = require('lazypipe');
 const Vinyl = require('vinyl');
@@ -8,10 +9,10 @@ const gulpESLint = require('gulp-eslint');
 const gulpSourcemaps = require('gulp-sourcemaps');
 
 const through = require('through2');
-
-const tsProject = gulpTS.createProject(path.join(process.cwd(), 'tsconfig.json'));
+const tsconfig = path.join(process.cwd(), 'tsconfig.json');
+const tsProject = fs.existsSync(tsconfig) ? gulpTS.createProject(tsconfig) : gulpTS.createProject({});
 tsProject.options.declaration = true; // Enable declarations for build
-tsProject.config.exclude.push('**/*.spec.ts'); // Remove spec from distribution'
+if (tsProject.config && tsProject.config.exclude) tsProject.config.exclude.push('**/*.spec.ts'); // Remove spec from distribution
 
 const SRC_DIR = path.resolve(process.cwd(), 'src');
 const WARNING = `

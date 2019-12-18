@@ -6,10 +6,13 @@ module.exports.base = {
   /* COLOR */
   '--c_color_alpha': '#b27100', // Quality Gold
   '--c_color_beta': '#ffab19', // Shiny Gold
+
   '--c_light_alpha': '#556270', // Might Slate
   '--c_light_beta': '#666666', // Soft Grey
+
   '--c_text': '#121212', // Dark Grey
   '--c_background': '#ffffff', // White
+
   '--c_valid': '#95c11f', // Green
   '--c_warning': '#ea5b0c', // Orange
   '--c_invalid': '#c43b0a', // Red
@@ -68,10 +71,13 @@ module.exports.dark = {
   /* COLOR */
   '--c_color_alpha': '#ffab19', // Shiny Gold
   '--c_color_beta': '#b27100', // Quality Gold
+
   '--c_light_alpha': '#556270', // Might Slate
   '--c_light_beta': '#666666', // Soft Grey
+
   '--c_text': '#f0f0f0', // Bone White
   '--c_background': '#121212', // Dark Grey
+
   '--c_valid': '#95c11f', // Green
   '--c_warning': '#ea5b0c', // Orange
   '--c_invalid': '#c43b0a', // Red

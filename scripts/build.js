@@ -14,6 +14,7 @@ const logger = require('./utils/logger.js');
 const { configPipeline } = require('./pipelines/config');
 const { tsxPipeline } = require('./pipelines/tsx');
 const { cssPipeline } = require('./pipelines/css');
+const { svgPipeline } = require('./pipelines/svg');
 const { licensePipeline } = require('./pipelines/license');
 
 const DIST_DIR = path.resolve(process.cwd(), 'dist');
@@ -30,6 +31,7 @@ module.exports.build = () => {
       .pipe(gulpIf(/postcss\.(\w+)\.js$/, configPipeline().on('error', reject)))
       .pipe(gulpIf(/\.tsx?$/, tsxPipeline().on('error', reject)))
       .pipe(gulpIf(/\.css$/, cssPipeline().on('error', reject)))
+      .pipe(gulpIf(/\.svg$/, svgPipeline().on('error', reject)))
       .pipe(gulpIf(/\.(js|css|d\.ts?)$/, licensePipeline().on('error', reject)))
       .pipe(gulp.dest(DIST_DIR))
       .on('end', resolve);

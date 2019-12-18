@@ -12,19 +12,20 @@
   overflow: hidden;
   cursor: pointer;
   outline: none;
-  border: none;
   vertical-align: middle;
   border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: var(--c_background);
   transition: color 0.15s ease, background-color 0.15s ease;
   box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.2);
 
   &:hover,
   &:focus {
-    background-color: white;
+    color: var(--c_color_beta);
+    background-color: var(--c_light_alpha);
   }
 
-  &:active {
+  &:not(.disabled):active {
     margin-top: 3px;
     box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
   }

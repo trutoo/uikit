@@ -1,0 +1,374 @@
+icon-action-redo:
+  title: Action redo
+  description: This will redo the last action
+icon-action-undo:
+  title: Action undo
+icon-anchor:
+  title: Anchor
+icon-arrow-down-circle:
+  title: Arrow down circle
+icon-arrow-down:
+  title: Arrow down
+icon-arrow-left-circle:
+  title: Arrow left circle
+icon-arrow-left:
+  title: Arrow left
+icon-arrow-right-circle:
+  title: Arrow right circle
+icon-arrow-right:
+  title: Arrow right
+icon-arrow-up-circle:
+  title: Arrow up circle
+icon-arrow-up:
+  title: Arrow up
+icon-badge:
+  title: Badge
+icon-bag:
+  title: Bag
+icon-ban:
+  title: Ban
+icon-basket-loaded:
+  title: Basket loaded
+icon-basket:
+  title: Basket
+icon-bell:
+  title: Bell
+icon-book-open:
+  title: Book open
+icon-briefcase:
+  title: Briefcase
+icon-bubble:
+  title: Bubble
+icon-bubbles:
+  title: Bubbles
+icon-bulb:
+  title: Bulb
+icon-calculator:
+  title: Calculator
+icon-calendar:
+  title: Calendar
+icon-call-end:
+  title: Call end
+icon-call-in:
+  title: Call in
+icon-call-out:
+  title: Call out
+icon-camera:
+  title: Camera
+icon-camrecorder:
+  title: Camrecorder
+icon-chart:
+  title: Chart
+icon-check:
+  title: Check
+icon-chemistry:
+  title: Chemistry
+icon-clock:
+  title: Clock
+icon-close:
+  title: Close
+icon-cloud-download:
+  title: Cloud download
+icon-cloud-upload:
+  title: Cloud upload
+icon-compass:
+  title: Compass
+icon-control-end:
+  title: Control end
+icon-control-forward:
+  title: Control forward
+icon-control-pause:
+  title: Control pause
+icon-control-play:
+  title: Control play
+icon-control-rewind:
+  title: Control rewind
+icon-control-start:
+  title: Control start
+icon-credit-card:
+  title: Credit card
+icon-crop:
+  title: Crop
+icon-cup:
+  title: Cup
+icon-cursor-move:
+  title: Cursor move
+icon-cursor:
+  title: Cursor
+icon-diamond:
+  title: Diamond
+icon-direction:
+  title: Direction
+icon-directions:
+  title: Directions
+icon-disk:
+  title: Disk
+icon-dislike:
+  title: Dislike
+icon-doc:
+  title: Doc
+icon-docs:
+  title: Docs
+icon-drawer:
+  title: Drawer
+icon-drop:
+  title: Drop
+icon-earphone:
+  title: Earphone
+icon-earphones-alt:
+  title: Earphones alt
+icon-emotsmile:
+  title: Emotsmile
+icon-energy:
+  title: Energy
+icon-envelope-letter:
+  title: Envelope letter
+icon-envelope-open:
+  title: Envelope open
+icon-envelope:
+  title: Envelope
+icon-equaizer:
+  title: Equaizer
+icon-exclamation:
+  title: Exclamation
+icon-eye:
+  title: Eye
+icon-eyeglass:
+  title: Eyeglass
+icon-feed:
+  title: Feed
+icon-film:
+  title: Film
+icon-fire:
+  title: Fire
+icon-flag:
+  title: Flag
+icon-folder-alt:
+  title: Folder alt
+icon-folder:
+  title: Folder
+icon-frame:
+  title: Frame
+icon-game-controller:
+  title: Game controller
+icon-ghost:
+  title: Ghost
+icon-globe-alt:
+  title: Globe alt
+icon-globe:
+  title: Globe
+icon-graduation:
+  title: Graduation
+icon-graph:
+  title: Graph
+icon-grid:
+  title: Grid
+icon-handbag:
+  title: Handbag
+icon-heart:
+  title: Heart
+icon-home:
+  title: Home
+icon-hourglass:
+  title: Hourglass
+icon-info:
+  title: Info
+icon-key:
+  title: Key
+icon-layers:
+  title: Layers
+icon-like:
+  title: Like
+icon-link:
+  title: Link
+icon-list:
+  title: List
+icon-location-pin:
+  title: Location pin
+icon-lock-open:
+  title: Lock open
+icon-lock:
+  title: Lock
+icon-login:
+  title: Login
+icon-logout:
+  title: Logout
+icon-loop:
+  title: Loop
+icon-magic-wand:
+  title: Magic wand
+icon-magnet:
+  title: Magnet
+icon-magnifier-add:
+  title: Magnifier add
+icon-magnifier-remove:
+  title: Magnifier remove
+icon-magnifier:
+  title: Magnifier
+icon-map:
+  title: Map
+icon-menu:
+  title: Menu
+icon-microphone:
+  title: Microphone
+icon-minus:
+  title: Minus
+icon-mouse:
+  title: Mouse
+icon-music-tone-alt:
+  title: Music tone alt
+icon-music-tone:
+  title: Music tone
+icon-mustache:
+  title: Mustache
+icon-note:
+  title: Note
+icon-notebook:
+  title: Notebook
+icon-options-vertical:
+  title: Options vertical
+icon-options:
+  title: Options
+icon-organization:
+  title: Organization
+icon-paper-clip:
+  title: Paper clip
+icon-paper-plane:
+  title: Paper plane
+icon-paypal:
+  title: Paypal
+icon-pencil:
+  title: Pencil
+icon-people:
+  title: People
+icon-phone:
+  title: Phone
+icon-picture:
+  title: Picture
+icon-pie-chart:
+  title: Pie chart
+icon-pin:
+  title: Pin
+icon-plane:
+  title: Plane
+icon-playlist:
+  title: Playlist
+icon-plus:
+  title: Plus
+icon-power:
+  title: Power
+icon-present:
+  title: Present
+icon-printer:
+  title: Printer
+icon-puzzle:
+  title: Puzzle
+icon-question:
+  title: Question
+icon-refresh:
+  title: Refresh
+icon-reload:
+  title: Reload
+icon-rocket:
+  title: Rocket
+icon-screen-desktop:
+  title: Screen desktop
+icon-screen-smartphone:
+  title: Screen smartphone
+icon-screen-tablet:
+  title: Screen tablet
+icon-settings:
+  title: Settings
+icon-share-alt:
+  title: Share alt
+icon-share:
+  title: Share
+icon-shield:
+  title: Shield
+icon-shuffle:
+  title: Shuffle
+icon-size-actual:
+  title: Size actual
+icon-size-fullscreen:
+  title: Size fullscreen
+icon-social-behange:
+  title: Social behange
+icon-social-dribbble:
+  title: Social dribbble
+icon-social-dropbox:
+  title: Social dropbox
+icon-social-facebook:
+  title: Social facebook
+  description: Social media logo of Facebook
+icon-social-foursquare:
+  title: Social foursquare
+icon-social-github:
+  title: Social github
+icon-social-google:
+  title: Social google
+icon-social-instagram:
+  title: Social instagram
+icon-social-linkedin:
+  title: Social linkedin
+icon-social-pinterest:
+  title: Social pinterest
+icon-social-reddit:
+  title: Social reddit
+icon-social-skype:
+  title: Social skype
+icon-social-soundcloud:
+  title: Social soundcloud
+icon-social-stumbleupon:
+  title: Social stumbleupon
+icon-social-tumblr:
+  title: Social tumblr
+icon-social-twitter:
+  title: Social twitter
+icon-social-youtube:
+  title: Social youtube
+icon-speech:
+  title: Speech
+icon-speedometer:
+  title: Speedometer
+icon-spotify:
+  title: Spotify
+icon-star:
+  title: Star
+icon-support:
+  title: Support
+icon-symbol-female:
+  title: Symbol female
+icon-symbol-male:
+  title: Symbol male
+icon-tag:
+  title: Tag
+icon-target:
+  title: Target
+icon-trash:
+  title: Trash
+icon-trophy:
+  title: Trophy
+icon-umbrella:
+  title: Umbrella
+icon-user-female:
+  title: User female
+icon-user-follow:
+  title: User follow
+icon-user-following:
+  title: User following
+icon-user-unfollow:
+  title: User unfollow
+icon-user:
+  title: User
+icon-vector:
+  title: Vector
+icon-volume-1:
+  title: Volume 1
+icon-volume-2:
+  title: Volume 2
+icon-volume-off:
+  title: Volume off
+icon-wallet:
+  title: Wallet
+icon-wrench:
+  title: Wrench
