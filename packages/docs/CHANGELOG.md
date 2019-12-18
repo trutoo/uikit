@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/trutoo/uikit/compare/v1.5.0...v1.5.1) (2019-12-16)
+
+
+### Bug Fixes
+
+* docs deploy now requires an actor ([86c123a](https://github.com/trutoo/uikit/commit/86c123ab7ab3d9a77848d35bbebdd830218d811b))
+
+
+
+
+
 # [1.5.0](https://github.com/trutoo/uikit/compare/v1.4.6...v1.5.0) (2019-12-16)
 
 
