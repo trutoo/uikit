@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/trutoo/uikit/compare/v1.5.1...v1.6.0) (2019-12-18)
+
+
+### Features
+
+* added autoprefixer with default config ([64496d4](https://github.com/trutoo/uikit/commit/64496d45308cc06bbbfe2487d6cf2ff2d49b562b))
+* added new ui-icons package ([d9de442](https://github.com/trutoo/uikit/commit/d9de442e50a1719253d4fe15498802c4dbbee7fd))
+
+
+
+
+
 ## [1.5.1](https://github.com/trutoo/uikit/compare/v1.5.0...v1.5.1) (2019-12-16)
 
 **Note:** Version bump only for package @trutoo/ui-core
