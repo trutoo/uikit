@@ -32,6 +32,7 @@
   "dependencies": {
     "@trutoo/ui-core": "^1.5.1",
     "@trutoo/ui-datepicker": "^1.5.1",
+    "@trutoo/ui-icons": "^1.5.1",
     "@trutoo/ui-typeahead": "^1.5.1"
   }
 }

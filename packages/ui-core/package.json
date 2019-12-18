@@ -32,5 +32,7 @@
     "build": "node ../../scripts/build.js",
     "postinstall": "node banner.js || echo \"ignore\""
   },
-  "gitHead": "772a4c9e6afc4e9adbcaf99dd09f97ad85362c5d"
+  "dependencies": {
+    "@trutoo/ui-icons": "^1.5.1"
+  }
 }

@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@trutoo/ui-core": "^1.5.1",
+    "@trutoo/ui-icons": "^1.5.1",
     "moment": "2.24.0",
     "scroll-into-view-if-needed": "^2.2.20"
-  },
-  "gitHead": "772a4c9e6afc4e9adbcaf99dd09f97ad85362c5d"
+  }
 }
