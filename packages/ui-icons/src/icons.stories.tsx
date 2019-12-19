@@ -26,7 +26,7 @@ export const basic = () => {
             width: size,
             height: size,
           }}>
-          <use xlinkHref={`${icon}#Layer_1`} width={size} height={size} />
+          <use xlinkHref={`${icon}#icon`} width={size} height={size} />
         </svg>
       ))}
     </div>
