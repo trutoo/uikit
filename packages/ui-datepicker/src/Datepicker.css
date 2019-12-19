@@ -47,7 +47,7 @@
     outline: none;
     border: 1px solid var(--c_light_beta);
     background-color: white;
-    background-image: svg-load('./assets/select-date.svg', fill: var(--c_text));
+    background-image: svg-load('@trutoo/ui-icons/dist/icons/icon-calendar.svg', fill: var(--c_text));
     background-position: right 0.5rem center;
     background-size: 1.6em;
     background-repeat: no-repeat;
@@ -232,7 +232,7 @@
 
     & .e-datepicker--input {
       border-left-color: $color;
-      background-image: svg-load('./assets/select-date.svg', fill: $color);
+      background-image: svg-load('@trutoo/ui-icons/dist/icons/icon-calendar.svg', fill: $color);
     }
   }
 

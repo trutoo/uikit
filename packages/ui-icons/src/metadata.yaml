@@ -21,6 +21,10 @@ icon-arrow-up-circle:
   title: Arrow up circle
 icon-arrow-up:
   title: Arrow up
+icon-arrows-horizontal:
+  title: Arrows horizontal
+icon-arrows-vertical:
+  title: Arrows vertical
 icon-badge:
   title: Badge
 icon-bag:
@@ -183,6 +187,8 @@ icon-link:
   title: Link
 icon-list:
   title: List
+icon-loader:
+  title: Loader
 icon-location-pin:
   title: Location pin
 icon-lock-open:

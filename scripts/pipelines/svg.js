@@ -21,16 +21,6 @@ module.exports.svgPipeline = lazypipe().pipe(() => {
           },
         },
         mode: {
-          view: {
-            dest: '',
-            prefix: '.%s',
-            sprite: 'sprite',
-            dimensions: false,
-            render: { css: true },
-            example: {
-              dest: 'example.sprite.html',
-            },
-          },
           symbol: {
             dest: '',
             prefix: '.%s',

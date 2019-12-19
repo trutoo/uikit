@@ -6,6 +6,7 @@
   "html.format.wrapAttributes": "force",
   "scss.validate": false,
   "search.exclude": {
+    "**/package-lock.json": true,
     "**/node_modules": true,
     "**/dist": true,
     "**/docs": true

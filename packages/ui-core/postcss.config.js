@@ -1,3 +1,4 @@
+const path = require('path');
 const defaultVariables = require('./postcss.variables.js');
 const defaultMedia = require('./postcss.media.js');
 const defaultMixins = require('./postcss.mixins.js');
@@ -48,7 +49,9 @@ module.exports = ({ options, env }) => {
 
       // Reference an SVG file and control its attributes with CSS syntax
       // https://github.com/TrySound/postcss-inline-svg
-      'postcss-inline-svg': {},
+      'postcss-inline-svg': {
+        paths: [path.resolve('src'), path.resolve('node_modules')],
+      },
 
       // Add vendor prefixes to CSS rules using values = require(caniuse.com)
       // https://github.com/postcss/autoprefixer
