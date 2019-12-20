@@ -1,3 +1,4 @@
+import React from 'react';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import addon from '@storybook/addons';
 import { withA11y } from '@storybook/addon-a11y';
@@ -18,6 +19,8 @@ addParameters({
     light: { ...themes.normal },
   },
 });
+
+addDecorator(storyFn => <div className="e-container">{storyFn()}</div>);
 
 addDecorator(centered);
 

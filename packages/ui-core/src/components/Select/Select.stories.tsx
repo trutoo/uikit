@@ -12,31 +12,31 @@ const store = new Store({
 const options = [
   {
     key: 0,
-    label: 'The Incredibles',
+    label: 'Eagle',
   },
   {
     key: 1,
-    label: 'Kick-Ass',
+    label: 'Hawk',
     disabled: true,
   },
   {
     key: 2,
-    label: 'Hellboy',
+    label: 'Owl',
   },
   {
-    label: 'Avengers',
+    label: 'Parrots',
     options: [
       {
         key: 3,
-        label: 'Thor',
+        label: 'Cockatoo',
       },
       {
         key: 4,
-        label: 'Iron Man',
+        label: 'Macaw',
       },
       {
         key: 5,
-        label: 'Black Widow',
+        label: 'Parakeet',
         disabled: true,
       },
     ],
@@ -56,4 +56,17 @@ export const basic = () => (
     onChange={state => store.set({ value: state })}
     validators={[Validator.required()]}
   />
+);
+
+export const onDark = () => (state: { value: string }) => (
+  <div style={{ padding: '4rem', background: 'var(--c_light_alpha)' }}>
+    <Select
+      label="Select me!"
+      options={options}
+      value={state.value}
+      placeholder={'Choose option in list'}
+      onChange={state => store.set({ value: state })}
+      validators={[Validator.required()]}
+    />
+  </div>
 );
