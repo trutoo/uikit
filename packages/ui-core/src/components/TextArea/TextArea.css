@@ -46,7 +46,7 @@
     appearance: none;
     outline: none;
     border: 1px solid var(--c_light_beta);
-    background-color: white;
+    background-color: var(--c_light);
     resize: vertical;
 
     &.labelled {

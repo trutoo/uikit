@@ -5,17 +5,21 @@ module.exports.base = {
 
   /* COLOR */
   '--c_color_alpha': '#b27100', // Quality Gold
-  '--c_color_beta': '#ffab19', // Shiny Gold
+  '--c_color_beta': '#556270', // Might Slate
 
-  '--c_light_alpha': '#556270', // Might Slate
-  '--c_light_beta': '#666666', // Soft Grey
+  '--c_text': 'rgba(0, 0, 0, 0.87)',
+  '--c_text_low': 'rgba(0, 0, 0, 0.6)',
+  '--c_text_disabled': 'rgba(0, 0, 0, 0.38)',
 
-  '--c_text': '#121212', // Dark Grey
-  '--c_background': '#ffffff', // White
+  '--c_background': '#ffffff',
+  '--c_light': 'rgba(0, 0, 0, 0.125)',
+  '--c_light_alpha': 'rgba(0, 0, 0, 0.25)',
+  '--c_light_beta': 'rgba(0, 0, 0, 0.5)',
+  '--c_light_gamma': 'rgba(0, 0, 0, 0.75)',
 
   '--c_valid': '#95c11f', // Green
-  '--c_warning': '#ea5b0c', // Orange
-  '--c_invalid': '#c43b0a', // Red
+  '--c_warning': '#f3a118', // Orange
+  '--c_invalid': '#c10d08', // Red
 
   /* Z-INDEX */
   '--z_floating': '1000',
@@ -70,15 +74,19 @@ module.exports.base = {
 module.exports.dark = {
   /* COLOR */
   '--c_color_alpha': '#ffab19', // Shiny Gold
-  '--c_color_beta': '#b27100', // Quality Gold
+  '--c_color_beta': '#556270', // Might Slate
 
-  '--c_light_alpha': '#556270', // Might Slate
-  '--c_light_beta': '#666666', // Soft Grey
+  '--c_text': 'rgba(255, 255, 255, 0.87)',
+  '--c_text_low': 'rgba(255, 255, 255, 0.6)',
+  '--c_text_disabled': 'rgba(255, 255, 255, 0.38)',
 
-  '--c_text': '#f0f0f0', // Bone White
-  '--c_background': '#121212', // Dark Grey
+  '--c_background': '#121212',
+  '--c_light': 'rgba(255, 255, 255, 0.06)',
+  '--c_light_alpha': 'rgba(255, 255, 255, 0.12)',
+  '--c_light_beta': 'rgba(255, 255, 255, 0.24)',
+  '--c_light_gamma': 'rgba(255, 255, 255, 0.48)',
 
   '--c_valid': '#95c11f', // Green
-  '--c_warning': '#ea5b0c', // Orange
-  '--c_invalid': '#c43b0a', // Red
+  '--c_warning': '#f3a118', // Orange
+  '--c_invalid': '#c10d08', // Red
 };

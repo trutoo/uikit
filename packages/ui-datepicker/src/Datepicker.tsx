@@ -50,7 +50,7 @@ export default class Datepicker extends Component<Props, State> {
   /** @internal today's date */
   protected todaysDate: Date;
 
-  protected selectingSpan: boolean = false;
+  protected selectingSpan = false;
 
   constructor(props: Props) {
     super(props);
@@ -387,24 +387,22 @@ export default class Datepicker extends Component<Props, State> {
           {...this.props.inputProps}
         />
 
-        {!this.props.disabled && this.hasValueOrFocus() && (
-          <a
-            className="e-datepicker--clear"
-            tabIndex={-1}
-            title={this.props.clearText || 'Clear'}
-            onClick={this.onClear}
-          />
+        {this.props.disabled || !this.state.focused ? (
+          <svg className="e-datepicker--helper no-events">
+            <use xlinkHref="#icon-calendar" />
+          </svg>
+        ) : (
+          <svg className="e-datepicker--helper" tabIndex={-1} onMouseDown={this.onClear}>
+            <use xlinkHref="#icon-calendar-clear" />
+          </svg>
         )}
 
         {this.state.dates && (
           <Grid className="e-datepicker--select" columns={7} id={`${this.state.id}-results`}>
             {/* PREVIOUS */}
-            <span
-              className="e-datepicker--select-button"
-              onMouseDown={event => this.onChangeMonth(event, -1)}
-              onTouchStart={event => this.onChangeMonth(event, -1)}>
-              <i className="icon-prev"></i>
-            </span>
+            <svg className="e-datepicker--select-button" onMouseDown={event => this.onChangeMonth(event, -1)}>
+              <use xlinkHref="#icon-arrow-left-circle" />
+            </svg>
 
             {/* MONTH */}
             <strong className="e-datepicker--select-month">
@@ -412,12 +410,9 @@ export default class Datepicker extends Component<Props, State> {
             </strong>
 
             {/* NEXT */}
-            <span
-              className="e-datepicker--select-button"
-              onMouseDown={event => this.onChangeMonth(event, 1)}
-              onTouchStart={event => this.onChangeMonth(event, 1)}>
-              <i className="icon-next"></i>
-            </span>
+            <svg className="e-datepicker--select-button" onMouseDown={event => this.onChangeMonth(event, 1)}>
+              <use xlinkHref="#icon-arrow-right-circle" />
+            </svg>
 
             {/* WEEK DAYS */}
             {this.state.days.map(day => (

@@ -88,6 +88,7 @@
     "postcss-nested": "4.2.1",
     "postcss-preset-env": "6.7.0",
     "prettier": "1.19.1",
+    "raw-loader": "4.0.0",
     "storybook-dark-mode": "0.2.0",
     "stylelint": "12.0.0",
     "stylelint-config-prettier": "8.0.0",

@@ -5,6 +5,8 @@ import { withA11y } from '@storybook/addon-a11y';
 import { themes } from '@storybook/theming';
 import centered from '@storybook/addon-centered/react';
 
+import icons from '!raw-loader!@trutoo/ui-icons/dist/symbols.svg';
+
 /* Utilize lerna linking to access src files and hot reload */
 const css = require.context('../node_modules/@trutoo/ui-core', true, /src.*(variables|base)\.css$/);
 const stories = require.context('../node_modules/@trutoo', true, /src.*\.stories\.(js|ts)x?$/);
@@ -20,7 +22,12 @@ addParameters({
   },
 });
 
-addDecorator(storyFn => <div className="e-container">{storyFn()}</div>);
+addDecorator(storyFn => (
+  <div className="e-container">
+    <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: icons }}></div>
+    {storyFn()}
+  </div>
+));
 
 addDecorator(centered);
 

@@ -45,12 +45,8 @@
     line-height: 1rem;
     appearance: none;
     outline: none;
-    border: 1px solid var(--c_light_beta);
-    background-color: white;
-    background-image: svg-load('@trutoo/ui-icons/dist/icons/icon-calendar.svg');
-    background-position: right 0.5rem center;
-    background-size: 1.6em;
-    background-repeat: no-repeat;
+    border: 1px solid var(--c_light);
+    background-color: var(--c_light);
 
     &.labelled {
       padding: 0.85rem 0.5rem 0.15rem;
@@ -78,12 +74,17 @@
   /* CLEAR
   ================================================================================ */
 
-  &--clear {
+  &--helper {
     position: absolute;
     right: 0;
     padding: 0 0.5rem;
-    width: auto;
-    line-height: 2rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+
+    &.no-events {
+      pointer-events: none;
+    }
 
     &::before {
       @mixin iconBase;
@@ -132,11 +133,11 @@
   ================================================================================ */
 
   &--select {
-    /* display: none; */
+    @mixin elevation 1;
+
+    display: none;
     margin: 0;
     padding: 0.25rem;
-    background-color: white;
-    border: 1px solid var(--c_light_beta);
 
     &-month {
       min-width: calc(100% / 3 * 2 - 0.01rem);
@@ -144,6 +145,7 @@
 
     &-button {
       min-width: calc(100% / 6 - 0.01rem);
+      height: 1.5rem;
       cursor: pointer;
     }
 
@@ -171,11 +173,11 @@
       border-radius: 6px;
 
       &.dimmed {
-        color: var(--c_light_beta);
+        color: var(--c_text_disabled);
       }
 
       &.disabled {
-        color: var(--c_light_beta);
+        color: var(--c_text_disabled);
         cursor: default;
       }
 
@@ -184,14 +186,14 @@
       }
 
       &.span {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--c_light_alpha);
         border-radius: 0;
       }
 
       &[aria-selected='true'] {
         color: white;
-        border-color: var(--c_light_alpha);
-        background-color: var(--c_light_alpha);
+        border-color: var(--c_color_beta);
+        background-color: var(--c_color_beta);
 
         &.span {
           border-top-left-radius: 6px;

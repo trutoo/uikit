@@ -21,10 +21,10 @@ export const basic = () => {
       {paths.map(icon => (
         <svg
           key={icon}
-          fill={color('Color', 'rgba(0,0,0,1)')}
           style={{
             width: size,
             height: size,
+            fill: color('Color', ''),
           }}>
           <use xlinkHref={`${icon}#icon`} width={size} height={size} />
         </svg>

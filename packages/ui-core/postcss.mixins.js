@@ -106,7 +106,7 @@ module.exports = variables => ({
   elevation: (mixin, level) => {
     return {
       transition: 'background-color var(--t_animation), box-shadow var(--t_animation)',
-      'background-color': 'var(--c_background)',
+      'background-color': 'rgba(255, 255, 255, 1)',
       'box-shadow': `0 ${exponent(1, 1.38, level)}px ${exponent(1, 1.44, level)}px ${exponent(
         1,
         1.1,

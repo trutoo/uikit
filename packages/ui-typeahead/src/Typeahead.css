@@ -62,8 +62,8 @@
     line-height: 1rem;
     appearance: none;
     outline: none;
-    border: 1px solid var(--c_light_beta);
-    background-color: white;
+    border: 1px solid var(--c_light);
+    background-color: var(--c_light);
 
     &.labelled {
       padding: 0.85rem 0.5rem 0.15rem;
@@ -160,12 +160,13 @@
   ================================================================================ */
 
   &--results {
+    @mixin elevation 1;
+
     width: 100%;
     margin: 0;
     padding: 0;
     overflow: auto;
     list-style: none;
-    background-color: var(--c_background);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 
     &[aria-hidden='true'] {
@@ -176,7 +177,7 @@
       margin: 0;
       padding: 0.25rem 0.5rem;
       cursor: pointer;
-      border: 1px solid #ccc;
+      border: 1px solid var(--c_light);
       border-top: none;
 
       em {

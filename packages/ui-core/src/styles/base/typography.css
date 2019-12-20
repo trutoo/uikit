@@ -13,6 +13,16 @@ body {
   color: var(--c_text);
 }
 
+svg {
+  fill: var(--c_text);
+}
+
+input,
+select,
+textarea {
+  color: var(--c_text);
+}
+
 /* HEADERS
 ================================================================================ */
 
