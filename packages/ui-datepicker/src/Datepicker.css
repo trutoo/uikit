@@ -47,7 +47,7 @@
     outline: none;
     border: 1px solid var(--c_light_beta);
     background-color: white;
-    background-image: svg-load('@trutoo/ui-icons/dist/icons/icon-calendar.svg', fill: var(--c_text));
+    background-image: svg-load('@trutoo/ui-icons/dist/icons/icon-calendar.svg');
     background-position: right 0.5rem center;
     background-size: 1.6em;
     background-repeat: no-repeat;
@@ -132,11 +132,11 @@
   ================================================================================ */
 
   &--select {
+    /* display: none; */
     margin: 0;
     padding: 0.25rem;
     background-color: white;
     border: 1px solid var(--c_light_beta);
-    display: none;
 
     &-month {
       min-width: calc(100% / 3 * 2 - 0.01rem);
@@ -168,13 +168,14 @@
       padding: 0.25rem;
       min-width: calc(100% / 7 - 0.01rem);
       text-align: center;
+      border-radius: 6px;
 
       &.dimmed {
-        color: var(--c_light_gamma);
+        color: var(--c_light_beta);
       }
 
       &.disabled {
-        color: var(--c_light_gamma);
+        color: var(--c_light_beta);
         cursor: default;
       }
 
@@ -183,18 +184,34 @@
       }
 
       &.span {
-        background-color: var(--c_light_gamma);
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 0;
       }
 
       &[aria-selected='true'] {
         color: white;
-        border-color: var(--c_color_alpha);
-        background-color: var(--c_color_alpha);
+        border-color: var(--c_light_alpha);
+        background-color: var(--c_light_alpha);
+
+        &.span {
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        & ~ &.span {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;
+        }
       }
 
       &.focused {
         color: white;
-        background-color: var(--c_color_beta);
+        border-color: var(--c_color_alpha);
+        background-color: var(--c_color_alpha);
       }
     }
   }
@@ -232,7 +249,6 @@
 
     & .e-datepicker--input {
       border-left-color: $color;
-      background-image: svg-load('@trutoo/ui-icons/dist/icons/icon-calendar.svg', fill: $color);
     }
   }
 

@@ -203,7 +203,7 @@ export default class Datepicker extends Component<Props, State> {
       (this.props.span && !this.selectingSpan) ||
       (this.props.span && this.selectingSpan && prevDate && date < prevDate)
     ) {
-      model = { date, secondaryDate: date };
+      model = { date };
       this.selectingSpan = true;
     } else if (this.props.value && this.props.span && this.selectingSpan) {
       model = { date: prevDate, secondaryDate: date };
