@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/trutoo/uikit/compare/v1.6.1...v1.7.0) (2019-12-20)
+
+
+### Bug Fixes
+
+* datepicker improved span style ([c04aa63](https://github.com/trutoo/uikit/commit/c04aa63373863516ee2f4ca8c3f2cbbc392ce7c0))
+* removed touchstart event due to scroll triggering ([e701e43](https://github.com/trutoo/uikit/commit/e701e43aaaa28de8e08b0843b6d6b4476904cdc4))
+
+
+### Code Refactoring
+
+* cleaned up some bad rules and obsolete code ([64bb104](https://github.com/trutoo/uikit/commit/64bb1042a219e71778c3bded382725ed9bd346cc))
+
+
+### Documentation
+
+* minor cleanup ([ef4ea27](https://github.com/trutoo/uikit/commit/ef4ea2761403dff477adaf395ff190be2e7521ad))
+
+
+### Features
+
+* added checkbox and radio icons ([eeaeef1](https://github.com/trutoo/uikit/commit/eeaeef12f21f5afa57b22db20cfc2a5376333e74))
+* calendar clear icon ([14f194e](https://github.com/trutoo/uikit/commit/14f194ec79bf1f2ba5945d7b627ad00e09d3765c))
+* migrating to new ui-icons and improving dark theme ([57c2f9d](https://github.com/trutoo/uikit/commit/57c2f9d2d4ff91d192e1843cd5c6c66229de2d19))
+
+
+
+
+
 ## [1.6.1](https://github.com/trutoo/uikit/compare/v1.6.0...v1.6.1) (2019-12-19)
 
 

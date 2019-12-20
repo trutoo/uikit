@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/trutoo/uikit/compare/v1.6.1...v1.7.0) (2019-12-20)
+
+
+### Bug Fixes
+
+* removed touchstart event due to scroll triggering ([e701e43](https://github.com/trutoo/uikit/commit/e701e43aaaa28de8e08b0843b6d6b4476904cdc4))
+
+
+### Features
+
+* migrating to new ui-icons and improving dark theme ([57c2f9d](https://github.com/trutoo/uikit/commit/57c2f9d2d4ff91d192e1843cd5c6c66229de2d19))
+
+
+
+
+
 ## [1.6.1](https://github.com/trutoo/uikit/compare/v1.6.0...v1.6.1) (2019-12-19)
 
 
