@@ -18,12 +18,13 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'prettier/prettier': 'warn',
+    '@typescript-eslint/explicit-function-return-type': 'off',
   },
   overrides: [
     {
+      files: ['*.js', '*.jsx'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
       },
     },
   ],

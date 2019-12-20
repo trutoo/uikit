@@ -15,7 +15,3 @@
 @import './base/standardize.css';
 @import './base/typography.css';
 @import './base/general.css';
-
-/* TEMPORARY */
-
-@import './base/storybook.css';
