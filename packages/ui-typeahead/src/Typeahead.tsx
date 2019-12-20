@@ -388,8 +388,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
               role="option"
               key={result.id}
               aria-selected={result == this.state.results[this.state.active]}
-              onMouseDown={this.onResultClick.bind(this, result)}
-              onTouchStart={this.onResultClick.bind(this, result)}>
+              onMouseDown={this.onResultClick.bind(this, result)}>
               {result.view}
             </li>
           ))}

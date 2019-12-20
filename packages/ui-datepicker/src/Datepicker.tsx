@@ -1,4 +1,4 @@
-import React, { Component, TouchEvent, MouseEvent, KeyboardEvent, createRef } from 'react';
+import React, { Component, MouseEvent, KeyboardEvent, createRef } from 'react';
 import { Validator, ValidationExpression, Grid } from '@trutoo/ui-core';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
@@ -96,13 +96,13 @@ export default class Datepicker extends Component<Props, State> {
   // DATEPICKER INTERACTIONS
   //------------------------------------------------------------------------------------
 
-  private onSelectDate = (event: TouchEvent<HTMLElement> | MouseEvent<HTMLElement>, date: Date) => {
+  private onSelectDate = (event: MouseEvent<HTMLElement>, date: Date) => {
     event.preventDefault();
     this.selectDate(date);
     if (this.inputRef.current) this.inputRef.current.focus();
   };
 
-  private onChangeMonth = (event: TouchEvent<HTMLElement> | MouseEvent<HTMLElement>, steps: number) => {
+  private onChangeMonth = (event: MouseEvent<SVGElement>, steps: number) => {
     event.preventDefault();
     const focus = new Date(this.state.focusedDate);
     const dayCount = Utilities.daysInMonth(focus.getMonth() + steps, focus.getFullYear());
@@ -438,7 +438,6 @@ export default class Datepicker extends Component<Props, State> {
                   role="option"
                   tabIndex={-1}
                   onMouseDown={event => this.onSelectDate(event, date)}
-                  onTouchStart={event => this.onSelectDate(event, date)}
                   aria-selected={this.isDateSelected(date)}
                   aria-disabled={!this.isDateEnabled(date)}>
                   {Utilities.transform(date, 'D')}
