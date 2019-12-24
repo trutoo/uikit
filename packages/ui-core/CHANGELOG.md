@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/trutoo/uikit/compare/v1.6.1...v1.7.0) (2019-12-20)
+
+
+### Code Refactoring
+
+* cleaned up some bad rules and obsolete code ([64bb104](https://github.com/trutoo/uikit/commit/64bb1042a219e71778c3bded382725ed9bd346cc))
+
+
+### Documentation
+
+* minor cleanup ([ef4ea27](https://github.com/trutoo/uikit/commit/ef4ea2761403dff477adaf395ff190be2e7521ad))
+
+
+### Features
+
+* migrating to new ui-icons and improving dark theme ([57c2f9d](https://github.com/trutoo/uikit/commit/57c2f9d2d4ff91d192e1843cd5c6c66229de2d19))
+
+
+
+
+
 ## [1.6.1](https://github.com/trutoo/uikit/compare/v1.6.0...v1.6.1) (2019-12-19)
 
 

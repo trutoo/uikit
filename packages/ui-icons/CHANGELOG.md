@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/trutoo/uikit/compare/v1.6.1...v1.7.0) (2019-12-20)
+
+
+### Features
+
+* added checkbox and radio icons ([eeaeef1](https://github.com/trutoo/uikit/commit/eeaeef12f21f5afa57b22db20cfc2a5376333e74))
+* calendar clear icon ([14f194e](https://github.com/trutoo/uikit/commit/14f194ec79bf1f2ba5945d7b627ad00e09d3765c))
+* migrating to new ui-icons and improving dark theme ([57c2f9d](https://github.com/trutoo/uikit/commit/57c2f9d2d4ff91d192e1843cd5c6c66229de2d19))
+
+
+
+
+
 ## [1.6.1](https://github.com/trutoo/uikit/compare/v1.6.0...v1.6.1) (2019-12-19)
 
 
