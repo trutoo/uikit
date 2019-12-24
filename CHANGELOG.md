@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/trutoo/uikit/compare/v1.7.0...v1.8.0) (2019-12-24)
+
+
+### Documentation
+
+* improved base presentation ([5bd0800](https://github.com/trutoo/uikit/commit/5bd0800234737caf441a3fc689a2cbf8254287e6))
+
+
+### Features
+
+* added icon component ([f5f2b99](https://github.com/trutoo/uikit/commit/f5f2b990aa4ed87cb4a2b7a85f7cfe06083dd797))
+* migrating to new color scheme ([362bf3a](https://github.com/trutoo/uikit/commit/362bf3ae0e6f7418cbf84ba4c798efbb5e3f9bad))
+
+
+
+
+
 # [1.7.0](https://github.com/trutoo/uikit/compare/v1.6.1...v1.7.0) (2019-12-20)
 
 

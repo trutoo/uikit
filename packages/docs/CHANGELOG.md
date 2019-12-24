@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/trutoo/uikit/compare/v1.7.0...v1.8.0) (2019-12-24)
+
+
+### Documentation
+
+* improved base presentation ([5bd0800](https://github.com/trutoo/uikit/commit/5bd0800234737caf441a3fc689a2cbf8254287e6))
+
+
+
+
+
 # [1.7.0](https://github.com/trutoo/uikit/compare/v1.6.1...v1.7.0) (2019-12-20)
 
 

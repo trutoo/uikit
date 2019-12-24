@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/trutoo/uikit/compare/v1.7.0...v1.8.0) (2019-12-24)
+
+
+### Features
+
+* migrating to new color scheme ([362bf3a](https://github.com/trutoo/uikit/commit/362bf3ae0e6f7418cbf84ba4c798efbb5e3f9bad))
+
+
+
+
+
 # [1.7.0](https://github.com/trutoo/uikit/compare/v1.6.1...v1.7.0) (2019-12-20)
 
 
