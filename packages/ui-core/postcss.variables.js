@@ -4,18 +4,27 @@ module.exports.base = {
   'color-scheme': 'light dark',
 
   /* COLOR */
-  '--c_color_alpha': '#b27100', // Quality Gold
-  '--c_color_beta': '#556270', // Might Slate
+  '--c_alpha': '#b27100', // Quality Gold
+  '--c_alpha_light': '#e99f3c', // Quality Gold Light
+  '--c_alpha_dark': '#7d4600', // Quality Gold Dark
 
-  '--c_text': 'rgba(0, 0, 0, 0.87)',
-  '--c_text_low': 'rgba(0, 0, 0, 0.6)',
-  '--c_text_disabled': 'rgba(0, 0, 0, 0.38)',
+  '--c_beta': '#556270', // Might Slate
+  '--c_beta_light': '#828f9e', // Might Slate Light
+  '--c_beta_dark': '#2b3845', // Might Slate Dark
 
-  '--c_background': '#ffffff',
-  '--c_light': 'rgba(0, 0, 0, 0.125)',
-  '--c_light_alpha': 'rgba(0, 0, 0, 0.25)',
-  '--c_light_beta': 'rgba(0, 0, 0, 0.5)',
-  '--c_light_gamma': 'rgba(0, 0, 0, 0.75)',
+  '--c_text': 'rgba(0, 0, 0, 0.87)', // Black 87 %
+  '--c_text_low': 'rgba(0, 0, 0, 0.6)', // Black 60 %
+  '--c_text_disabled': 'rgba(0, 0, 0, 0.38)', // Black 38 %
+
+  '--c_text_alt': 'rgba(255, 255, 255, 0.87)', // White 87 %
+  '--c_text_alt_low': 'rgba(255, 255, 255, 0.6)', // White 60 %
+  '--c_text_alt_disabled': 'rgba(255, 255, 255, 0.38)', // White 38 %
+
+  '--c_background': 'rgba(255, 255, 255, 1)', // White
+  '--c_detail': 'rgba(0, 0, 0, 0.125)', // Black 12.5 %
+  '--c_detail_low': 'rgba(0, 0, 0, 0.25)', // Black 25 %
+  '--c_detail_medium': 'rgba(0, 0, 0, 0.5)', // Black 50 %
+  '--c_detail_high': 'rgba(0, 0, 0, 0.75)', // Black 75 %
 
   '--c_valid': '#95c11f', // Green
   '--c_warning': '#f3a118', // Orange
@@ -73,18 +82,27 @@ module.exports.base = {
 
 module.exports.dark = {
   /* COLOR */
-  '--c_color_alpha': '#ffab19', // Shiny Gold
-  '--c_color_beta': '#556270', // Might Slate
+  '--c_alpha': '#b27100', // Quality Gold
+  '--c_alpha_light': '#e99f3c', // Quality Gold Light
+  '--c_alpha_dark': '#7d4600', // Quality Gold Dark
 
-  '--c_text': 'rgba(255, 255, 255, 0.87)',
-  '--c_text_low': 'rgba(255, 255, 255, 0.6)',
-  '--c_text_disabled': 'rgba(255, 255, 255, 0.38)',
+  '--c_beta': '#556270', // Might Slate
+  '--c_beta_light': '#828f9e', // Might Slate Light
+  '--c_beta_dark': '#2b3845', // Might Slate Dark
 
-  '--c_background': '#121212',
-  '--c_light': 'rgba(255, 255, 255, 0.06)',
-  '--c_light_alpha': 'rgba(255, 255, 255, 0.12)',
-  '--c_light_beta': 'rgba(255, 255, 255, 0.24)',
-  '--c_light_gamma': 'rgba(255, 255, 255, 0.48)',
+  '--c_text': 'rgba(255, 255, 255, 0.87)', // White 87 %
+  '--c_text_low': 'rgba(255, 255, 255, 0.6)', // White 60 %
+  '--c_text_disabled': 'rgba(255, 255, 255, 0.38)', // White 38 %
+
+  '--c_text_alt': 'rgba(0, 0, 0, 0.87)', // Black 87 %
+  '--c_text_alt_low': 'rgba(0, 0, 0, 0.6)', // Black 60 %
+  '--c_text_alt_disabled': 'rgba(0, 0, 0, 0.38)', // Black 38 %
+
+  '--c_background': 'rgb(18, 18, 18, 1)', // Dark Grey
+  '--c_detail': 'rgba(255, 255, 255, 0.06)', // White 6 %
+  '--c_detail_low': 'rgba(255, 255, 255, 0.12)', // White 12 %
+  '--c_detail_medium': 'rgba(255, 255, 255, 0.24)', // White 24 %
+  '--c_detail_high': 'rgba(255, 255, 255, 0.48)', // White 48 %
 
   '--c_valid': '#95c11f', // Green
   '--c_warning': '#f3a118', // Orange

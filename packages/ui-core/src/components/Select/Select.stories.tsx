@@ -57,16 +57,3 @@ export const basic = () => (
     validators={[Validator.required()]}
   />
 );
-
-export const onDark = () => (state: { value: string }) => (
-  <div style={{ padding: '4rem', background: 'var(--c_color_beta)' }}>
-    <Select
-      label="Select me!"
-      options={options}
-      value={state.value}
-      placeholder={'Choose option in list'}
-      onChange={state => store.set({ value: state })}
-      validators={[Validator.required()]}
-    />
-  </div>
-);

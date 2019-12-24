@@ -85,25 +85,25 @@ td,
 label,
 legend {
   &.primary {
-    color: var(--c_color_alpha) !important;
+    color: var(--c_alpha);
 
     &.inverted {
-      color: inherit !important;
+      color: inherit;
 
       &:hover {
-        color: var(--c_color_alpha) !important;
+        color: var(--c_alpha);
       }
     }
   }
 
   &.secondary {
-    color: var(--c_color_beta) !important;
+    color: var(--c_beta);
 
     &.inverted {
-      color: inherit !important;
+      color: inherit;
 
       &:hover {
-        color: var(--c_color_beta) !important;
+        color: var(--c_beta);
       }
     }
   }
@@ -114,7 +114,7 @@ legend {
 
 a {
   cursor: pointer;
-  color: var(--c_color_alpha);
+  color: var(--c_alpha);
   transition: all 200ms;
 
   &:hover,
@@ -127,7 +127,7 @@ a {
   &:focus {
     color: white;
     outline: none;
-    background-color: var(--c_color_alpha);
+    background-color: var(--c_alpha);
   }
 }
 

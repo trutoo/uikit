@@ -15,6 +15,18 @@ export const link = () => (
   </Button>
 );
 
+export const primary = () => (
+  <Button className="primary" onClick={console.log}>
+    Click me!
+  </Button>
+);
+
+export const secondary = () => (
+  <Button className="secondary" onClick={console.log}>
+    Click me!
+  </Button>
+);
+
 export const disabledButton = () => (
   <Button disabled={true} onClick={console.log}>
     Click me!
@@ -25,10 +37,4 @@ export const disabledLink = () => (
   <Button type="link" disabled={true} onClick={console.log}>
     Click me!
   </Button>
-);
-
-export const onDark = () => (
-  <div style={{ padding: '4rem', background: 'var(--c_color_beta)' }}>
-    <Button onClick={console.log}>Click me!</Button>
-  </div>
 );

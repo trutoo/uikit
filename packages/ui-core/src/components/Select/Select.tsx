@@ -128,10 +128,9 @@ export default class Select extends Component<Props, State> {
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
           (this.state.invalid ? ' invalid ' : '')
-        }
-      >
+        }>
         {this.props.label && (
-          <label className="e-select--label" htmlFor={this.state.id}>
+          <label className={'e-select--label' + (this.hasValueOrFocus() ? ' floating' : '')} htmlFor={this.state.id}>
             {this.props.label}
           </label>
         )}
@@ -143,8 +142,7 @@ export default class Select extends Component<Props, State> {
           onChange={this.onChange}
           onFocus={this.onFocusChange}
           onBlur={this.onFocusChange}
-          {...this.props.inputProps}
-        >
+          {...this.props.inputProps}>
           {this.props.placeholder && (
             <option value="" disabled hidden>
               {this.props.placeholder}

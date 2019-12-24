@@ -6,7 +6,7 @@
 
 [href]:focus,
 [tabindex]:not([tabindex='-1']):focus {
-  outline: 1px solid var(--c_color_alpha);
+  outline: 1px solid var(--c_alpha);
 }
 
 /* LOADING STATE

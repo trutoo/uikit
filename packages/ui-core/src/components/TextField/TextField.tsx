@@ -82,8 +82,7 @@ export default class TextField extends Component<Props, State> {
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
           (this.state.invalid ? ' invalid ' : '')
-        }
-      >
+        }>
         {this.props.label && (
           <label className={'e-textfield--label' + (this.hasValueOrFocus() ? ' floating' : '')} htmlFor={this.state.id}>
             {this.props.label}

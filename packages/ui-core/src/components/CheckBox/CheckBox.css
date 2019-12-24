@@ -29,7 +29,7 @@
       width: 1em;
       line-height: 1em;
       flex-shrink: 0;
-      color: var(--c_color_alpha);
+      color: var(--c_alpha);
       font-size: 1.5em;
       text-align: center;
       vertical-align: middle; /* IE10 Fix */
@@ -54,7 +54,7 @@
 
     &-toggler {
       padding: 0.25rem 0.5rem;
-      color: var(--c_color_alpha);
+      color: var(--c_alpha);
 
       &::before {
         @mixin iconBase;
@@ -68,7 +68,7 @@
 
       content: var(--i_info);
       margin-right: 0.25em;
-      color: var(--c_color_alpha);
+      color: var(--c_alpha);
     }
   }
 
@@ -113,7 +113,7 @@
   }
 
   &.focused {
-    @mixin state var(--c_color_alpha);
+    @mixin state var(--c_alpha);
   }
 
   &.valid {

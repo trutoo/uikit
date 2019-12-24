@@ -18,6 +18,8 @@ export const basic = () => (
             <svg style={{ width: 32, height: 32, fill: 'white' }}>
               <use xlinkHref="#icon-ghost" />
             </svg>
+            <span style={{ width: 32, height: 32, color: 'black' }}>:></span>
+            <span style={{ width: 32, height: 32, color: 'white' }}>:></span>
           </div>
           <figcaption style={{ paddingTop: 24 }}>{key}</figcaption>
         </figure>

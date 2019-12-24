@@ -28,7 +28,7 @@ module.exports = variables => ({
       ':root': {
         ...variables.base,
       },
-      '[data-theme=dark]': {
+      ':root[data-theme=dark]': {
         ...variables.dark,
       },
     };

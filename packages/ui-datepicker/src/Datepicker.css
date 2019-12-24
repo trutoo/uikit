@@ -45,8 +45,12 @@
     line-height: 1rem;
     appearance: none;
     outline: none;
-    border: 1px solid var(--c_light);
-    background-color: var(--c_light);
+    border: 1px solid var(--c_detail_low);
+    background-color: var(--c_background);
+
+    [data-theme='dark'] & {
+      background-color: var(--c_detail);
+    }
 
     &.labelled {
       padding: 0.85rem 0.5rem 0.15rem;
@@ -67,7 +71,7 @@
     &:focus {
       padding-left: calc(0.5rem - 2px);
       border-left-width: 3px;
-      border-left-color: var(--c_color_alpha);
+      border-left-color: var(--c_alpha);
     }
   }
 
@@ -110,7 +114,7 @@
       right: 0;
       width: 1.5rem;
       line-height: 2rem;
-      color: var(--c_color_alpha);
+      color: var(--c_alpha);
       text-align: center;
 
       &::before {
@@ -125,7 +129,7 @@
 
       content: var(--i_info);
       margin-right: 0.25em;
-      color: var(--c_color_alpha);
+      color: var(--c_alpha);
     }
   }
 
@@ -182,7 +186,7 @@
       }
 
       &.today {
-        border: 2px dashed var(--c_color_alpha);
+        border: 2px dashed var(--c_alpha);
       }
 
       &.span {
@@ -192,8 +196,8 @@
 
       &[aria-selected='true'] {
         color: white;
-        border-color: var(--c_color_beta);
-        background-color: var(--c_color_beta);
+        border-color: var(--c_beta);
+        background-color: var(--c_beta);
 
         &.span {
           border-top-left-radius: 6px;
@@ -212,8 +216,8 @@
 
       &.focused {
         color: white;
-        border-color: var(--c_color_alpha);
-        background-color: var(--c_color_alpha);
+        border-color: var(--c_alpha);
+        background-color: var(--c_alpha);
       }
     }
   }
@@ -255,7 +259,7 @@
   }
 
   &.focused {
-    @mixin state var(--c_color_alpha);
+    @mixin state var(--c_alpha);
 
     & .e-datepicker--select {
       display: flex;
