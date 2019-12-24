@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "docs": "start-storybook --quiet --ci -p 2999",
-    "docs:build": "build-storybook --quiet --ci -o dist",
+    "docs:build": "build-storybook --quiet -o dist",
     "docs:deploy": "npm run docs:build && node .storybook/deploy.js"
   },
   "dependencies": {
