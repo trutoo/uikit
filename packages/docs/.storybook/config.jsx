@@ -14,6 +14,9 @@ const stories = require.context('../node_modules/@trutoo', true, /src.*\.stories
 addDecorator(withA11y);
 
 addParameters({
+  options: {
+    storySort: (a, b) => (a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true })),
+  },
   darkMode: {
     // Override the default dark theme
     dark: { ...themes.dark },
@@ -22,14 +25,17 @@ addParameters({
   },
 });
 
-addDecorator(storyFn => (
-  <div className="e-container">
-    <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: icons }}></div>
-    {storyFn()}
-  </div>
-));
-
-addDecorator(centered);
+addDecorator((storyFn, context) => {
+  return (
+    <div className="e-container e-elevation-1" style={{ marginTop: '2rem', paddingTop: '1rem', minHeight: '50vh' }}>
+      <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: icons }}></div>
+      <h1 style={{ fontSize: '1.5em' }}>{context.kind}</h1>
+      <strong style={{ color: 'var(--c_text_low)' }}>{context.name}</strong>
+      <hr />
+      {storyFn()}
+    </div>
+  );
+});
 
 // Update preview html with theme attribute on dark mode change
 const channel = addon.getChannel();
