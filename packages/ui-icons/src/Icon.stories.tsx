@@ -1,9 +1,10 @@
 import React from 'react';
 import { withKnobs, number, color } from '@storybook/addon-knobs';
 
+import Icon from './Icon';
+
 const iconContext = require.context('./icons/', false, /\.svg$/);
-const keys = iconContext.keys() as string[];
-const paths = keys.map(iconContext) as string[];
+const icons = iconContext.keys() as string[];
 
 export default {
   title: 'Icons',
@@ -18,17 +19,11 @@ export const basic = () => {
   });
   return (
     <div className="e-grid style-uniform">
-      {paths.map(icon => (
-        <svg
-          key={icon}
-          style={{
-            width: size,
-            height: size,
-            fill: color('Color', ''),
-          }}>
-          <use xlinkHref={`${icon}#icon`} width={size} height={size} />
-        </svg>
-      ))}
+      {icons
+        .map(icon => icon.replace(/.*?([\w-]+).\w+$/, 'icon-$1'))
+        .map(icon => (
+          <Icon key={icon} icon={icon} size={size} color={color('Color', '')} />
+        ))}
     </div>
   );
 };
