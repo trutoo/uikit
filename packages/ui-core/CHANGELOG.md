@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/trutoo/uikit/compare/v1.9.0...v1.10.0) (2019-12-27)
+
+
+### Features
+
+* migrated radio button to ui-icons ([182e4fd](https://github.com/trutoo/uikit/commit/182e4fd538a2602e03702711630aced4ac0ac821))
+
+
+
+
+
 # [1.9.0](https://github.com/trutoo/uikit/compare/v1.8.1...v1.9.0) (2019-12-27)
 
 

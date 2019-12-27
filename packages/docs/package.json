@@ -1,6 +1,6 @@
 {
   "name": "@trutoo/docs",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "private": true,
   "keywords": [
     "trutoo",
@@ -30,9 +30,9 @@
     "docs:deploy": "npm run docs:build && node .storybook/deploy.js"
   },
   "dependencies": {
-    "@trutoo/ui-core": "^1.9.0",
-    "@trutoo/ui-datepicker": "^1.9.0",
-    "@trutoo/ui-icons": "^1.9.0",
-    "@trutoo/ui-typeahead": "^1.9.0"
+    "@trutoo/ui-core": "^1.10.0",
+    "@trutoo/ui-datepicker": "^1.10.0",
+    "@trutoo/ui-icons": "^1.10.0",
+    "@trutoo/ui-typeahead": "^1.10.0"
   }
 }
