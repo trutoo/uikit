@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/trutoo/uikit/compare/v1.8.1...v1.9.0) (2019-12-27)
+
+
+### Features
+
+* migrated checkbox to ui icons ([91b6d96](https://github.com/trutoo/uikit/commit/91b6d9612726700870429efb520238da42f794d7))
+
+
+
+
+
 # [1.8.0](https://github.com/trutoo/uikit/compare/v1.7.0...v1.8.0) (2019-12-24)
 
 
