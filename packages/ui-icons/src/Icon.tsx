@@ -17,8 +17,8 @@ export default class Icon extends Component<Props> {
       <svg
         className={this.props.className}
         style={{
-          width: this.props.size || '1em',
-          height: this.props.size || '1em',
+          width: this.props.size,
+          height: this.props.size,
           fill: this.props.color,
         }}>
         <use xlinkHref={`#${this.props.icon}`} />

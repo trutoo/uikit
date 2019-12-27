@@ -41,7 +41,14 @@ export const basic = () => (
         <RadioButton label="Owl" name="bird" />
       </div>
     </fieldset>
-    <CheckBox label="Accept this checkbox" />
+    <fieldset>
+      <legend>Favorite birds?</legend>
+      <div className="e-grid style-start layout-no-margin" e-columns="6">
+        <CheckBox label="Cockatoo" />
+        <CheckBox label="Macaw" />
+        <CheckBox label="Parakeet" />
+      </div>
+    </fieldset>
     <menu className="e-grid style-end" e-columns="6" style={{ textAlign: 'right' }}>
       <Button type="link" href="#" className="secondary">
         Terms
