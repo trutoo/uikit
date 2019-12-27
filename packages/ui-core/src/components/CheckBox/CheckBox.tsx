@@ -86,7 +86,7 @@ export default class CheckBox extends Component<Props, State> {
         />
         <label className={'e-checkbox--label'} htmlFor={this.state.id}>
           <Icon className="e-checkbox--label-box" icon="icon-checkbox" />
-          <Icon className="e-checkbox--label-check" icon="icon-checkbox-check" />
+          <Icon className="e-checkbox--label-check" icon="icon-checkbox-check-alt" />
           {this.props.label}
         </label>
         {this.state.invalid && this.state.errors.length && (

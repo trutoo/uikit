@@ -13,21 +13,39 @@ export default {
 };
 
 /* Handle differently because radio buttons work as a group and checked must be conditional */
-let index = 0;
 export const basic = () => {
-  const value = 'value-' + index++;
   return (
     <State store={store}>
       {state => (
-        <RadioButton
-          label="Pick me!"
-          name="test1"
-          value={value}
-          checked={state.value == value}
-          onChange={state => {
-            store.set({ value: state });
-          }}
-        />
+        <>
+          <RadioButton
+            label="Pick me!"
+            name="test"
+            value={'value-1'}
+            checked={state.value == 'value-1'}
+            onChange={state => {
+              store.set({ value: state });
+            }}
+          />
+          <RadioButton
+            label="Pick me!"
+            name="test"
+            value={'value-2'}
+            checked={state.value == 'value-2'}
+            onChange={state => {
+              store.set({ value: state });
+            }}
+          />
+          <RadioButton
+            label="Pick me!"
+            name="test"
+            value={'value-3'}
+            checked={state.value == 'value-3'}
+            onChange={state => {
+              store.set({ value: state });
+            }}
+          />
+        </>
       )}
     </State>
   );

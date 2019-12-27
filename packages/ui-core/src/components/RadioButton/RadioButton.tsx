@@ -1,4 +1,5 @@
 import React, { Component, FormEvent, FocusEvent } from 'react';
+import { Icon } from '@trutoo/ui-icons';
 import { ValidationExpression } from '../../framework/models';
 import { Validator } from '../../framework/validator';
 
@@ -72,8 +73,7 @@ export default class RadioButton extends Component<Props, State> {
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
           (this.state.invalid ? ' invalid ' : '')
-        }
-      >
+        }>
         <input
           id={this.state.id}
           name={this.props.name}
@@ -87,6 +87,8 @@ export default class RadioButton extends Component<Props, State> {
           {...this.props.inputProps}
         />
         <label className={'e-radiobutton--label'} htmlFor={this.state.id}>
+          <Icon className="e-radiobutton--label-box" icon="icon-radio" />
+          <Icon className="e-radiobutton--label-check" icon="icon-radio-center" />
           {this.props.label}
         </label>
         {this.state.invalid && this.state.errors.length && (

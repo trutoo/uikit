@@ -1,3 +1,25 @@
+@keyframes flash1 {
+  60% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes flash2 {
+  60% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
 .e-radiobutton {
   position: relative;
   display: inline-block;
@@ -21,26 +43,44 @@
     cursor: pointer;
     align-items: center;
 
-    &::before {
-      @mixin iconBase;
-
-      content: var(--i_radio);
+    &-box,
+    &-check {
       margin-right: 0.25em;
-      width: 1em;
-      line-height: 1em;
+      width: 1.5em;
+      height: 1.5em;
       flex-shrink: 0;
-      color: var(--c_alpha);
-      font-size: 1.5em;
-      text-align: center;
+      fill: var(--c_alpha);
       vertical-align: middle; /* IE10 Fix */
+    }
+
+    &-check {
+      position: absolute;
+      opacity: 0;
+      transition: opacity calc(var(--t_animation) / 2);
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      margin-left: -0.75em;
+      width: 3em;
+      height: 3em;
+      opacity: 0;
       border-radius: 50%;
-      background-color: transparent;
-      transition: background-color var(--t_animation);
+      transform: scale(0.5);
     }
   }
 
   &--input:checked + &--label::before {
-    content: var(--i_radio_checked);
+    animation: flash1 calc(var(--t_animation) * 2);
+  }
+
+  &--input:not(:checked) + &--label::before {
+    animation: flash2 calc(var(--t_animation) * 2);
+  }
+
+  &--input:checked + &--label &--label-check {
+    opacity: 1;
   }
 
   /* DESCRIPTION
@@ -99,16 +139,18 @@
   ================================================================================ */
 
   @define-mixin state $color {
-    & .e-radiobutton--input + .e-radiobutton--label::before {
-      color: $color;
+    & .e-radiobutton--label {
+      & svg {
+        fill: $color;
+      }
+
+      &::before {
+        background-color: $color;
+      }
     }
 
     & .e-radiobutton--input:focus + .e-radiobutton--label {
       color: $color;
-
-      &::before {
-        background-color: rgba(0, 0, 0, 0.2);
-      }
     }
   }
 
@@ -125,9 +167,9 @@
   }
 
   &.disabled {
-    @mixin state var(--c_light_gamma);
+    @mixin state rgba(0, 0, 0, 0.5);
 
-    & .e-radiobutton--label {
+    & .e-checkbox--label {
       cursor: not-allowed;
       color: rgba(0, 0, 0, 0.5);
     }
