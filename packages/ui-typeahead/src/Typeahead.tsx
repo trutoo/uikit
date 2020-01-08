@@ -49,10 +49,12 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
 
   protected inputRef = createRef<HTMLInputElement>();
   protected resultRefs: (HTMLLIElement | null)[] = [];
-  protected reqIndex: number = 0;
-  protected deleting: boolean = false;
+  protected reqIndex = 0;
   protected debounceTimer: number | undefined;
   protected validator: Validator<T>;
+
+  protected allowFill = false;
+  protected cachedInput = '';
 
   constructor(props: Props<T>) {
     super(props);
@@ -89,11 +91,6 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
    */
   onKeyDown = (event: KeyboardEvent) => {
     switch (event.keyCode || event.which) {
-      case 8: // Backspace
-      case 46: // Delete
-        this.deleting = true;
-        break;
-
       case 13: // Enter - Disable form submission
         event.preventDefault();
         event.stopPropagation();
@@ -148,11 +145,6 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
         this.scrollToResult(active);
         break;
 
-      case 8: // Backspace
-      case 46: // Delete
-        this.deleting = false;
-        break;
-
       case 27: // Escape - Clear the result and value of the typeahead, resetting it
         this.onClear();
         break;
@@ -165,7 +157,10 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
    */
   onChange = (event: FormEvent<HTMLInputElement>) => {
     if (this.props.disabled) return;
+    if (event.currentTarget.value.length <= this.cachedInput.length) this.allowFill = false;
+    else this.allowFill = true;
     this.updateModel({ view: event.currentTarget.value } as T);
+    this.cachedInput = event.currentTarget.value;
     clearTimeout(this.debounceTimer);
     this.debounceTimer = window.setTimeout(this.search.bind(this, event.currentTarget.value), this.props.debounce);
   };
@@ -264,7 +259,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
     });
 
     // Store deletion state before search
-    const deleting = this.deleting;
+    const allowFill = this.allowFill;
     const reqIndex = ++this.reqIndex;
     this.props.service
       .search(query)
@@ -274,7 +269,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
         const result = results[0];
         this.setState({ results });
 
-        if (this.props.inline && result && !deleting && reqIndex === this.reqIndex) {
+        if (this.props.inline && result && allowFill && reqIndex === this.reqIndex) {
           this.updateModel(result);
           setTimeout(() => {
             if (this.inputRef.current) this.inputRef.current.setSelectionRange(query.length, result.view.length);
@@ -354,6 +349,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
             value={this.props.value ? this.props.value.view : ''}
             placeholder={this.props.placeholder}
             readOnly={this.props.readonly}
+            autoComplete="off"
             aria-readonly={this.props.readonly}
             aria-label={this.props.description}
             aria-autocomplete={this.props.inline ? 'both' : 'list'}
