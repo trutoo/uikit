@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/trutoo/uikit/compare/v1.10.0...v1.11.0) (2020-01-08)
+
+
+### Bug Fixes
+
+* cleaned up cross-browser, color and responsive issues ([2c4956c](https://github.com/trutoo/uikit/commit/2c4956cb315618d81eaf042d59bf72ebceff0a2f))
+* removed center plugin and imporved general presentation ([3d65b63](https://github.com/trutoo/uikit/commit/3d65b63de721f9a7bb5d74e0bf6acd945ba3ab44))
+* rework deletion detection for inline mode ([0e59b80](https://github.com/trutoo/uikit/commit/0e59b80633f9e493c1e1583efbd9f6c9a0618fa5))
+* reworked nested grids and containers ([32759ec](https://github.com/trutoo/uikit/commit/32759ec9de52671cb3269d582ae7d723fdfb4576))
+
+
+### Continuous Integration
+
+* changed to private deploy token ([c293191](https://github.com/trutoo/uikit/commit/c29319175c9d5cffa9bda9b8730cc2db772cfc3c))
+* migrated to new deploy token ([dbebaf0](https://github.com/trutoo/uikit/commit/dbebaf0a3bc3e2447e4335c86773fa43929a40f0))
+
+
+### Features
+
+* improved responsiveness ([4f39052](https://github.com/trutoo/uikit/commit/4f39052977654a16ebab8a9df68e4133029fb3a3))
+
+
+
+
+
 # [1.10.0](https://github.com/trutoo/uikit/compare/v1.9.0...v1.10.0) (2019-12-27)
 
 

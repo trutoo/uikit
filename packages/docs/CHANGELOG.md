@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/trutoo/uikit/compare/v1.10.0...v1.11.0) (2020-01-08)
+
+
+### Bug Fixes
+
+* removed center plugin and imporved general presentation ([3d65b63](https://github.com/trutoo/uikit/commit/3d65b63de721f9a7bb5d74e0bf6acd945ba3ab44))
+
+
+
+
+
 # [1.10.0](https://github.com/trutoo/uikit/compare/v1.9.0...v1.10.0) (2019-12-27)
 
 **Note:** Version bump only for package @trutoo/docs

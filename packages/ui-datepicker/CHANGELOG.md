@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/trutoo/uikit/compare/v1.10.0...v1.11.0) (2020-01-08)
+
+
+### Bug Fixes
+
+* cleaned up cross-browser, color and responsive issues ([2c4956c](https://github.com/trutoo/uikit/commit/2c4956cb315618d81eaf042d59bf72ebceff0a2f))
+
+
+
+
+
 # [1.10.0](https://github.com/trutoo/uikit/compare/v1.9.0...v1.10.0) (2019-12-27)
 
 **Note:** Version bump only for package @trutoo/ui-datepicker
