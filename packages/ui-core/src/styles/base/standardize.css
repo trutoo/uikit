@@ -160,8 +160,8 @@ tfoot {
       padding-right: 0;
     }
 
-    td:before {
-      /* Now like a table header */
+    /* Replacement table headers */
+    td::before {
       position: absolute;
       content: attr(data-thead);
       top: 0;

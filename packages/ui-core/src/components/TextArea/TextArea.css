@@ -44,7 +44,6 @@
     width: 100%;
     min-height: 6rem;
     line-height: 1rem;
-    appearance: none;
     outline: none;
     border: 1px solid var(--c_detail_low);
     background-color: var(--c_background);
