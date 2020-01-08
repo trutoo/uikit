@@ -42,3 +42,23 @@ export const override = () => (
     </Grid>
   </div>
 );
+
+export const nested = () => (
+  <div>
+    <Grid columns={[2, 5]}>
+      <article>Article One</article>
+      <Grid columns={1}>
+        <article>Nested Two</article>
+        <article>Nested Three</article>
+      </Grid>
+      <article>Article Four</article>
+      <Grid columns={1}>
+        <Grid columns={1}>
+          <article>Double Five</article>
+          <article>Double Six</article>
+        </Grid>
+      </Grid>
+      <article>Article Seven</article>
+    </Grid>
+  </div>
+);
