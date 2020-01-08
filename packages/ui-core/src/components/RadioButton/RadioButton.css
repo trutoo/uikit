@@ -29,6 +29,7 @@
   ================================================================================ */
 
   &--input {
+    appearance: none;
     position: absolute;
     opacity: 0;
   }
@@ -42,6 +43,8 @@
     margin-bottom: 0;
     cursor: pointer;
     align-items: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 
     &-box,
     &-check {

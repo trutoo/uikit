@@ -1,10 +1,11 @@
 /* BUTTON
 ================================================================================ */
 .e-button {
+  appearance: none;
   position: relative;
   display: inline-flex;
   margin-bottom: 1rem;
-  padding: 0.5rem 3em;
+  padding: 0.5rem 2em;
   color: var(--c_alpha);
   font-weight: bold;
   justify-content: center;
@@ -19,6 +20,12 @@
   background-color: var(--c_background);
   transition: color 0.15s ease, background-color 0.15s ease;
   box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.2);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+
+  @media (--b_sm) {
+    padding: 0.5rem 3em;
+  }
 
   &:hover {
     background-color: var(--c_detail);
@@ -44,6 +51,7 @@
 
   &:not(.disabled):active {
     margin-top: 3px;
+    margin-bottom: calc(1rem - 3px);
     box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
   }
 

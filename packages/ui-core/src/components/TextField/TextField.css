@@ -39,6 +39,7 @@
   ================================================================================ */
 
   &--input {
+    appearance: none;
     padding: 0.5rem;
     width: 100%;
     height: 2rem;
@@ -46,6 +47,7 @@
     appearance: none;
     outline: none;
     border: 1px solid var(--c_detail_low);
+    background-color: var(--c_background);
 
     [data-theme='dark'] & {
       background-color: var(--c_detail);
