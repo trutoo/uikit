@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.1](https://github.com/trutoo/uikit/compare/v1.11.0...v1.11.1) (2020-01-08)
+
+
+### Bug Fixes
+
+* cleanup lint errors detected with stylelint ([6cedc62](https://github.com/trutoo/uikit/commit/6cedc62fd1d3c88cc0e5feed596846bd01f22369))
+
+
+
+
+
 # [1.11.0](https://github.com/trutoo/uikit/compare/v1.10.0...v1.11.0) (2020-01-08)
 
 
