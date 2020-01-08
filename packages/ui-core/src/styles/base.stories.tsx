@@ -164,7 +164,47 @@ export const basic = () => (
             <h1>Tabular data</h1>
           </header>
           <table>
-            <caption>Table Caption</caption>
+            <caption>Caption: This is a regular table</caption>
+            <thead>
+              <tr>
+                <th>Table Heading 1</th>
+                <th>Table Heading 2</th>
+                <th>Table Heading 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+              </tr>
+              <tr>
+                <td>Table Cell 1</td>
+                <td>Table Cell 2</td>
+                <td>Table Cell 3</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Table Footer 1</th>
+                <th>Table Footer 2</th>
+                <th>Table Footer 3</th>
+              </tr>
+            </tfoot>
+          </table>
+          <h2>Collapsable</h2>
+          <table className="collapse">
+            <caption>Caption: This table collapses in mobile</caption>
             <thead>
               <tr>
                 <th>Table Heading 1</th>
@@ -174,6 +214,36 @@ export const basic = () => (
                 <th>Table Heading 5</th>
               </tr>
             </thead>
+            <tbody>
+              <tr>
+                <td data-thead="Table Heading 1">Table Cell 1</td>
+                <td data-thead="Table Heading 2">Table Cell 2</td>
+                <td data-thead="Table Heading 3">Table Cell 3</td>
+                <td data-thead="Table Heading 4">Table Cell 4</td>
+                <td data-thead="Table Heading 5">Table Cell 5</td>
+              </tr>
+              <tr>
+                <td data-thead="Table Heading 1">Table Cell 1</td>
+                <td data-thead="Table Heading 2">Table Cell 2</td>
+                <td data-thead="Table Heading 3">Table Cell 3</td>
+                <td data-thead="Table Heading 4">Table Cell 4</td>
+                <td data-thead="Table Heading 5">Table Cell 5</td>
+              </tr>
+              <tr>
+                <td data-thead="Table Heading 1">Table Cell 1</td>
+                <td data-thead="Table Heading 2">Table Cell 2</td>
+                <td data-thead="Table Heading 3">Table Cell 3</td>
+                <td data-thead="Table Heading 4">Table Cell 4</td>
+                <td data-thead="Table Heading 5">Table Cell 5</td>
+              </tr>
+              <tr>
+                <td data-thead="Table Heading 1">Table Cell 1</td>
+                <td data-thead="Table Heading 2">Table Cell 2</td>
+                <td data-thead="Table Heading 3">Table Cell 3</td>
+                <td data-thead="Table Heading 4">Table Cell 4</td>
+                <td data-thead="Table Heading 5">Table Cell 5</td>
+              </tr>
+            </tbody>
             <tfoot>
               <tr>
                 <th>Table Footer 1</th>
@@ -183,36 +253,6 @@ export const basic = () => (
                 <th>Table Footer 5</th>
               </tr>
             </tfoot>
-            <tbody>
-              <tr>
-                <td>Table Cell 1</td>
-                <td>Table Cell 2</td>
-                <td>Table Cell 3</td>
-                <td>Table Cell 4</td>
-                <td>Table Cell 5</td>
-              </tr>
-              <tr>
-                <td>Table Cell 1</td>
-                <td>Table Cell 2</td>
-                <td>Table Cell 3</td>
-                <td>Table Cell 4</td>
-                <td>Table Cell 5</td>
-              </tr>
-              <tr>
-                <td>Table Cell 1</td>
-                <td>Table Cell 2</td>
-                <td>Table Cell 3</td>
-                <td>Table Cell 4</td>
-                <td>Table Cell 5</td>
-              </tr>
-              <tr>
-                <td>Table Cell 1</td>
-                <td>Table Cell 2</td>
-                <td>Table Cell 3</td>
-                <td>Table Cell 4</td>
-                <td>Table Cell 5</td>
-              </tr>
-            </tbody>
           </table>
           <footer>
             <p>

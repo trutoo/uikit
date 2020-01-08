@@ -21,6 +21,10 @@ html {
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* Margins and Height */
 
 h1,
@@ -116,6 +120,57 @@ tfoot {
   th,
   td {
     border-bottom: none;
+  }
+}
+
+@media (--b_xs) {
+  table.collapse {
+    display: block;
+
+    thead,
+    caption,
+    tfoot,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+
+    /* Hide table headers */
+    thead tr {
+      position: absolute;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+
+    th {
+      padding-left: 0;
+      padding-right: 0;
+      border-bottom: 1px solid var(--c_alpha);
+    }
+
+    td,
+    td:first-child {
+      position: relative;
+      padding-left: calc(50% + 0.5rem);
+      padding-right: 0;
+    }
+
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      content: attr(data-thead);
+      top: 0;
+      left: 0;
+      padding: 0.5rem 0.5rem 0.5rem 0;
+      width: calc(50% - 1rem);
+      font-weight: bold;
+      white-space: nowrap;
+    }
   }
 }
 

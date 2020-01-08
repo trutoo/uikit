@@ -6,7 +6,7 @@ export default {
 };
 
 export const basic = () => (
-  <div className="e-grid style-uniform" e-columns="5">
+  <div className="e-grid style-uniform" e-columns="2" e-columns-sm="3" e-columns-md="4" e-columns-lg="5">
     {Object.keys(base)
       .filter(key => key.startsWith('--c_'))
       .map(key => (
@@ -18,8 +18,8 @@ export const basic = () => (
             <svg style={{ width: 32, height: 32, fill: 'white' }}>
               <use xlinkHref="#icon-ghost" />
             </svg>
-            <span style={{ width: 32, height: 32, color: 'black' }}>:></span>
-            <span style={{ width: 32, height: 32, color: 'white' }}>:></span>
+            <span style={{ width: 32, height: 32, color: 'black' }}></span>
+            <span style={{ width: 32, height: 32, color: 'white' }}></span>
           </div>
           <figcaption style={{ paddingTop: 24 }}>{key}</figcaption>
         </figure>

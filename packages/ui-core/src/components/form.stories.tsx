@@ -35,7 +35,7 @@ export const basic = () => (
     <TextArea label="Text area" />
     <fieldset>
       <legend>What matches you the best?</legend>
-      <div className="e-grid style-start layout-no-margin" e-columns="6">
+      <div className="e-grid style-start layout-no-margin" e-columns="3" e-columns-md="6">
         <RadioButton label="Eagle" name="bird" />
         <RadioButton label="Hawk" name="bird" />
         <RadioButton label="Owl" name="bird" />
@@ -43,13 +43,13 @@ export const basic = () => (
     </fieldset>
     <fieldset>
       <legend>Favorite birds?</legend>
-      <div className="e-grid style-start layout-no-margin" e-columns="6">
+      <div className="e-grid style-start layout-no-margin" e-columns="3" e-columns-md="6">
         <CheckBox label="Cockatoo" />
         <CheckBox label="Macaw" />
         <CheckBox label="Parakeet" />
       </div>
     </fieldset>
-    <menu className="e-grid style-end" e-columns="6" style={{ textAlign: 'right' }}>
+    <menu className="e-grid style-end" e-columns="3" e-columns-md="6" style={{ textAlign: 'right' }}>
       <Button type="link" href="#" className="secondary">
         Terms
       </Button>
