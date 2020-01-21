@@ -26,8 +26,8 @@ addParameters({
 
 addDecorator((storyFn, context) => {
   return (
-    <div className="e-container" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
-      <div className="e-elevation-1" style={{ padding: '1rem' }}>
+    <div className="tu-container" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
+      <div className="tu-elevation-1" style={{ padding: '1rem' }}>
         <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: icons }}></div>
         <h1 style={{ fontSize: '1.5em' }}>{context.kind}</h1>
         <strong style={{ color: 'var(--c_text_low)' }}>{context.name}</strong>
