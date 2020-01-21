@@ -20,9 +20,9 @@ export const basic = () => {
   return (
     <div className="tu-grid style-uniform">
       {icons
-        .map(icon => icon.replace(/.*?([\w-]+).\w+$/, 'icon-$1'))
+        .map(icon => icon.replace(/.*?([\w-]+).\w+$/, '$1'))
         .map(icon => (
-          <Icon key={icon} icon={icon} size={size} color={color('Color', '')} />
+          <Icon key={icon} id={icon} size={size} color={color('Color', '')} />
         ))}
     </div>
   );

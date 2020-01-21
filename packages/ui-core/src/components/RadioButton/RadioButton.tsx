@@ -87,8 +87,8 @@ export default class RadioButton extends Component<Props, State> {
           {...this.props.inputProps}
         />
         <label className={'tu-radiobutton--label'} htmlFor={this.state.id}>
-          <Icon className="tu-radiobutton--label-box" icon="icon-radio" />
-          <Icon className="tu-radiobutton--label-check" icon="icon-radio-center" />
+          <Icon className="tu-radiobutton--label-box" id="radio" />
+          <Icon className="tu-radiobutton--label-check" id="radio-center" />
           {this.props.label}
         </label>
         {this.state.invalid && this.state.errors.length && (

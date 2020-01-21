@@ -1,4 +1,5 @@
 import React, { Component, FormEvent, KeyboardEvent, createRef } from 'react';
+import { Icon } from '@trutoo/ui-icons';
 import { Validator, ValidationExpression } from '@trutoo/ui-core';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
@@ -310,6 +311,36 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
   // RENDER
   //------------------------------------------------------------------------------------
 
+  renderHelper() {
+    if (this.state.loading) {
+      return (
+        <Icon
+          id="loader"
+          className="tu-typeahead--helper"
+          tabIndex={-1}
+          title={this.props.clearText || 'Clear'}
+          onClick={this.onClear}
+        />
+      );
+    }
+
+    if (this.props.disabled || !this.state.focused) {
+      return <Icon id="arrows-vertical" className="tu-typeahead--helper no-events" />;
+    }
+
+    if (!this.props.readonly && this.hasValueOrFocus()) {
+      return (
+        <Icon
+          id="close"
+          className="tu-typeahead--helper"
+          tabIndex={-1}
+          title={this.props.clearText || 'Clear'}
+          onClick={this.onClear}
+        />
+      );
+    }
+  }
+
   render() {
     // Reset result refs on render
     this.resultRefs.length = 0;
@@ -340,6 +371,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
               {this.props.label}
             </label>
           )}
+
           <input
             ref={this.inputRef}
             id={this.state.id}
@@ -360,15 +392,9 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
             onBlur={this.onBlur}
             {...this.props.inputProps}
           />
-          {!this.props.readonly && !this.props.disabled && this.hasValueOrFocus() && (
-            <a
-              className="tu-typeahead--clear"
-              tabIndex={-1}
-              title={this.props.clearText || 'Clear'}
-              onClick={this.onClear}
-            />
-          )}
+          {this.renderHelper()}
         </div>
+
         <ul
           id={this.state.id + '-results'}
           role="listbox"
@@ -389,6 +415,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
             </li>
           ))}
         </ul>
+
         {this.state.invalid && this.state.errors.length && (
           <label className="tu-typeahead--error" htmlFor={this.state.id}>
             {this.state.errors.map(error => (

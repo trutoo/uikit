@@ -57,7 +57,7 @@
 
   &--input {
     appearance: none;
-    padding: 0.5rem;
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
     width: 100%;
     height: 2rem;
     line-height: 1rem;
@@ -70,7 +70,7 @@
     }
 
     &.labelled {
-      padding: 0.85rem 0.5rem 0.15rem;
+      padding: 0.85rem 1.5rem 0.15rem 0.5rem;
 
       &::placeholder {
         color: rgba(0, 0, 0, 0);
@@ -107,21 +107,19 @@
     }
   }
 
-  /* CLEAR
+  /* HELPER
   ================================================================================ */
 
-  &--clear {
+  &--helper {
     position: absolute;
     right: 0;
-    padding: 0 0.5rem;
-    width: auto;
-    line-height: 2rem;
+    padding: 0.5rem 0.25rem;
+    width: 1.5rem;
+    height: 2rem;
+    cursor: pointer;
 
-    &::before {
-      @mixin iconBase;
-
-      display: inline-block;
-      content: var(--i_close);
+    &.no-events {
+      pointer-events: none;
     }
   }
 
