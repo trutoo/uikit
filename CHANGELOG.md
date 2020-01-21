@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.2](https://github.com/trutoo/uikit/compare/v1.11.1...v1.11.2) (2020-01-21)
+
+
+### Bug Fixes
+
+* missing prefix change ([6fecf27](https://github.com/trutoo/uikit/commit/6fecf275c25da68af869a78a625d53016f90a3ab))
+
+
+### Styles
+
+* migrated from "e" prefix to "tu" ([10fcbdc](https://github.com/trutoo/uikit/commit/10fcbdc7139c43520299aa6531020a602880d83f))
+
+
+
+
+
 ## [1.11.1](https://github.com/trutoo/uikit/compare/v1.11.0...v1.11.1) (2020-01-08)
 
 
