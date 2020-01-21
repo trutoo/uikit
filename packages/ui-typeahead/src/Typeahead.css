@@ -1,4 +1,4 @@
-.e-typeahead {
+.tu-typeahead {
   position: relative;
   display: inline-block;
   margin-bottom: 1rem;
@@ -224,11 +224,11 @@
   ================================================================================ */
 
   @define-mixin state $color {
-    & .e-typeahead--label {
+    & .tu-typeahead--label {
       color: $color;
     }
 
-    & .e-typeahead--input {
+    & .tu-typeahead--input {
       border-left-color: $color;
     }
   }
@@ -240,7 +240,7 @@
   &.disabled {
     @mixin state rgba(0, 0, 0, 0.5);
 
-    & .e-typeahead--input {
+    & .tu-typeahead--input {
       cursor: not-allowed;
       color: rgba(0, 0, 0, 0.5);
       border-color: rgba(0, 0, 0, 0.5);

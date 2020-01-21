@@ -6,11 +6,11 @@ export default {
 };
 
 export const basic = () => (
-  <div className="e-grid style-uniform" e-columns="2" e-columns-sm="3" e-columns-md="4" e-columns-lg="5">
+  <div className="tu-grid style-uniform" tu-columns="2" tu-columns-sm="3" tu-columns-md="4" tu-columns-lg="5">
     {Object.keys(base)
       .filter(key => key.startsWith('--c_'))
       .map(key => (
-        <figure key={key} className="e-elevation-1" style={{ padding: 24 }}>
+        <figure key={key} className="tu-elevation-1" style={{ padding: 24 }}>
           <div style={{ height: 128, padding: 12, background: `var(${key})` }}>
             <svg style={{ width: 32, height: 32, fill: 'black' }}>
               <use xlinkHref="#icon-ghost" />

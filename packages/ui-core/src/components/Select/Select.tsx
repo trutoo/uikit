@@ -105,7 +105,7 @@ export default class Select extends Component<Props, State> {
 
   private templateOption(option: Option) {
     return (
-      <option key={option.key} value={option.key} disabled={!!option.disabled}>
+      <option key={option.key} className={'tu-select--option'} value={option.key} disabled={!!option.disabled}>
         {option.label}
       </option>
     );
@@ -113,7 +113,7 @@ export default class Select extends Component<Props, State> {
 
   private templateGroup(group: OptionGroup) {
     return (
-      <optgroup key={group.label} label={group.label} disabled={!!group.disabled}>
+      <optgroup key={group.label} className={'tu-select--optgroup'} label={group.label} disabled={!!group.disabled}>
         {group.options.map(this.templateOption)}
       </optgroup>
     );
@@ -123,14 +123,14 @@ export default class Select extends Component<Props, State> {
     return (
       <div
         className={
-          'e-select ' +
+          'tu-select ' +
           (this.props.className || '') +
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
           (this.state.invalid ? ' invalid ' : '')
         }>
         {this.props.label && (
-          <label className={'e-select--label' + (this.hasValueOrFocus() ? ' floating' : '')} htmlFor={this.state.id}>
+          <label className={'tu-select--label' + (this.hasValueOrFocus() ? ' floating' : '')} htmlFor={this.state.id}>
             {this.props.label}
           </label>
         )}
@@ -138,7 +138,7 @@ export default class Select extends Component<Props, State> {
           id={this.state.id}
           name={this.props.name}
           value={this.props.value}
-          className={'e-select--input' + (this.props.label ? ' labelled' : '')}
+          className={'tu-select--input' + (this.props.label ? ' labelled' : '')}
           onChange={this.onChange}
           onFocus={this.onFocusChange}
           onBlur={this.onFocusChange}
@@ -154,7 +154,7 @@ export default class Select extends Component<Props, State> {
             )}
         </select>
         {this.state.invalid && this.state.errors.length && (
-          <label className="e-select--error" htmlFor={this.state.id}>
+          <label className="tu-select--error" htmlFor={this.state.id}>
             {this.state.errors.map(error => (
               <span key={error}>{'errors.field.' + error}</span>
             ))}

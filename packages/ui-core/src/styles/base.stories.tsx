@@ -7,7 +7,7 @@ export default {
 };
 
 export const basic = () => (
-  <div id="top" className="e-container" role="document">
+  <div id="top" className="tu-container" role="document">
     <header role="banner">
       <h1>HTML5 Test Page</h1>
       <p>
@@ -400,7 +400,7 @@ export const basic = () => (
 );
 
 export const article = () => (
-  <div className="e-container" role="document">
+  <div className="tu-container" role="document">
     <h1>Fringilla Cursus</h1>
     <p>
       Ornare hendrerit fames porttitor lectus suscipit dictumst platea id class leo mollis feugiat volutpat, posuere ut

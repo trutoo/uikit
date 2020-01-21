@@ -350,7 +350,7 @@ export default class Datepicker extends Component<Props, State> {
     return (
       <div
         className={
-          'e-datepicker ' +
+          'tu-datepicker ' +
           (this.props.className || '') +
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
@@ -360,7 +360,7 @@ export default class Datepicker extends Component<Props, State> {
         {this.props.label && (
           <label
             id={`${this.state.id}-label`}
-            className={`e-datepicker--label ${this.hasValueOrFocus() ? 'floating' : ''}`}
+            className={`tu-datepicker--label ${this.hasValueOrFocus() ? 'floating' : ''}`}
             htmlFor={this.state.id}>
             {this.props.label}
           </label>
@@ -371,7 +371,7 @@ export default class Datepicker extends Component<Props, State> {
           ref={this.inputRef}
           id={this.state.id}
           name={this.props.name}
-          className={`e-datepicker--input ${this.props.label ? 'labelled' : ''}`}
+          className={`tu-datepicker--input ${this.props.label ? 'labelled' : ''}`}
           type={'text'}
           value={this.formatInput(this.props.value)}
           placeholder={this.props.placeholder}
@@ -388,35 +388,35 @@ export default class Datepicker extends Component<Props, State> {
         />
 
         {this.props.disabled || !this.state.focused ? (
-          <svg className="e-datepicker--helper no-events">
+          <svg className="tu-datepicker--helper no-events">
             <use xlinkHref="#icon-calendar" />
           </svg>
         ) : (
-          <svg className="e-datepicker--helper" tabIndex={-1} onMouseDown={this.onClear}>
+          <svg className="tu-datepicker--helper" tabIndex={-1} onMouseDown={this.onClear}>
             <use xlinkHref="#icon-calendar-clear" />
           </svg>
         )}
 
         {this.state.dates && (
-          <Grid className="e-datepicker--select" columns={7} id={`${this.state.id}-results`}>
+          <Grid className="tu-datepicker--select" columns={7} id={`${this.state.id}-results`}>
             {/* PREVIOUS */}
-            <svg className="e-datepicker--select-button" onMouseDown={event => this.onChangeMonth(event, -1)}>
+            <svg className="tu-datepicker--select-button" onMouseDown={event => this.onChangeMonth(event, -1)}>
               <use xlinkHref="#icon-arrow-left-circle" />
             </svg>
 
             {/* MONTH */}
-            <strong className="e-datepicker--select-month">
+            <strong className="tu-datepicker--select-month">
               {Utilities.transform(this.state.focusedDate, 'MMMM YYYY').replace(/^\w/, c => c.toUpperCase())}
             </strong>
 
             {/* NEXT */}
-            <svg className="e-datepicker--select-button" onMouseDown={event => this.onChangeMonth(event, 1)}>
+            <svg className="tu-datepicker--select-button" onMouseDown={event => this.onChangeMonth(event, 1)}>
               <use xlinkHref="#icon-arrow-right-circle" />
             </svg>
 
             {/* WEEK DAYS */}
             {this.state.days.map(day => (
-              <strong key={day} className="e-datepicker--select-days">
+              <strong key={day} className="tu-datepicker--select-days">
                 {day}
               </strong>
             ))}
@@ -428,7 +428,7 @@ export default class Datepicker extends Component<Props, State> {
                 <span
                   key={key}
                   ref={ref => (this.dateRefs[key] = ref)}
-                  className={`e-datepicker--select-dates ${this.genDateState(date)}`}
+                  className={`tu-datepicker--select-dates ${this.genDateState(date)}`}
                   id={`${this.state.id}-result-${key}`}
                   role="option"
                   tabIndex={-1}
@@ -443,7 +443,7 @@ export default class Datepicker extends Component<Props, State> {
         )}
 
         {this.state.invalid && this.state.errors.length && (
-          <label className="e-datepicker--error" htmlFor={this.state.id}>
+          <label className="tu-datepicker--error" htmlFor={this.state.id}>
             {this.state.errors.map(error => (
               <span key={error}>{'errors.field.' + error}</span>
             ))}

@@ -132,10 +132,10 @@ module.exports = variables => ({
   columns: (mixin, device) => {
     const columns = {};
     for (let i = 1; i <= 12; i++) {
-      columns[`&[e-columns${device ? '-' + device : ''}="${i}"] > *`] = {
+      columns[`&[tu-columns${device ? '-' + device : ''}="${i}"] > *`] = {
         width: `calc(${100 / i}% - var(--d_columns_gap) - 0.01rem)`,
 
-        '&.e-grid': {
+        '&.tu-grid': {
           width: `calc(${100 / i}% - 0.01rem)`,
         },
       };

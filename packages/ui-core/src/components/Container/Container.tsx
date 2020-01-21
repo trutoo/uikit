@@ -14,7 +14,7 @@ export default class Container extends Component<Props, State> {
   public render() {
     const { className, children, ...rest } = this.props;
     return (
-      <div {...rest} className={`e-container ${className || ''}`}>
+      <div {...rest} className={`tu-container ${className || ''}`}>
         {children}
       </div>
     );

@@ -74,7 +74,7 @@ export default class TextArea extends Component<Props, State> {
     return (
       <div
         className={
-          'e-textarea ' +
+          'tu-textarea ' +
           (this.props.className || '') +
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
@@ -82,14 +82,14 @@ export default class TextArea extends Component<Props, State> {
         }
       >
         {this.props.label && (
-          <label className={'e-textarea--label' + (this.hasValueOrFocus() ? ' floating' : '')} htmlFor={this.state.id}>
+          <label className={'tu-textarea--label' + (this.hasValueOrFocus() ? ' floating' : '')} htmlFor={this.state.id}>
             {this.props.label}
           </label>
         )}
         <textarea
           id={this.state.id}
           name={this.props.name}
-          className={'e-textarea--input' + (this.props.label ? ' labelled' : '')}
+          className={'tu-textarea--input' + (this.props.label ? ' labelled' : '')}
           value={this.props.value}
           onChange={this.onChange}
           onFocus={this.onFocusChange}
@@ -97,7 +97,7 @@ export default class TextArea extends Component<Props, State> {
           {...this.props.inputProps}
         />
         {this.state.invalid && this.state.errors.length && (
-          <label className="e-textarea--error" htmlFor={this.state.id}>
+          <label className="tu-textarea--error" htmlFor={this.state.id}>
             {this.state.errors.map(error => (
               <span key={error}>{'errors.field.' + error}</span>
             ))}

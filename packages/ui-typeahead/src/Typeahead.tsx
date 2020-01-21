@@ -316,7 +316,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
     return (
       <div
         className={
-          'e-typeahead ' +
+          'tu-typeahead ' +
           (this.props.className || '') +
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
@@ -326,7 +326,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
         onKeyDown={this.onKeyDown}
         onKeyUp={this.onKeyUp}>
         <div
-          className="e-typeahead--wrapper"
+          className="tu-typeahead--wrapper"
           role="combobox"
           id={this.state.id + '-combobox'}
           aria-expanded={this.hasFocusAndResult()}
@@ -335,7 +335,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
           {this.props.label && (
             <label
               id={this.state.id + '-label'}
-              className={'e-typeahead--label' + (this.hasValueOrFocus() ? ' floating' : '')}
+              className={'tu-typeahead--label' + (this.hasValueOrFocus() ? ' floating' : '')}
               htmlFor={this.state.id}>
               {this.props.label}
             </label>
@@ -344,7 +344,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
             ref={this.inputRef}
             id={this.state.id}
             name={this.props.name}
-            className={'e-typeahead--input' + (this.props.label ? ' labelled' : '')}
+            className={'tu-typeahead--input' + (this.props.label ? ' labelled' : '')}
             type={this.props.type || 'search'}
             value={this.props.value ? this.props.value.view : ''}
             placeholder={this.props.placeholder}
@@ -362,7 +362,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
           />
           {!this.props.readonly && !this.props.disabled && this.hasValueOrFocus() && (
             <a
-              className="e-typeahead--clear"
+              className="tu-typeahead--clear"
               tabIndex={-1}
               title={this.props.clearText || 'Clear'}
               onClick={this.onClear}
@@ -372,7 +372,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
         <ul
           id={this.state.id + '-results'}
           role="listbox"
-          className="e-typeahead--results"
+          className="tu-typeahead--results"
           aria-labelledby={this.state.id + '-label'}
           aria-hidden={!this.hasFocusAndResult()}
           style={{ maxHeight: this.props.resultHeight ? `${this.props.resultHeight}rem` : undefined }}>
@@ -380,7 +380,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
             <li
               ref={ref => (this.resultRefs[i] = ref)}
               id={this.state.id + '-result-' + i}
-              className="e-typeahead--results-item"
+              className="tu-typeahead--results-item"
               role="option"
               key={result.id}
               aria-selected={result == this.state.results[this.state.active]}
@@ -390,7 +390,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
           ))}
         </ul>
         {this.state.invalid && this.state.errors.length && (
-          <label className="e-typeahead--error" htmlFor={this.state.id}>
+          <label className="tu-typeahead--error" htmlFor={this.state.id}>
             {this.state.errors.map(error => (
               <span key={error}>{'errors.field.' + error}</span>
             ))}

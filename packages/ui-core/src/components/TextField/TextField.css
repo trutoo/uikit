@@ -1,4 +1,4 @@
-.e-textfield {
+.tu-textfield {
   position: relative;
   display: inline-block;
   margin-bottom: 1rem;
@@ -141,11 +141,11 @@
   ================================================================================ */
 
   @define-mixin state $color {
-    & .e-textfield--label {
+    & .tu-textfield--label {
       color: $color;
     }
 
-    & .e-textfield--input {
+    & .tu-textfield--input {
       border-left-color: $color;
     }
   }
@@ -165,7 +165,7 @@
   &.disabled {
     @mixin state rgba(0, 0, 0, 0.5);
 
-    & .e-textfield--input {
+    & .tu-textfield--input {
       cursor: not-allowed;
       color: rgba(0, 0, 0, 0.5);
       border-color: rgba(0, 0, 0, 0.5);

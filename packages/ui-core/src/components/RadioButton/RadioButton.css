@@ -20,7 +20,7 @@
   }
 }
 
-.e-radiobutton {
+.tu-radiobutton {
   position: relative;
   display: inline-block;
   margin-bottom: 1rem;
@@ -142,7 +142,7 @@
   ================================================================================ */
 
   @define-mixin state $color {
-    & .e-radiobutton--label {
+    & .tu-radiobutton--label {
       & svg {
         fill: $color;
       }
@@ -152,7 +152,7 @@
       }
     }
 
-    & .e-radiobutton--input:focus + .e-radiobutton--label {
+    & .tu-radiobutton--input:focus + .tu-radiobutton--label {
       color: $color;
     }
   }
@@ -172,7 +172,7 @@
   &.disabled {
     @mixin state rgba(0, 0, 0, 0.5);
 
-    & .e-checkbox--label {
+    & .tu-checkbox--label {
       cursor: not-allowed;
       color: rgba(0, 0, 0, 0.5);
     }

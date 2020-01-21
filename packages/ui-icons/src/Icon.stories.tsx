@@ -18,7 +18,7 @@ export const basic = () => {
     max: 128,
   });
   return (
-    <div className="e-grid style-uniform">
+    <div className="tu-grid style-uniform">
       {icons
         .map(icon => icon.replace(/.*?([\w-]+).\w+$/, 'icon-$1'))
         .map(icon => (

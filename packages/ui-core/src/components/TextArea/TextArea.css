@@ -1,4 +1,4 @@
-.e-textarea {
+.tu-textarea {
   position: relative;
   display: inline-block;
   margin-bottom: 1rem;
@@ -138,11 +138,11 @@
   ================================================================================ */
 
   @define-mixin state $color {
-    & .e-textarea--label {
+    & .tu-textarea--label {
       color: $color;
     }
 
-    & .e-textarea--input {
+    & .tu-textarea--input {
       border-left-color: $color;
     }
   }
@@ -162,7 +162,7 @@
   &.disabled {
     @mixin state rgba(0, 0, 0, 0.5);
 
-    & .e-textarea--input {
+    & .tu-textarea--input {
       cursor: not-allowed;
       color: rgba(0, 0, 0, 0.5);
       border-color: rgba(0, 0, 0, 0.5);

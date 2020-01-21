@@ -20,7 +20,7 @@
   }
 }
 
-.e-checkbox {
+.tu-checkbox {
   position: relative;
   display: inline-block;
   margin-bottom: 1rem;
@@ -142,7 +142,7 @@
   ================================================================================ */
 
   @define-mixin state $color {
-    & .e-checkbox--label {
+    & .tu-checkbox--label {
       & svg {
         fill: $color;
       }
@@ -152,7 +152,7 @@
       }
     }
 
-    & .e-checkbox--input:focus + .e-checkbox--label {
+    & .tu-checkbox--input:focus + .tu-checkbox--label {
       color: $color;
     }
   }
@@ -172,7 +172,7 @@
   &.disabled {
     @mixin state rgba(0, 0, 0, 0.5);
 
-    & .e-checkbox--label {
+    & .tu-checkbox--label {
       cursor: not-allowed;
       color: rgba(0, 0, 0, 0.5);
     }

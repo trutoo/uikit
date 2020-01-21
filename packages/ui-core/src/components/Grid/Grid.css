@@ -1,7 +1,7 @@
 /* GRID
 ================================================================================ */
 
-.e-grid {
+.tu-grid {
   @mixin clearfix;
 
   display: flex;
@@ -17,7 +17,7 @@
   /* PARENTS & LAYOUTS
   -------------------------------------------------------------------------------- */
 
-  .e-container &,
+  .tu-container &,
   &.layout-no-margin {
     margin-left: -0.5rem;
     margin-right: -0.5rem;
@@ -67,7 +67,7 @@
     flex-grow: 1;
     flex-shrink: 1;
 
-    &.e-grid {
+    &.tu-grid {
       margin: 0;
       padding: 0;
     }

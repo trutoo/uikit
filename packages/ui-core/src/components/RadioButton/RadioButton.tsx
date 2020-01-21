@@ -68,7 +68,7 @@ export default class RadioButton extends Component<Props, State> {
     return (
       <div
         className={
-          'e-radiobutton ' +
+          'tu-radiobutton ' +
           (this.props.className || '') +
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
@@ -77,7 +77,7 @@ export default class RadioButton extends Component<Props, State> {
         <input
           id={this.state.id}
           name={this.props.name}
-          className="e-radiobutton--input"
+          className="tu-radiobutton--input"
           type="radio"
           value={this.props.value}
           checked={this.props.checked}
@@ -86,13 +86,13 @@ export default class RadioButton extends Component<Props, State> {
           onBlur={this.onFocusChange}
           {...this.props.inputProps}
         />
-        <label className={'e-radiobutton--label'} htmlFor={this.state.id}>
-          <Icon className="e-radiobutton--label-box" icon="icon-radio" />
-          <Icon className="e-radiobutton--label-check" icon="icon-radio-center" />
+        <label className={'tu-radiobutton--label'} htmlFor={this.state.id}>
+          <Icon className="tu-radiobutton--label-box" icon="icon-radio" />
+          <Icon className="tu-radiobutton--label-check" icon="icon-radio-center" />
           {this.props.label}
         </label>
         {this.state.invalid && this.state.errors.length && (
-          <label className="e-radiobutton--error" htmlFor={this.state.id}>
+          <label className="tu-radiobutton--error" htmlFor={this.state.id}>
             {this.state.errors.map(error => (
               <span key={error}>{'errors.field.' + error}</span>
             ))}

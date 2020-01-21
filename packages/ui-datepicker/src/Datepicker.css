@@ -1,4 +1,4 @@
-.e-datepicker {
+.tu-datepicker {
   position: relative;
   display: inline-block;
   margin-bottom: 1rem;
@@ -250,11 +250,11 @@
   ================================================================================ */
 
   @define-mixin state $color {
-    & .e-datepicker--label {
+    & .tu-datepicker--label {
       color: $color;
     }
 
-    & .e-datepicker--input {
+    & .tu-datepicker--input {
       border-left-color: $color;
     }
   }
@@ -262,7 +262,7 @@
   &.focused {
     @mixin state var(--c_alpha);
 
-    & .e-datepicker--select {
+    & .tu-datepicker--select {
       display: flex;
     }
   }
@@ -270,7 +270,7 @@
   &.disabled {
     @mixin state rgba(0, 0, 0, 0.5);
 
-    & .e-datepicker--input {
+    & .tu-datepicker--input {
       cursor: not-allowed;
       color: rgba(0, 0, 0, 0.5);
       border-color: rgba(0, 0, 0, 0.5);

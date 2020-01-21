@@ -1,7 +1,7 @@
 /* CONTAINER
 ================================================================================ */
 
-.e-container {
+.tu-container {
   @mixin clearfix;
 
   position: relative;

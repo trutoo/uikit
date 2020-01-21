@@ -33,7 +33,7 @@ export default class Button extends Component<Props, State> {
     return type === 'link' ? (
       <a
         {...rest}
-        className={`e-button ${className || '' + (disabled ? ' disabled' : '')}`}
+        className={`tu-button ${className || '' + (disabled ? ' disabled' : '')}`}
         id={this.state.id}
         href={href}
         onClick={this.onClick}>
@@ -42,7 +42,7 @@ export default class Button extends Component<Props, State> {
     ) : (
       <button
         {...rest}
-        className={`e-button ${className || ''}`}
+        className={`tu-button ${className || ''}`}
         id={this.state.id}
         type={type || 'button'}
         disabled={disabled}

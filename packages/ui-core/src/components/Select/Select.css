@@ -1,4 +1,4 @@
-.e-select {
+.tu-select {
   position: relative;
   display: inline-block;
   margin-bottom: 1rem;
@@ -70,7 +70,7 @@
 
   &--option,
   &--optgroup {
-    background-color: white;
+    background-color: var(--c_background);
   }
 
   /* DESCRIPTION
@@ -135,11 +135,11 @@
   ================================================================================ */
 
   @define-mixin state $color {
-    & .e-select--label {
+    & .tu-select--label {
       color: $color;
     }
 
-    & .e-select--input {
+    & .tu-select--input {
       border-left-color: $color;
     }
   }
@@ -159,7 +159,7 @@
   &.disabled {
     @mixin state rgba(0, 0, 0, 0.5);
 
-    & .e-select--input {
+    & .tu-select--input {
       cursor: not-allowed;
       color: rgba(0, 0, 0, 0.5);
       border-color: rgba(0, 0, 0, 0.5);

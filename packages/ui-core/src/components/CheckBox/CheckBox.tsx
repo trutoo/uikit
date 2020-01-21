@@ -66,7 +66,7 @@ export default class CheckBox extends Component<Props, State> {
     return (
       <div
         className={
-          'e-checkbox ' +
+          'tu-checkbox ' +
           (this.props.className || '') +
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
@@ -75,7 +75,7 @@ export default class CheckBox extends Component<Props, State> {
         <input
           id={this.state.id}
           name={this.props.name}
-          className="e-checkbox--input"
+          className="tu-checkbox--input"
           type="checkbox"
           value={this.props.value}
           checked={this.props.checked}
@@ -84,13 +84,13 @@ export default class CheckBox extends Component<Props, State> {
           onBlur={this.onFocusChange}
           {...this.props.inputProps}
         />
-        <label className={'e-checkbox--label'} htmlFor={this.state.id}>
-          <Icon className="e-checkbox--label-box" icon="icon-checkbox" />
-          <Icon className="e-checkbox--label-check" icon="icon-checkbox-check-alt" />
+        <label className={'tu-checkbox--label'} htmlFor={this.state.id}>
+          <Icon className="tu-checkbox--label-box" icon="icon-checkbox" />
+          <Icon className="tu-checkbox--label-check" icon="icon-checkbox-check-alt" />
           {this.props.label}
         </label>
         {this.state.invalid && this.state.errors.length && (
-          <label className="e-checkbox--error" htmlFor={this.state.id}>
+          <label className="tu-checkbox--error" htmlFor={this.state.id}>
             {this.state.errors.map(error => (
               <span key={error}>{'errors.field.' + error}</span>
             ))}

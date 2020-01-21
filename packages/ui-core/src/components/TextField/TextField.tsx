@@ -77,21 +77,21 @@ export default class TextField extends Component<Props, State> {
     return (
       <div
         className={
-          'e-textfield ' +
+          'tu-textfield ' +
           (this.props.className || '') +
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
           (this.state.invalid ? ' invalid ' : '')
         }>
         {this.props.label && (
-          <label className={'e-textfield--label' + (this.hasValueOrFocus() ? ' floating' : '')} htmlFor={this.state.id}>
+          <label className={'tu-textfield--label' + (this.hasValueOrFocus() ? ' floating' : '')} htmlFor={this.state.id}>
             {this.props.label}
           </label>
         )}
         <input
           id={this.state.id}
           name={this.props.name}
-          className={'e-textfield--input' + (this.props.label ? ' labelled' : '')}
+          className={'tu-textfield--input' + (this.props.label ? ' labelled' : '')}
           type={this.props.type}
           value={this.props.value}
           onChange={this.onChange}
@@ -100,7 +100,7 @@ export default class TextField extends Component<Props, State> {
           {...this.props.inputProps}
         />
         {this.state.invalid && this.state.errors.length && (
-          <label className="e-textfield--error" htmlFor={this.state.id}>
+          <label className="tu-textfield--error" htmlFor={this.state.id}>
             {this.state.errors.map(error => (
               <span key={error}>{'errors.field.' + error}</span>
             ))}
