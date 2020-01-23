@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/trutoo/uikit/compare/v1.12.0...v1.13.0) (2020-01-23)
+
+
+### Bug Fixes
+
+* changed default input style to 100% ([65f47e1](https://github.com/trutoo/uikit/commit/65f47e179903bb7a6eb83c003c90e268a25405e9))
+* tweaked color contrast, following WCAG 2.0 AA ([8a3bde5](https://github.com/trutoo/uikit/commit/8a3bde566ec49d766a50aa0b4d1f0eaed233a0a3))
+
+
+### Features
+
+* experimental helper text for inputs ([e70f2d0](https://github.com/trutoo/uikit/commit/e70f2d08739ab081c525f618a279051d8ce7fc89))
+* improved icon usage ([7a3c2aa](https://github.com/trutoo/uikit/commit/7a3c2aa4799ca1487e3d9b3bc7dab08e95f222e0))
+
+
+
+
+
 # [1.12.0](https://github.com/trutoo/uikit/compare/v1.11.2...v1.12.0) (2020-01-21)
 
 
