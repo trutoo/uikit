@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/trutoo/uikit/compare/v1.11.2...v1.12.0) (2020-01-21)
+
+
+### Features
+
+* improved icon rendering for inputs ([c4ab013](https://github.com/trutoo/uikit/commit/c4ab013a18fef35768ff6cadbea947a6f94cd02e))
+
+
+
+
+
 ## [1.11.2](https://github.com/trutoo/uikit/compare/v1.11.1...v1.11.2) (2020-01-21)
 
 
