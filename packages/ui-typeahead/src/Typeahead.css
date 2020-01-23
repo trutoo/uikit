@@ -1,6 +1,5 @@
 .tu-typeahead {
   position: relative;
-  display: inline-block;
   margin-bottom: 1rem;
 
   &[aria-busy='true'] &--clear::before {
