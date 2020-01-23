@@ -4,9 +4,9 @@ module.exports.base = {
   'color-scheme': 'light dark',
 
   /* COLOR */
-  '--c_alpha': '#b27100', // Quality Gold
-  '--c_alpha_light': '#e99f3c', // Quality Gold Light
-  '--c_alpha_dark': '#7d4600', // Quality Gold Dark
+  '--c_alpha': '#a66802', // Quality Gold
+  '--c_alpha_light': '#dc963b', // Quality Gold Light
+  '--c_alpha_dark': '#723d00', // Quality Gold Dark
 
   '--c_beta': '#556270', // Might Slate
   '--c_beta_light': '#828f9e', // Might Slate Light
@@ -26,9 +26,8 @@ module.exports.base = {
   '--c_detail_medium': 'rgba(0, 0, 0, 0.5)', // Black 50 %
   '--c_detail_high': 'rgba(0, 0, 0, 0.75)', // Black 75 %
 
-  '--c_valid': '#95c11f', // Green
-  '--c_warning': '#f3a118', // Orange
-  '--c_invalid': '#c10d08', // Red
+  '--c_valid': '#178A00', // Green
+  '--c_invalid': '#DA1406', // Red
 
   /* Z-INDEX */
   '--z_floating': '1000',
@@ -82,9 +81,9 @@ module.exports.base = {
 
 module.exports.dark = {
   /* COLOR */
-  '--c_alpha': '#b27100', // Quality Gold
-  '--c_alpha_light': '#e99f3c', // Quality Gold Light
-  '--c_alpha_dark': '#7d4600', // Quality Gold Dark
+  '--c_alpha': '#d2810e', // Quality Gold
+  '--c_alpha_light': '#ffb146', // Quality Gold Light
+  '--c_alpha_dark': '#9b5400', // Quality Gold Dark
 
   '--c_beta': '#556270', // Might Slate
   '--c_beta_light': '#828f9e', // Might Slate Light
@@ -104,7 +103,6 @@ module.exports.dark = {
   '--c_detail_medium': 'rgba(255, 255, 255, 0.24)', // White 24 %
   '--c_detail_high': 'rgba(255, 255, 255, 0.48)', // White 48 %
 
-  '--c_valid': '#95c11f', // Green
-  '--c_warning': '#f3a118', // Orange
-  '--c_invalid': '#c10d08', // Red
+  '--c_valid': '#8BC513', // Green
+  '--c_invalid': '#FF3009', // Red
 };
