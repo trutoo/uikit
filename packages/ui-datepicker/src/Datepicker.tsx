@@ -1,4 +1,5 @@
 import React, { Component, MouseEvent, KeyboardEvent, createRef } from 'react';
+import { Icon } from '@trutoo/ui-icons';
 import { Validator, ValidationExpression, Grid } from '@trutoo/ui-core';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
@@ -344,6 +345,26 @@ export default class Datepicker extends Component<Props, State> {
   // RENDER
   //------------------------------------------------------------------------------------
 
+  renderHelper() {
+    if (this.props.disabled) {
+      return <Icon id="calendar" className="tu-datepicker--helper no-events" />;
+    }
+
+    if (this.props.value !== null && this.props.value !== undefined && this.props.value.date) {
+      return (
+        <Icon
+          id="calendar-clear"
+          className="tu-datepicker--helper"
+          tabIndex={-1}
+          title={this.props.clearText || 'Clear'}
+          onClick={this.onClear}
+        />
+      );
+    }
+
+    return <Icon id="calendar" className="tu-datepicker--helper no-events" />;
+  }
+
   render() {
     // Reset date refs on render
     this.dateRefs = {};
@@ -387,15 +408,7 @@ export default class Datepicker extends Component<Props, State> {
           {...this.props.inputProps}
         />
 
-        {this.props.disabled || !this.state.focused ? (
-          <svg className="tu-datepicker--helper no-events">
-            <use xlinkHref="#icon-calendar" />
-          </svg>
-        ) : (
-          <svg className="tu-datepicker--helper" tabIndex={-1} onMouseDown={this.onClear}>
-            <use xlinkHref="#icon-calendar-clear" />
-          </svg>
-        )}
+        {this.renderHelper()}
 
         {this.state.dates && (
           <Grid className="tu-datepicker--select" columns={7} id={`${this.state.id}-results`}>

@@ -324,11 +324,16 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
       );
     }
 
-    if (this.props.disabled || !this.state.focused) {
+    if (this.props.disabled) {
       return <Icon id="arrows-vertical" className="tu-typeahead--helper no-events" />;
     }
 
-    if (!this.props.readonly && this.hasValueOrFocus()) {
+    if (
+      !this.props.readonly &&
+      this.props.value !== null &&
+      this.props.value !== undefined &&
+      this.props.value.view !== ''
+    ) {
       return (
         <Icon
           id="close"
@@ -339,6 +344,8 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
         />
       );
     }
+
+    return <Icon id="arrows-vertical" className="tu-typeahead--helper no-events" />;
   }
 
   render() {
