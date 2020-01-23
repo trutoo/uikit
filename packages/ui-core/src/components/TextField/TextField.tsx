@@ -1,6 +1,7 @@
 import React, { Component, FormEvent, FocusEvent } from 'react';
 import { ValidationExpression } from '../../framework/models';
 import { Validator } from '../../framework/validator';
+import { Icon } from '@trutoo/ui-icons';
 
 interface Props {
   id?: string;
@@ -10,6 +11,7 @@ interface Props {
   type?: string;
   value?: string;
   disabled?: boolean;
+  helpText?: string;
   validators?: ValidationExpression<string>[];
   inputProps?: { [key: string]: string };
   onChange?: (event: string) => void;
@@ -20,6 +22,7 @@ interface State {
   invalid: boolean;
   focused: boolean;
   errors: string[];
+  showHelp: boolean;
 }
 
 export default class TextField extends Component<Props, State> {
@@ -36,6 +39,7 @@ export default class TextField extends Component<Props, State> {
       invalid: false,
       focused: false,
       errors: [],
+      showHelp: false,
     };
   }
 
@@ -84,7 +88,9 @@ export default class TextField extends Component<Props, State> {
           (this.state.invalid ? ' invalid ' : '')
         }>
         {this.props.label && (
-          <label className={'tu-textfield--label' + (this.hasValueOrFocus() ? ' floating' : '')} htmlFor={this.state.id}>
+          <label
+            className={'tu-textfield--label' + (this.hasValueOrFocus() ? ' floating' : '')}
+            htmlFor={this.state.id}>
             {this.props.label}
           </label>
         )}
@@ -94,11 +100,27 @@ export default class TextField extends Component<Props, State> {
           className={'tu-textfield--input' + (this.props.label ? ' labelled' : '')}
           type={this.props.type}
           value={this.props.value}
+          aria-label={this.props.helpText}
           onChange={this.onChange}
           onFocus={this.onFocusChange}
           onBlur={this.onFocusChange}
           {...this.props.inputProps}
         />
+        {this.props.helpText && (
+          <Icon
+            className={`tu-textfield--description-toggler`}
+            id="question"
+            tabIndex={0}
+            onClick={() => {
+              this.setState({ showHelp: !this.state.showHelp });
+            }}
+          />
+        )}
+        {this.props.helpText && this.state.showHelp && (
+          <label className="tu-textfield--description" htmlFor={this.state.id}>
+            {this.props.helpText}
+          </label>
+        )}
         {this.state.invalid && this.state.errors.length && (
           <label className="tu-textfield--error" htmlFor={this.state.id}>
             {this.state.errors.map(error => (

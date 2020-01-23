@@ -44,6 +44,7 @@
     height: 2rem;
     line-height: 1rem;
     outline: none;
+    text-overflow: ellipsis;
     border: 1px solid var(--c_detail_low);
     background-color: var(--c_background);
 
@@ -78,38 +79,47 @@
     }
   }
 
+  /* HELPER
+  ================================================================================ */
+
+  &--helper {
+    position: absolute;
+    right: 0;
+    padding: 0.5rem 0.25rem;
+    width: 1.5rem;
+    height: 2rem;
+    cursor: pointer;
+
+    &.no-events {
+      pointer-events: none;
+    }
+  }
+
   /* DESCRIPTION
   ================================================================================ */
 
   &--description {
-    padding: 0.5rem;
     display: block;
-    background-color: var(--c_light_alpha);
-    border: 1px solid var(--c_light_beta);
+    margin-bottom: 0;
+    padding: 0.5rem;
+    border: 1px solid var(--c_detail_low);
     border-top: none;
 
     &-toggler {
       position: absolute;
-      top: 0;
       right: 0;
+      padding: 0.5rem 0.25rem;
       width: 1.5rem;
-      line-height: 2rem;
-      color: var(--c_alpha);
-      text-align: center;
+      height: 2rem;
+      cursor: pointer;
+      fill: var(--c_alpha);
+      border: 1px solid rgba(0, 0, 0, 0);
 
-      &::before {
-        @mixin iconBase;
-
-        content: var(--i_info);
+      &:focus {
+        outline: none !important;
+        fill: var(--c_text_alt);
+        background-color: var(--c_alpha);
       }
-    }
-
-    &::before {
-      @mixin iconBase;
-
-      content: var(--i_info);
-      margin-right: 0.25em;
-      color: var(--c_alpha);
     }
   }
 

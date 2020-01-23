@@ -19,6 +19,6 @@ export const basic = () => (
     label="Text here!"
     onChange={state => store.set({ value: state })}
     validators={[Validator.required()]}
-    inputProps={{ 'aria-label': 'test' }}
+    helpText="Libero alias voluptatem ipsa nemo facilis veritatis ab soluta et."
   />
 );
