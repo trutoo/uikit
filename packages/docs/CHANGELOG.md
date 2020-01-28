@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/trutoo/uikit/compare/v1.13.0...v1.14.0) (2020-01-28)
+
+**Note:** Version bump only for package @trutoo/docs
+
+
+
+
+
 # [1.13.0](https://github.com/trutoo/uikit/compare/v1.12.0...v1.13.0) (2020-01-23)
 
 **Note:** Version bump only for package @trutoo/docs
