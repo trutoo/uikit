@@ -32,10 +32,9 @@ export default class TextField extends Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    window.eid = window.eid || 0;
     this.validator = new Validator(this.props.validators);
     this.state = {
-      id: `id-${window.eid++}`,
+      id: window.uikit.nextId(),
       invalid: false,
       focused: false,
       errors: [],

@@ -27,10 +27,9 @@ export default class TextArea extends Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    window.eid = window.eid || 0;
     this.validator = new Validator(this.props.validators);
     this.state = {
-      id: `id-${window.eid++}`,
+      id: window.uikit.nextId(),
       invalid: false,
       focused: false,
       errors: [],
@@ -79,8 +78,7 @@ export default class TextArea extends Component<Props, State> {
           (this.state.focused ? ' focused' : '') +
           (this.props.disabled ? ' disabled' : '') +
           (this.state.invalid ? ' invalid ' : '')
-        }
-      >
+        }>
         {this.props.label && (
           <label className={'tu-textarea--label' + (this.hasValueOrFocus() ? ' floating' : '')} htmlFor={this.state.id}>
             {this.props.label}

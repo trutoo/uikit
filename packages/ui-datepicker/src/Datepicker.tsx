@@ -55,7 +55,6 @@ export default class Datepicker extends Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    window.eid = window.eid || 0;
     this.todaysDate = new Date();
     this.todaysDate.setHours(0, 0, 0, 0);
     this.validator = new Validator(props.validators);
@@ -66,7 +65,7 @@ export default class Datepicker extends Component<Props, State> {
     focusedDate.setHours(0, 0, 0, 0);
 
     this.state = {
-      id: `id-${window.eid++}`,
+      id: window.uikit.nextId(),
       invalid: false,
       focused: false,
       days: this.genDays(this.props.weekday),

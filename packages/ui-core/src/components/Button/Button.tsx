@@ -16,9 +16,8 @@ interface State {
 export default class Button extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    window.eid = window.eid || 0;
     this.state = {
-      id: `id-${window.eid++}`,
+      id: window.uikit.nextId(),
     };
   }
 

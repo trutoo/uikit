@@ -41,9 +41,8 @@ export default class Select extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.validator = new Validator(this.props.validators);
-    window.eid = window.eid || 0;
     this.state = {
-      id: `id-${window.eid++}`,
+      id: window.uikit.nextId(),
       invalid: false,
       focused: false,
       errors: [],

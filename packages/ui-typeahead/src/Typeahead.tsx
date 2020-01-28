@@ -59,10 +59,9 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
 
   constructor(props: Props<T>) {
     super(props);
-    window.eid = window.eid || 0;
     this.validator = new Validator(props.validators);
     this.state = {
-      id: `id-${window.eid++}`,
+      id: window.uikit.nextId(),
       invalid: false,
       focused: false,
       active: -1,
