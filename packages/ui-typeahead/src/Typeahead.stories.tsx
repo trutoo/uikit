@@ -1,5 +1,5 @@
 import React from 'react';
-import { StateDecorator, Store } from '@sambego/storybook-state';
+import { Store, withState } from '@sambego/storybook-state';
 
 import './Typeahead.css';
 import mock from './mock.json';
@@ -21,7 +21,8 @@ const typeaheadMock: TypeaheadService = {
 
 export default {
   title: 'Typeahead',
-  decorators: [StateDecorator(store)],
+  decorators: [withState()],
+  parameters: { state: { store } },
 };
 
 export const basic = () => (

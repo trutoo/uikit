@@ -1,5 +1,5 @@
 import React from 'react';
-import { StateDecorator, Store } from '@sambego/storybook-state';
+import { Store, withState } from '@sambego/storybook-state';
 
 import './Select.css';
 import Select from './Select';
@@ -45,7 +45,8 @@ const options = [
 
 export default {
   title: 'Select',
-  decorators: [StateDecorator(store)],
+  decorators: [withState()],
+  parameters: { state: { store } },
 };
 
 export const basic = () => (

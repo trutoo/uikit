@@ -1,5 +1,5 @@
 import React from 'react';
-import { StateDecorator, Store } from '@sambego/storybook-state';
+import { Store, withState } from '@sambego/storybook-state';
 
 import './Datepicker.css';
 import Datepicker, { DateValue } from './Datepicker';
@@ -14,7 +14,8 @@ const store = new Store({
 
 export default {
   title: 'Datepicker',
-  decorators: [StateDecorator(store)],
+  decorators: [withState()],
+  parameters: { state: { store } },
 };
 
 export const basic = () => (

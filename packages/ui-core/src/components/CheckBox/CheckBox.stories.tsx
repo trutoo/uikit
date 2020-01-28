@@ -1,5 +1,5 @@
 import React from 'react';
-import { StateDecorator, Store } from '@sambego/storybook-state';
+import { Store, withState } from '@sambego/storybook-state';
 
 import './CheckBox.css';
 import CheckBox from './CheckBox';
@@ -10,7 +10,8 @@ const store = new Store({
 
 export default {
   title: 'CheckBox',
-  decorators: [StateDecorator(store)],
+  decorators: [withState()],
+  parameters: { state: { store } },
 };
 
 export const basic = () => (

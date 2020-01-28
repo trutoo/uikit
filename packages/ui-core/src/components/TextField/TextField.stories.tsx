@@ -1,5 +1,5 @@
 import React from 'react';
-import { StateDecorator, Store } from '@sambego/storybook-state';
+import { Store, withState } from '@sambego/storybook-state';
 
 import './TextField.css';
 import TextField from './TextField';
@@ -11,7 +11,8 @@ const store = new Store({
 
 export default {
   title: 'TextField',
-  decorators: [StateDecorator(store)],
+  decorators: [withState()],
+  parameters: { state: { store } },
 };
 
 export const basic = () => (

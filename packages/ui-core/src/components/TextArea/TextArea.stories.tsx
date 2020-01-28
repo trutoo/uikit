@@ -1,5 +1,5 @@
 import React from 'react';
-import { StateDecorator, Store } from '@sambego/storybook-state';
+import { Store, withState } from '@sambego/storybook-state';
 
 import './TextArea.css';
 import TextArea from './TextArea';
@@ -11,7 +11,8 @@ const store = new Store({
 
 export default {
   title: 'TextArea',
-  decorators: [StateDecorator(store)],
+  decorators: [withState(store)],
+  parameters: { state: { store } },
 };
 
 export const basic = () => (
