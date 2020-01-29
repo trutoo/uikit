@@ -14,7 +14,7 @@
   "bugs": "https://github.com/trutoo/uikit/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/trutoo/uikit.git",
+    "url": "https://github.com/trutoo/uikit.git",
     "directory": "packages/ui-datepicker"
   },
   "contributors": [
