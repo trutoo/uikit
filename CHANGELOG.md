@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.1](https://github.com/trutoo/uikit/compare/v1.15.0...v1.15.1) (2020-01-29)
+
+
+### Bug Fixes
+
+* cleanup metadata ([da43a6a](https://github.com/trutoo/uikit/commit/da43a6a2f884962a9a3fc2b10127225756ee2195))
+
+
+
+
+
 # [1.15.0](https://github.com/trutoo/uikit/compare/v1.14.0...v1.15.0) (2020-01-28)
 
 
