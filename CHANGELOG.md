@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.2](https://github.com/trutoo/uikit/compare/v1.15.1...v1.15.2) (2020-01-29)
+
+
+### Continuous Integration
+
+* updated repository url ([133f8a8](https://github.com/trutoo/uikit/commit/133f8a89a27f55234bce2146e051640e4d5b0ebe))
+
+
+
+
+
 ## [1.15.1](https://github.com/trutoo/uikit/compare/v1.15.0...v1.15.1) (2020-01-29)
 
 
