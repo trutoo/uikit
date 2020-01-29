@@ -14,7 +14,7 @@
     "url": "https://www.trutoo.com/"
   },
   "license": "GPL-3.0",
-  "repository": "git://github.com/trutoo/uikit.git",
+  "repository": "https://github.com/trutoo/uikit.git",
   "bugs": "https://github.com/trutoo/uikit/issues",
   "contributors": [
     {
