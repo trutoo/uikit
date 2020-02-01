@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.15.5](https://github.com/trutoo/uikit/compare/v1.15.4...v1.15.5) (2020-02-01)
+
+
+### Bug Fixes
+
+* added missing elevation helper to base ([d839f7d](https://github.com/trutoo/uikit/commit/d839f7d870a51187d9a3f432931ca932f10a6b8a))
+
+
+
+
+
 ## [1.15.4](https://github.com/trutoo/uikit/compare/v1.15.3...v1.15.4) (2020-02-01)
 
 
