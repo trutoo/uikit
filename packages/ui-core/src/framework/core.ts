@@ -14,14 +14,14 @@ declare global {
 
 (function() {
   // Make sure there is an incremental ID each component can use
-  if (window.uikit) {
+  if (!window.uikit) {
     window.uikit = {
-      ids: { default: 0 },
-      nextId(namespace?: string): string {
-        if (!namespace || namespace == 'default') return `id-${this.ids.default++}`;
-        if (this.ids[namespace]) return `id-${namespace}-${this.ids[namespace]++}`;
-        this.ids[namespace] = 0;
-        return `id-${namespace}-${this.ids[namespace]}`;
+      ids: { default: -1 },
+      nextId(namespace = 'default'): string {
+        let id = this.ids[namespace] || 0;
+        if (typeof this.ids[namespace] == 'number') id++;
+        this.ids[namespace] = id;
+        return namespace == 'default' ? `id-${id}` : `id-${namespace}-${id}`;
       },
     };
   }

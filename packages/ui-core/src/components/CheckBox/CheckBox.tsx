@@ -1,5 +1,6 @@
 import React, { Component, FormEvent, FocusEvent } from 'react';
 import { Icon } from '@trutoo/ui-icons';
+import '../../framework/core';
 import { ValidationExpression } from '../../framework/models';
 import { Validator } from '../../framework/validator';
 
