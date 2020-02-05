@@ -18,8 +18,8 @@ jobs:
 
       - name: Set git user and email
         run: |
-          git config --local user.name "GitHub Action"
-          git config --local user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
 
       - name: Setting up Node.js 12.x
         uses: actions/setup-node@v1
