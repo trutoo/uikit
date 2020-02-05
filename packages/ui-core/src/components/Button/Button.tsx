@@ -1,4 +1,5 @@
 import React, { Component, MouseEvent, HTMLAttributes } from 'react';
+import '../../framework/core';
 
 export type ButtonTypes = 'button' | 'submit' | 'reset' | 'link';
 

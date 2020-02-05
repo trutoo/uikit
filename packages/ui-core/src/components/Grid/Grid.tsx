@@ -24,7 +24,7 @@ export default class Grid extends Component<Props, State> {
     columnsLG?: number,
     columnsXL?: number,
   ) {
-    let base = Array.isArray(columns) ? columns : [];
+    const base = Array.isArray(columns) ? columns : [];
     return {
       'tu-columns': base[0] || columns, // Reverse to avoid attribute becoming an array
       'tu-columns-sm': columnsSM || base[1],
@@ -40,8 +40,7 @@ export default class Grid extends Component<Props, State> {
       <div
         {...this.getColumns(columns, columnsSM, columnsMD, columnsLG, columnsXL)}
         {...rest}
-        className={`tu-grid ${className || ''}`}
-      >
+        className={`tu-grid ${className || ''}`}>
         {children}
       </div>
     );

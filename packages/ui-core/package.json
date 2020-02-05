@@ -1,6 +1,6 @@
 {
   "name": "@trutoo/ui-core",
-  "version": "1.15.2",
+  "version": "1.15.5",
   "keywords": [
     "trutoo",
     "uikit",
@@ -33,6 +33,6 @@
     "postinstall": "node banner.js || echo \"ignore\""
   },
   "dependencies": {
-    "@trutoo/ui-icons": "^1.15.2"
+    "@trutoo/ui-icons": "^1.15.3"
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component, MouseEvent, KeyboardEvent, createRef } from 'react';
 import { Icon } from '@trutoo/ui-icons';
+import '@trutoo/ui-core/dist/framework/core';
 import { Validator, ValidationExpression, Grid } from '@trutoo/ui-core';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
