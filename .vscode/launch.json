@@ -10,18 +10,6 @@
       "name": "Launch Storybook",
       "program": "${workspaceFolder}/node_modules/.bin/start-storybook",
       "skipFiles": ["<node_internals>/**"]
-    },
-    {
-      "type": "chrome",
-      "request": "attach",
-      "name": "Attach to client",
-      "url": "http://localhost:2999*",
-      "webRoot": "${workspaceFolder}/src",
-      "port": 9222,
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack:///*": "${webRoot}/*"
-      }
     }
   ]
 }
