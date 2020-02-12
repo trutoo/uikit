@@ -27,7 +27,6 @@
     "dist/",
     "banner.js"
   ],
-  "type": "module",
   "module": "dist/index.js",
   "scripts": {
     "build": "node ../../scripts/build.js",
