@@ -62,7 +62,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
     super(props);
     this.validator = new Validator(props.validators);
     this.state = {
-      id: window.uikit.nextId(),
+      id: '',
       invalid: false,
       focused: false,
       active: -1,
@@ -73,6 +73,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
   }
 
   componentDidMount() {
+    this.setState({ id: window.uikit.nextId() });
     this.updateValidity(this.props.value);
   }
 

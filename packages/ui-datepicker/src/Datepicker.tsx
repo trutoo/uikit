@@ -66,7 +66,7 @@ export default class Datepicker extends Component<Props, State> {
     focusedDate.setHours(0, 0, 0, 0);
 
     this.state = {
-      id: window.uikit.nextId(),
+      id: '',
       invalid: false,
       focused: false,
       days: this.genDays(this.props.weekday),
@@ -77,6 +77,7 @@ export default class Datepicker extends Component<Props, State> {
   }
 
   componentDidMount() {
+    this.setState({ id: window.uikit.nextId() });
     this.updateValidity(this.props.value);
   }
 

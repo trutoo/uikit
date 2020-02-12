@@ -35,7 +35,7 @@ export default class TextField extends Component<Props, State> {
     super(props);
     this.validator = new Validator(this.props.validators);
     this.state = {
-      id: window.uikit.nextId(),
+      id: '',
       invalid: false,
       focused: false,
       errors: [],
@@ -44,6 +44,7 @@ export default class TextField extends Component<Props, State> {
   }
 
   componentDidMount() {
+    this.setState({ id: window.uikit.nextId() });
     this.updateValidity(this.props.value);
   }
 

@@ -31,7 +31,7 @@ export default class RadioButton extends Component<Props, State> {
     super(props);
     this.validator = new Validator<string>(this.props.validators);
     this.state = {
-      id: window.uikit.nextId(),
+      id: '',
       invalid: false,
       focused: false,
       errors: [],
@@ -39,6 +39,7 @@ export default class RadioButton extends Component<Props, State> {
   }
 
   componentDidMount() {
+    this.setState({ id: window.uikit.nextId() });
     this.updateValidity(this.props.checked ? this.props.value : undefined);
   }
 

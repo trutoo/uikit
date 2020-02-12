@@ -18,8 +18,12 @@ export default class Button extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      id: window.uikit.nextId(),
+      id: '',
     };
+  }
+
+  componentDidMount() {
+    this.setState({ id: window.uikit.nextId() });
   }
 
   private onClick = (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {

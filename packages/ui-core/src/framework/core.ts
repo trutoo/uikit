@@ -14,7 +14,7 @@ declare global {
 
 (function() {
   // Make sure there is an incremental ID each component can use
-  if (!window.uikit) {
+  if (typeof window !== 'undefined' && !window.uikit) {
     window.uikit = {
       ids: { default: -1 },
       nextId(namespace = 'default'): string {
