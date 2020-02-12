@@ -28,6 +28,7 @@
     "banner.js"
   ],
   "module": "dist/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "node ../../scripts/build.js",
     "postinstall": "node banner.js || echo \"ignore\""
