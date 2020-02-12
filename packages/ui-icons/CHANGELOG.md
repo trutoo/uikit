@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/trutoo/uikit/compare/v1.15.6...v1.16.0) (2020-02-12)
+
+
+### Bug Fixes
+
+* reintroduced main beside module for ts resolution ([6ac1461](https://github.com/trutoo/uikit/commit/6ac146194e626820d4fb92ee43fe02fd043820b2))
+* removed type module but kept main > module field ([552caaa](https://github.com/trutoo/uikit/commit/552caaa268ccd14a098e07bab51b576dec55ef9f))
+
+
+### Features
+
+* set package.json to type to module ([6e17960](https://github.com/trutoo/uikit/commit/6e179602ab6caa3fd02256bd76ec6b71cd556738))
+
+
+
+
+
 ## [1.15.6](https://github.com/trutoo/uikit/compare/v1.15.5...v1.15.6) (2020-02-05)
 
 **Note:** Version bump only for package @trutoo/ui-icons
