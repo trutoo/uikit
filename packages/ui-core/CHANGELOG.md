@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/trutoo/uikit/compare/v1.16.1...v1.17.0) (2020-02-14)
+
+
+### Features
+
+* added variables to base and halved shadow strength ([4c7f585](https://github.com/trutoo/uikit/commit/4c7f585cc6bb3014afc1131cb6e115731045b8aa))
+
+
+
+
+
 ## [1.16.1](https://github.com/trutoo/uikit/compare/v1.16.0...v1.16.1) (2020-02-14)
 
 **Note:** Version bump only for package @trutoo/ui-core
