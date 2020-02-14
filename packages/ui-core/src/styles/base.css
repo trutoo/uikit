@@ -2,6 +2,10 @@
 
 @import 'normalize.css';
 
+/* Variables */
+
+@import './variables.css';
+
 /* Helpers */
 
 @import './helpers/elevations.css';

@@ -111,15 +111,15 @@ module.exports = variables => ({
         1,
         1.1,
         level,
-      )}px rgba(0,0,0,0.14), 0 ${exponent(1, 1.25, level)}px ${exponent(1, 1.46, level)}px ${exponent(
+      )}px rgba(0,0,0,0.07), 0 ${exponent(1, 1.25, level)}px ${exponent(1, 1.46, level)}px ${exponent(
         1,
         1.25,
         level,
-      )}px rgba(0,0,0,0.12), 0 ${exponent(1, 1.28, level)}px ${exponent(3, 1.18, level)}px ${exponent(
+      )}px rgba(0,0,0,0.06), 0 ${exponent(1, 1.28, level)}px ${exponent(3, 1.18, level)}px ${exponent(
         -1,
         1.22,
         level,
-      )}px rgba(0,0,0,0.20)`,
+      )}px rgba(0,0,0,0.1)`,
 
       '[data-theme=dark] &': {
         'background-color': `rgba(255, 255, 255, ${exponent(4, 1.15, level) / 100})`,
