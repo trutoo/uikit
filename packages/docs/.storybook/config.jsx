@@ -3,6 +3,12 @@ import { configure, addDecorator, addParameters } from '@storybook/react';
 import addon from '@storybook/addons';
 import { withA11y } from '@storybook/addon-a11y';
 import { themes } from '@storybook/theming';
+import cssVars from 'css-vars-ponyfill';
+
+cssVars({
+  preserveVars: true,
+  watch: true,
+});
 
 import icons from '!raw-loader!@trutoo/ui-icons/dist/symbols.svg';
 

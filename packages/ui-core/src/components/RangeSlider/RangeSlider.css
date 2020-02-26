@@ -1,0 +1,190 @@
+@define-mixin track {
+  height: 6px;
+  color: transparent;
+  cursor: pointer;
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+@define-mixin progress {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+@define-mixin thumb {
+  position: relative;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background: white;
+  box-sizing: border-box;
+  transition: all var(--t_animation);
+}
+
+.tu-rangeslider {
+  position: relative;
+  margin-bottom: 1rem;
+
+  /* FLOATING LABEL
+  ================================================================================ */
+
+  &--label {
+    font-style: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all calc(var(--t_animation) * 0.5) linear;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  /* WRAPPER
+  ================================================================================ */
+
+  &--wrapper {
+    position: relative;
+  }
+
+  /* INPUT FIELD
+  ================================================================================ */
+
+  &--input {
+    appearance: none;
+    width: 100%;
+    padding: 0;
+    height: 48px;
+    outline: none;
+    background: transparent;
+
+    /* TRACKS */
+
+    &::-webkit-slider-runnable-track {
+      @mixin track;
+    }
+
+    &::-moz-range-track {
+      @mixin track;
+    }
+
+    &::-ms-track {
+      @mixin track;
+    }
+
+    /* PROGRESS */
+
+    &-webkit-progress {
+      @mixin progress;
+
+      position: absolute;
+      top: calc((48px - 6px) / 2);
+    }
+
+    &::-moz-range-progress {
+      @mixin progress;
+    }
+
+    &::-ms-fill-lower {
+      @mixin progress;
+    }
+
+    /* THUMB */
+
+    &::-webkit-slider-thumb {
+      @mixin thumb;
+
+      margin-top: -10px;
+    }
+
+    &::-moz-range-thumb {
+      @mixin thumb;
+    }
+
+    &::-ms-thumb {
+      @mixin thumb;
+
+      margin-top: 0;
+    }
+
+    &:active {
+      /* THUMB */
+
+      &::-webkit-slider-thumb {
+        transform: scale(1.25);
+      }
+
+      &::-moz-range-thumb {
+        transform: scale(1.25);
+      }
+
+      &::-ms-thumb {
+        transform: scale(1.25);
+      }
+    }
+  }
+
+  /* ERROR
+  ================================================================================ */
+
+  &--error {
+    position: relative;
+    display: inline-flex;
+    padding: 0.25rem 0;
+    color: var(--c_invalid);
+
+    &::before {
+      @mixin iconBase;
+
+      content: var(--i_warning);
+      margin-right: 0.25em;
+      width: 1em;
+      line-height: 1em;
+      flex-shrink: 0;
+      font-size: 1.5em;
+      text-align: center;
+      vertical-align: middle; /* IE10 Fix */
+    }
+  }
+
+  /* STATES
+  ================================================================================ */
+
+  @define-mixin state $color {
+    & .tu-rangeslider--label {
+      color: $color;
+    }
+
+    & .tu-rangeslider--input {
+    }
+  }
+
+  &.focused {
+    @mixin state var(--c_alpha);
+  }
+
+  &.valid {
+    @mixin state var(--c_valid);
+  }
+
+  &.invalid {
+    @mixin state var(--c_invalid);
+  }
+
+  &.disabled {
+    @mixin state rgba(0, 0, 0, 0.5);
+
+    & .tu-rangeslider--input {
+      cursor: not-allowed;
+      color: rgba(0, 0, 0, 0.5);
+      border-style: dashed;
+    }
+  }
+}

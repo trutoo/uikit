@@ -39,9 +39,10 @@
     "release": "lerna publish from-git --yes"
   },
   "dependencies": {
+    "css-vars-ponyfill": "2.2.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "normalize.css": "^8.0.1"
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@babel/core": "7.8.4",
