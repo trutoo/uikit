@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/trutoo/uikit/compare/v1.17.0...v1.18.0) (2020-02-26)
+
+
+### Features
+
+* added basic range slider ([6f7d1a3](https://github.com/trutoo/uikit/commit/6f7d1a326583350943cdaac2906be79381d0d873))
+
+
+
+
+
 # [1.17.0](https://github.com/trutoo/uikit/compare/v1.16.1...v1.17.0) (2020-02-14)
 
 
