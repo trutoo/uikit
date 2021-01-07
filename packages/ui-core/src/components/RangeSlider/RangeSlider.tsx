@@ -3,7 +3,7 @@ import '../../framework/core';
 import { ValidationExpression } from '../../framework/models';
 import { Validator } from '../../framework/validator';
 
-interface Props {
+export interface RangeSliderProps {
   id?: string;
   className?: string;
   name?: string;
@@ -18,17 +18,17 @@ interface Props {
   onChange?: (event: number) => void;
 }
 
-interface State {
+export interface RangeSliderState {
   id: string;
   invalid: boolean;
   focused: boolean;
   errors: string[];
 }
 
-export default class RangeSlider extends Component<Props, State> {
+export default class RangeSlider extends Component<RangeSliderProps, RangeSliderState> {
   protected validator: Validator<number>;
 
-  constructor(props: Props) {
+  constructor(props: RangeSliderProps) {
     super(props);
     this.validator = new Validator(this.props.validators);
     this.state = {
@@ -44,7 +44,7 @@ export default class RangeSlider extends Component<Props, State> {
     this.updateValidity(this.props.value);
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: RangeSliderProps) {
     if (!Object.is(this.props.validators, prevProps.validators))
       this.validator.replaceValidators(this.props.validators || []);
     if (this.props.value !== prevProps.value) this.updateValidity(this.props.value);

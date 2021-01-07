@@ -1,40 +1,40 @@
+import './Button.css';
+
 import React from 'react';
 
-import './Button.css';
-import Button from './Button';
+import { Meta, Story } from '@storybook/react';
+
+import Button, { ButtonProps } from './Button';
 
 export default {
-  title: 'Button',
+  title: 'UI-Core/Button',
+  component: Button,
+} as Meta;
+
+const Template: Story<ButtonProps> = (props: ButtonProps) => <Button {...props}>Click Me!</Button>;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  className: 'primary',
 };
 
-export const basic = () => <Button onClick={console.log}>Click me!</Button>;
+export const Secondary = Template.bind({});
+Secondary.args = {
+  className: 'secondary',
+};
 
-export const link = () => (
-  <Button type="link" onClick={console.log}>
-    <div>Click me!</div>
-  </Button>
-);
+export const Link = Template.bind({});
+Link.args = {
+  type: 'link',
+};
 
-export const primary = () => (
-  <Button className="primary" onClick={console.log}>
-    Click me!
-  </Button>
-);
+export const DisabledButton = Template.bind({});
+DisabledButton.args = {
+  disabled: true,
+};
 
-export const secondary = () => (
-  <Button className="secondary" onClick={console.log}>
-    Click me!
-  </Button>
-);
-
-export const disabledButton = () => (
-  <Button disabled={true} onClick={console.log}>
-    Click me!
-  </Button>
-);
-
-export const disabledLink = () => (
-  <Button type="link" disabled={true} onClick={console.log}>
-    Click me!
-  </Button>
-);
+export const DisabledLink = Template.bind({});
+DisabledLink.args = {
+  type: 'link',
+  disabled: true,
+};

@@ -26,7 +26,7 @@ const main = async () => {
         repo: url,
         message: `chore(release): documentation v${metadata.version}`,
       },
-      err => {
+      (err) => {
         if (err) reject(err);
         resolve();
       },
@@ -38,7 +38,7 @@ main()
   .then(() => {
     console.log(`\n\x1b[36mSucessfully published documentation to GitHub Pages\x1b[0m\n`);
   })
-  .catch(err => {
+  .catch((err) => {
     if (argv.v || argv.verbose) console.error(err);
     console.error(`\n\x1b[31mFailed to publish documentation to GitHub Pages\x1b[0m\n`);
     process.exit(1);

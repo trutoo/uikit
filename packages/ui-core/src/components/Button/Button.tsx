@@ -1,21 +1,22 @@
-import React, { Component, MouseEvent, HTMLAttributes } from 'react';
 import '../../framework/core';
+
+import React, { Component, HTMLAttributes, MouseEvent } from 'react';
 
 export type ButtonTypes = 'button' | 'submit' | 'reset' | 'link';
 
-interface Props extends HTMLAttributes<HTMLAnchorElement | HTMLButtonElement> {
+export interface ButtonProps extends HTMLAttributes<HTMLAnchorElement | HTMLButtonElement> {
   type?: ButtonTypes;
   href?: string;
   disabled?: boolean;
   onClick?: (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
 }
 
-interface State {
+export interface ButtonState {
   id: string;
 }
 
-export default class Button extends Component<Props, State> {
-  constructor(props: Props) {
+export default class Button extends Component<ButtonProps, ButtonState> {
+  constructor(props: ButtonProps) {
     super(props);
     this.state = {
       id: '',

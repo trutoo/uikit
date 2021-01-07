@@ -4,7 +4,7 @@ import '../../framework/core';
 import { ValidationExpression } from '../../framework/models';
 import { Validator } from '../../framework/validator';
 
-interface Props {
+export interface CheckBoxProps {
   id?: string;
   className?: string;
   name?: string;
@@ -17,17 +17,17 @@ interface Props {
   onChange?: (value: boolean) => void;
 }
 
-interface State {
+export interface CheckBoxState {
   id: string;
   invalid: boolean;
   focused: boolean;
   errors: string[];
 }
 
-export default class CheckBox extends Component<Props, State> {
+export default class CheckBox extends Component<CheckBoxProps, CheckBoxState> {
   protected validator: Validator<boolean>;
 
-  constructor(props: Props) {
+  constructor(props: CheckBoxProps) {
     super(props);
     this.validator = new Validator<boolean>(this.props.validators);
     this.state = {
@@ -43,7 +43,7 @@ export default class CheckBox extends Component<Props, State> {
     this.updateValidity(this.props.checked);
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: CheckBoxProps) {
     if (!Object.is(this.props.validators, prevProps.validators))
       this.validator.replaceValidators(this.props.validators || []);
     if (this.props.checked !== prevProps.checked) this.updateValidity(this.props.checked);

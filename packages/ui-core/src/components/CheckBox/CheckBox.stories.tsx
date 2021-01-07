@@ -1,28 +1,28 @@
-import React from 'react';
-import { Store, withState } from '@sambego/storybook-state';
-
 import './CheckBox.css';
-import CheckBox from './CheckBox';
 
-const store = new Store({
-  checked: false,
-});
+import React from 'react';
+
+import { Meta, Story } from '@storybook/react';
+
+import CheckBox, { CheckBoxProps } from './CheckBox';
 
 export default {
-  title: 'CheckBox',
-  decorators: [withState()],
-  parameters: { state: { store } },
-};
+  title: 'UI-Core/CheckBox',
+  component: CheckBox,
+} as Meta;
 
-export const basic = () => (
+const Template: Story<CheckBoxProps> = (props: CheckBoxProps) => (
   <CheckBox
-    label="Check me!"
-    onChange={state => store.set({ checked: state })}
+    {...props}
     validators={[
-      value => {
+      (value) => {
         return !value ? { required: true } : null;
       },
     ]}
-    inputProps={{ 'aria-label': 'test' }}
   />
 );
+
+export const Basic = Template.bind({});
+Basic.args = {
+  label: 'Check me!',
+};
