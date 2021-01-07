@@ -1,21 +1,24 @@
 {
+  "cSpell.words": ["trutoo", "typeahead", "typeaheads"],
   "css.validate": false,
   "docthis.includeMemberOfOnClassMembers": false,
   "docthis.includeMemberOfOnInterfaceMembers": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "files.insertFinalNewline": true,
   "html.format.wrapAttributes": "force",
+  "javascript.preferences.importModuleSpecifier": "relative",
   "scss.validate": false,
   "search.exclude": {
-    "**/package-lock.json": true,
-    "**/node_modules": true,
     "**/dist": true,
-    "**/docs": true
+    "**/docs": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true
   },
   "stylelint.enable": true,
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.format.insertSpaceBeforeFunctionParenthesis": false,
-  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-  "cSpell.words": ["trutoo", "typeahead", "typeaheads"],
+  "tsImportSorter.configuration.maxDefaultAndBindingNamesPerLine": 0,
   "typescript.preferences.importModuleSpecifier": "relative",
-  "javascript.preferences.importModuleSpecifier": "relative"
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
