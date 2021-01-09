@@ -1,6 +1,6 @@
 {
   "name": "@trutoo/ui-datepicker",
-  "version": "1.18.0",
+  "version": "1.18.1",
   "keywords": [
     "trutoo",
     "uikit",
@@ -32,8 +32,8 @@
     "build": "node ../../scripts/build.js"
   },
   "dependencies": {
-    "@trutoo/ui-core": "^1.18.0",
-    "@trutoo/ui-icons": "^1.17.0",
+    "@trutoo/ui-core": "^1.18.1",
+    "@trutoo/ui-icons": "^1.18.1",
     "moment": "2.24.0",
     "scroll-into-view-if-needed": "^2.2.20"
   }
