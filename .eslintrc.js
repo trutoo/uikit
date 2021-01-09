@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   extends: [
     'eslint:recommended', // Default base
@@ -13,13 +14,14 @@ module.exports = {
     sourceType: 'module', // Allows for the use of imports
   },
   rules: {
-    /* Important */
+    /* Prettier */
     'prettier/prettier': ['warn'],
+    /* General */
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    /* General */
     'lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: true }],
     /* TypeScript */
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
@@ -42,6 +44,10 @@ module.exports = {
       },
     },
   ],
+  env: {
+    es6: true,
+    node: true,
+  },
   settings: {
     react: {
       version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
