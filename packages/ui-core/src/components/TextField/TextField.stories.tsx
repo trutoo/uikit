@@ -1,9 +1,11 @@
+import './TextField.css';
+
 import React from 'react';
+
 import { Store, withState } from '@sambego/storybook-state';
 
-import './TextField.css';
-import TextField from './TextField';
 import { Validator } from '../../framework/validator';
+import TextField from './TextField';
 
 const store = new Store({
   value: '',
@@ -18,7 +20,7 @@ export default {
 export const basic = () => (
   <TextField
     label="Text here!"
-    onChange={state => store.set({ value: state })}
+    onChange={(state) => store.set({ value: state })}
     validators={[Validator.required()]}
     helpText="Libero alias voluptatem ipsa nemo facilis veritatis ab soluta et."
   />

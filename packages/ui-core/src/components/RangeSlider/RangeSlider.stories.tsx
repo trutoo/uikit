@@ -1,9 +1,11 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
-
 import './RangeSlider.css';
-import RangeSlider, { RangeSliderProps } from './RangeSlider';
+
+import React from 'react';
+
+import { Meta, Story } from '@storybook/react';
+
 import { Validator } from '../../framework/validator';
+import RangeSlider, { RangeSliderProps } from './RangeSlider';
 
 export default {
   title: 'UI-Core/RangeSlider',
@@ -11,11 +13,7 @@ export default {
 } as Meta;
 
 const Template: Story<RangeSliderProps> = (props: RangeSliderProps) => (
-  <RangeSlider
-    {...props}
-    label="Text here!"
-    validators={[Validator.required()]}
-  />
+  <RangeSlider {...props} label="Text here!" validators={[Validator.required()]} />
 );
 //onChange={state => store.set({ value: state })}
 

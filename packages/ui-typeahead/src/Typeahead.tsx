@@ -1,8 +1,11 @@
-import React, { Component, FormEvent, KeyboardEvent, createRef } from 'react';
-import { Icon } from '@trutoo/ui-icons';
 import '@trutoo/ui-core/dist/framework/core';
-import { Validator, ValidationExpression } from '@trutoo/ui-core';
+
+import React, { Component, createRef, FormEvent, KeyboardEvent } from 'react';
+
 import scrollIntoView from 'scroll-into-view-if-needed';
+
+import { ValidationExpression, Validator } from '@trutoo/ui-core';
+import { Icon } from '@trutoo/ui-icons';
 
 export type TypeaheadResult = {
   id: string;
@@ -265,7 +268,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
     const reqIndex = ++this.reqIndex;
     this.props.service
       .search(query)
-      .then(results => {
+      .then((results) => {
         // If service can't be reached and error is caught result will be void
         if (!results) return;
         const result = results[0];
@@ -412,7 +415,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
           style={{ maxHeight: this.props.resultHeight ? `${this.props.resultHeight}rem` : undefined }}>
           {this.state.results.map((result, i) => (
             <li
-              ref={ref => (this.resultRefs[i] = ref)}
+              ref={(ref) => (this.resultRefs[i] = ref)}
               id={this.state.id + '-result-' + i}
               className="tu-typeahead--results-item"
               role="option"
@@ -426,7 +429,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
 
         {this.state.invalid && this.state.errors.length && (
           <label className="tu-typeahead--error" htmlFor={this.state.id}>
-            {this.state.errors.map(error => (
+            {this.state.errors.map((error) => (
               <span key={error}>{'errors.field.' + error}</span>
             ))}
           </label>

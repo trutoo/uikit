@@ -1,5 +1,7 @@
-import React, { Component, FormEvent, FocusEvent } from 'react';
 import '../../framework/core';
+
+import React, { Component, FocusEvent, FormEvent } from 'react';
+
 import { ValidationExpression } from '../../framework/models';
 import { Validator } from '../../framework/validator';
 
@@ -129,7 +131,7 @@ export default class RangeSlider extends Component<RangeSliderProps, RangeSlider
         </div>
         {this.state.invalid && this.state.errors.length && (
           <label className="tu-rangeslider--error" htmlFor={this.state.id}>
-            {this.state.errors.map(error => (
+            {this.state.errors.map((error) => (
               <span key={error}>{'errors.field.' + error}</span>
             ))}
           </label>

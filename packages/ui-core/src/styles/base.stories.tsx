@@ -1,6 +1,6 @@
-import React from 'react';
-
 import './base.css';
+
+import React from 'react';
 
 export default {
   title: 'Base',

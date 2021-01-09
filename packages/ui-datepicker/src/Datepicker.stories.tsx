@@ -1,7 +1,9 @@
+import './Datepicker.css';
+
 import React from 'react';
+
 import { Store, withState } from '@sambego/storybook-state';
 
-import './Datepicker.css';
 import Datepicker, { DateValue } from './Datepicker';
 
 const date = new Date();
@@ -22,8 +24,8 @@ export const basic = () => (
   <Datepicker
     label="Datepicker"
     weekday="short"
-    onChange={state => store.set({ value: state })}
-    validators={[value => (!value || !value.date ? { required: true } : null)]}
+    onChange={(state) => store.set({ value: state })}
+    validators={[(value) => (!value || !value.date ? { required: true } : null)]}
   />
 );
 
@@ -32,8 +34,8 @@ export const past = () => (
     label="Datepicker"
     weekday="short"
     enablePastDates={true}
-    onChange={state => store.set({ value: state })}
-    validators={[value => (!value || !value.date ? { required: true } : null)]}
+    onChange={(state) => store.set({ value: state })}
+    validators={[(value) => (!value || !value.date ? { required: true } : null)]}
   />
 );
 
@@ -42,7 +44,7 @@ export const span = () => (
     label="Datepicker"
     weekday="short"
     span={true}
-    onChange={state => store.set({ value: state })}
-    validators={[value => (!value || !value.date ? { required: true } : null)]}
+    onChange={(state) => store.set({ value: state })}
+    validators={[(value) => (!value || !value.date ? { required: true } : null)]}
   />
 );

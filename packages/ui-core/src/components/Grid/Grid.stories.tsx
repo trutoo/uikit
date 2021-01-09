@@ -1,6 +1,7 @@
+import './Grid.css';
+
 import React from 'react';
 
-import './Grid.css';
 import Grid from './Grid';
 
 export default {

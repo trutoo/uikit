@@ -17,7 +17,7 @@ module.exports = ({ options, env }) => {
         addModulesDirectories: ['node_modules'],
         resolve: (id, basedir, importOptions) => {
           return id.charAt(0) === '/'
-            ? importOptions.path.map(path => {
+            ? importOptions.path.map((path) => {
                 return path + id;
               })
             : id;

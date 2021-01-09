@@ -1,8 +1,15 @@
-import React, { Component, MouseEvent, KeyboardEvent, createRef } from 'react';
-import { Icon } from '@trutoo/ui-icons';
 import '@trutoo/ui-core/dist/framework/core';
-import { Validator, ValidationExpression, Grid } from '@trutoo/ui-core';
+
+import React, { Component, createRef, KeyboardEvent, MouseEvent } from 'react';
+
 import scrollIntoView from 'scroll-into-view-if-needed';
+
+import {
+  Grid,
+  ValidationExpression,
+  Validator,
+} from '@trutoo/ui-core';
+import { Icon } from '@trutoo/ui-icons';
 
 import { Utilities } from './Utilities';
 
@@ -414,39 +421,39 @@ export default class Datepicker extends Component<Props, State> {
         {this.state.dates && (
           <Grid className="tu-datepicker--select" columns={7} id={`${this.state.id}-results`}>
             {/* PREVIOUS */}
-            <svg className="tu-datepicker--select-button" onMouseDown={event => this.onChangeMonth(event, -1)}>
+            <svg className="tu-datepicker--select-button" onMouseDown={(event) => this.onChangeMonth(event, -1)}>
               <use xlinkHref="#icon-arrow-left-circle" />
             </svg>
 
             {/* MONTH */}
             <strong className="tu-datepicker--select-month">
-              {Utilities.transform(this.state.focusedDate, 'MMMM YYYY').replace(/^\w/, c => c.toUpperCase())}
+              {Utilities.transform(this.state.focusedDate, 'MMMM YYYY').replace(/^\w/, (c) => c.toUpperCase())}
             </strong>
 
             {/* NEXT */}
-            <svg className="tu-datepicker--select-button" onMouseDown={event => this.onChangeMonth(event, 1)}>
+            <svg className="tu-datepicker--select-button" onMouseDown={(event) => this.onChangeMonth(event, 1)}>
               <use xlinkHref="#icon-arrow-right-circle" />
             </svg>
 
             {/* WEEK DAYS */}
-            {this.state.days.map(day => (
+            {this.state.days.map((day) => (
               <strong key={day} className="tu-datepicker--select-days">
                 {day}
               </strong>
             ))}
 
             {/* DATES */}
-            {this.state.dates.map(date => {
+            {this.state.dates.map((date) => {
               const key = date.getTime();
               return (
                 <span
                   key={key}
-                  ref={ref => (this.dateRefs[key] = ref)}
+                  ref={(ref) => (this.dateRefs[key] = ref)}
                   className={`tu-datepicker--select-dates ${this.genDateState(date)}`}
                   id={`${this.state.id}-result-${key}`}
                   role="option"
                   tabIndex={-1}
-                  onMouseDown={event => this.onSelectDate(event, date)}
+                  onMouseDown={(event) => this.onSelectDate(event, date)}
                   aria-selected={this.isDateSelected(date)}
                   aria-disabled={!this.isDateEnabled(date)}>
                   {Utilities.transform(date, 'D')}
@@ -458,7 +465,7 @@ export default class Datepicker extends Component<Props, State> {
 
         {this.state.invalid && this.state.errors.length && (
           <label className="tu-datepicker--error" htmlFor={this.state.id}>
-            {this.state.errors.map(error => (
+            {this.state.errors.map((error) => (
               <span key={error}>{'errors.field.' + error}</span>
             ))}
           </label>

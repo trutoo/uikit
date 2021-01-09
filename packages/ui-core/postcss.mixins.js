@@ -1,7 +1,7 @@
 const exponent = (base, exponent, level) => Math.round(base * Math.pow(exponent, level));
 
-module.exports = variables => ({
-  iconBase: mixin => {
+module.exports = (variables) => ({
+  iconBase: (mixin) => {
     return {
       'line-height': 1,
       'font-weight': 'normal',
@@ -23,7 +23,7 @@ module.exports = variables => ({
 
   /* GENERATORS */
 
-  genVariables: mixin => {
+  genVariables: (mixin) => {
     return {
       ':root': {
         ...variables.base,
@@ -34,10 +34,10 @@ module.exports = variables => ({
     };
   },
 
-  genIcons: mixin => {
-    const icons = Object.keys(variables.base).filter(key => key.startsWith('--i'));
+  genIcons: (mixin) => {
+    const icons = Object.keys(variables.base).filter((key) => key.startsWith('--i'));
     const generated = {};
-    icons.forEach(icon => {
+    icons.forEach((icon) => {
       const className = icon.replace('--i_', '.icon-').replace('_', '-');
       generated[`${className}::before`] = {
         content: variables.base[icon],
@@ -48,7 +48,7 @@ module.exports = variables => ({
 
   /* CLEARFOCUS */
 
-  clearfocus: mixin => {
+  clearfocus: (mixin) => {
     return {
       '&:focus': {
         color: 'inherit',
@@ -59,7 +59,7 @@ module.exports = variables => ({
 
   /* CLEARFIX */
 
-  clearfix: mixin => {
+  clearfix: (mixin) => {
     return {
       '&::after': {
         display: 'block',

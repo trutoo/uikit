@@ -11,13 +11,13 @@ export class Validator<T> {
 
   addValidator(...validator: ValidationExpression<T>[]) {
     const validators = new Set(this.validators);
-    validator.forEach(validator => validators.add(validator));
+    validator.forEach((validator) => validators.add(validator));
     return (this.validators = validators);
   }
 
   removeValidator(...validator: ValidationExpression<T>[]) {
     const validators = new Set(this.validators);
-    validator.forEach(validator => validators.delete(validator));
+    validator.forEach((validator) => validators.delete(validator));
     return (this.validators = validators);
   }
 
@@ -27,7 +27,7 @@ export class Validator<T> {
 
   validate(value: T | undefined) {
     let result: ValidationResult = {};
-    this.validators.forEach(validator => {
+    this.validators.forEach((validator) => {
       result = Object.assign(result, validator(value));
     });
     return result ? Object.keys(result) : [];
@@ -40,31 +40,29 @@ export class Validator<T> {
   /* PRESETS */
 
   static required(match?: any): ValidationExpression<any> {
-    return value =>
-      (typeof match !== 'undefined'
-      ? value !== match
-      : Validator.IsEmpty(value))
+    return (value) =>
+      (typeof match !== 'undefined' ? value !== match : Validator.IsEmpty(value))
         ? { required: typeof match !== 'undefined' ? match : true }
         : null;
   }
 
   static min(limit: number): ValidationExpression<number> {
-    return value => ((value || 0) < limit ? { min: { current: value || 0, expected: limit } } : null);
+    return (value) => ((value || 0) < limit ? { min: { current: value || 0, expected: limit } } : null);
   }
 
   static max(limit: number): ValidationExpression<number> {
-    return value => ((value || 0) > limit ? { max: { current: value || 0, expected: limit } } : null);
+    return (value) => ((value || 0) > limit ? { max: { current: value || 0, expected: limit } } : null);
   }
 
   static minLength(limit: number): ValidationExpression<string> {
-    return value => {
+    return (value) => {
       const length = value ? value.length : 0;
       return length < limit ? { minLength: { current: length, expected: limit } } : null;
     };
   }
 
   static maxLength(limit: number): ValidationExpression<string> {
-    return value => {
+    return (value) => {
       const length = value ? value.length : 0;
       return length > limit ? { minLength: { current: length, expected: limit } } : null;
     };
@@ -82,7 +80,7 @@ export class Validator<T> {
       regexp = expression;
       regexStr = expression.toString();
     }
-    return value => (value && regexp.test(value) ? { pattern: { current: value, required: regexStr } } : null);
+    return (value) => (value && regexp.test(value) ? { pattern: { current: value, required: regexStr } } : null);
   }
 
   /* PATTERNS */

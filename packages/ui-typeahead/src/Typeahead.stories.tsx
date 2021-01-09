@@ -1,7 +1,9 @@
+import './Typeahead.css';
+
 import React from 'react';
+
 import { Store, withState } from '@sambego/storybook-state';
 
-import './Typeahead.css';
 import mock from './mock.json';
 import Typeahead, { TypeaheadResult, TypeaheadService } from './Typeahead';
 
@@ -29,8 +31,8 @@ export const basic = () => (
   <Typeahead
     service={typeaheadMock}
     label="Typeahead"
-    onChange={state => store.set({ value: state })}
-    validators={[value => (!value || !value.id ? { required: true } : null)]}
+    onChange={(state) => store.set({ value: state })}
+    validators={[(value) => (!value || !value.id ? { required: true } : null)]}
   />
 );
 
@@ -39,8 +41,8 @@ export const inline = () => (
     service={typeaheadMock}
     label="Typeahead"
     inline={true}
-    onChange={state => store.set({ value: state })}
-    validators={[value => (!value || !value.id ? { required: true } : null)]}
+    onChange={(state) => store.set({ value: state })}
+    validators={[(value) => (!value || !value.id ? { required: true } : null)]}
   />
 );
 
@@ -49,7 +51,7 @@ export const searchOnFocus = () => (
     service={typeaheadMock}
     label="Typeahead"
     searchOnFocus={true}
-    onChange={state => store.set({ value: state })}
-    validators={[value => (!value || !value.id ? { required: true } : null)]}
+    onChange={(state) => store.set({ value: state })}
+    validators={[(value) => (!value || !value.id ? { required: true } : null)]}
   />
 );

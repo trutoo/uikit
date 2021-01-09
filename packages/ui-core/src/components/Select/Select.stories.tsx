@@ -1,9 +1,11 @@
+import './Select.css';
+
 import React from 'react';
+
 import { Store, withState } from '@sambego/storybook-state';
 
-import './Select.css';
-import Select from './Select';
 import { Validator } from '../../framework/validator';
+import Select from './Select';
 
 const store = new Store({
   value: '',
@@ -54,7 +56,7 @@ export const basic = () => (
     label="Select me!"
     options={options}
     placeholder={'Choose option in list'}
-    onChange={state => store.set({ value: state })}
+    onChange={(state) => store.set({ value: state })}
     validators={[Validator.required()]}
   />
 );

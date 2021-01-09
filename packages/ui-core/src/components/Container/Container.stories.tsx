@@ -1,6 +1,7 @@
+import './Container.css';
+
 import React from 'react';
 
-import './Container.css';
 import Container from './Container';
 
 export default {

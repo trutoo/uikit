@@ -1,4 +1,4 @@
-module.exports = variables => ({
+module.exports = (variables) => ({
   /* BREAKPOINTS */
   '--b_xs': `screen and (max-width: ${variables.base['--d_xs']})`,
   '--b_sm': `screen and (min-width: ${variables.base['--d_sm']})`,

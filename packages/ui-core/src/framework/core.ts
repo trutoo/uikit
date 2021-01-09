@@ -12,7 +12,7 @@ declare global {
   }
 }
 
-(function() {
+(function () {
   // Make sure there is an incremental ID each component can use
   if (typeof window !== 'undefined' && !window.uikit) {
     window.uikit = {
