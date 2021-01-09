@@ -7,7 +7,7 @@ import { Icon } from '@trutoo/ui-icons';
 import { ValidationExpression } from '../../framework/models';
 import { Validator } from '../../framework/validator';
 
-interface Props {
+export interface RadioButtonProps {
   id?: string;
   className?: string;
   name?: string;
@@ -20,17 +20,17 @@ interface Props {
   onChange?: (state: string | undefined) => void;
 }
 
-interface State {
+export interface RadioButtonState {
   id: string;
   invalid: boolean;
   focused: boolean;
   errors: string[];
 }
 
-export default class RadioButton extends Component<Props, State> {
+export default class RadioButton extends Component<RadioButtonProps, RadioButtonState> {
   protected validator: Validator<string>;
 
-  constructor(props: Props) {
+  constructor(props: RadioButtonProps) {
     super(props);
     this.validator = new Validator<string>(this.props.validators);
     this.state = {
@@ -46,7 +46,7 @@ export default class RadioButton extends Component<Props, State> {
     this.updateValidity(this.props.checked ? this.props.value : undefined);
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: RadioButtonProps) {
     if (!Object.is(this.props.validators, prevProps.validators))
       this.validator.replaceValidators(this.props.validators || []);
     if (this.props.checked !== prevProps.checked)

@@ -2,26 +2,26 @@ import './TextField.css';
 
 import React from 'react';
 
-import { Store, withState } from '@sambego/storybook-state';
+import { Meta, Story } from '@storybook/react';
 
 import { Validator } from '../../framework/validator';
-import TextField from './TextField';
-
-const store = new Store({
-  value: '',
-});
+import TextField, { TextFieldProps } from './TextField';
 
 export default {
-  title: 'TextField',
-  decorators: [withState()],
-  parameters: { state: { store } },
-};
+  title: 'UI-Core/TextField',
+  component: TextField,
+} as Meta;
 
-export const basic = () => (
+const Template: Story<TextFieldProps> = (props: TextFieldProps) => (
   <TextField
-    label="Text here!"
-    onChange={(state) => store.set({ value: state })}
+    {...props}
+    //onChange={(state) => store.set({ value: state })}
     validators={[Validator.required()]}
-    helpText="Libero alias voluptatem ipsa nemo facilis veritatis ab soluta et."
   />
 );
+
+export const Basic = Template.bind({});
+Basic.args = {
+  label: 'Text here!',
+  helpText: 'Libero alias voluptatem ipsa nemo facilis veritatis ab soluta et.',
+};

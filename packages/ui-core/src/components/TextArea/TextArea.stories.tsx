@@ -2,26 +2,25 @@ import './TextArea.css';
 
 import React from 'react';
 
-import { Store, withState } from '@sambego/storybook-state';
+import { Meta, Story } from '@storybook/react';
 
 import { Validator } from '../../framework/validator';
-import TextArea from './TextArea';
-
-const store = new Store({
-  value: '',
-});
+import TextArea, { TextAreaProps } from './TextArea';
 
 export default {
-  title: 'TextArea',
-  decorators: [withState(store)],
-  parameters: { state: { store } },
-};
+  title: 'UI-Core/TextArea',
+  component: TextArea,
+} as Meta;
 
-export const basic = () => (
+const Template: Story<TextAreaProps> = (props: TextAreaProps) => (
   <TextArea
-    label="Paragraph here!"
-    onChange={(state) => store.set({ value: state })}
+    {...props}
+    //onChange={(state) => store.set({ value: state })}
     validators={[Validator.required()]}
-    inputProps={{ 'aria-label': 'test' }}
   />
 );
+
+export const Basic = Template.bind({});
+Basic.args = {
+  label: 'Paragraph here!',
+};

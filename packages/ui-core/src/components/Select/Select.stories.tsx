@@ -2,14 +2,10 @@ import './Select.css';
 
 import React from 'react';
 
-import { Store, withState } from '@sambego/storybook-state';
+import { Meta, Story } from '@storybook/react';
 
 import { Validator } from '../../framework/validator';
-import Select from './Select';
-
-const store = new Store({
-  value: '',
-});
+import Select, { SelectProps } from './Select';
 
 const options = [
   {
@@ -46,17 +42,21 @@ const options = [
 ];
 
 export default {
-  title: 'Select',
-  decorators: [withState()],
-  parameters: { state: { store } },
-};
+  title: 'UI-Core/Select',
+  component: Select,
+} as Meta;
 
-export const basic = () => (
+const Template: Story<SelectProps> = (props: SelectProps) => (
   <Select
-    label="Select me!"
-    options={options}
-    placeholder={'Choose option in list'}
-    onChange={(state) => store.set({ value: state })}
+    {...props}
+    //onChange={(state) => store.set({ value: state })}
     validators={[Validator.required()]}
   />
 );
+
+export const Basic = Template.bind({});
+Basic.args = {
+  label: 'Select me!',
+  options: options,
+  placeholder: 'Choose option in list',
+};

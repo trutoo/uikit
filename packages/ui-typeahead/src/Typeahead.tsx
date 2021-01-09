@@ -16,7 +16,7 @@ export interface TypeaheadService<T extends TypeaheadResult = TypeaheadResult> {
   search: (query: string) => Promise<T[] | void>;
 }
 
-interface Props<T extends TypeaheadResult = TypeaheadResult> {
+export interface TypeaheadProps<T extends TypeaheadResult = TypeaheadResult> {
   id?: string;
   className?: string;
   name?: string;
@@ -39,7 +39,7 @@ interface Props<T extends TypeaheadResult = TypeaheadResult> {
   onChange?: (event: T | undefined) => void;
 }
 
-interface State<T extends TypeaheadResult = TypeaheadResult> {
+export interface TypeaheadState<T extends TypeaheadResult = TypeaheadResult> {
   id: string;
   invalid: boolean;
   focused: boolean;
@@ -49,7 +49,10 @@ interface State<T extends TypeaheadResult = TypeaheadResult> {
   errors: string[];
 }
 
-export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> extends Component<Props<T>, State<T>> {
+export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> extends Component<
+  TypeaheadProps<T>,
+  TypeaheadState<T>
+> {
   static ALWAYS_FLOATING = ['date', 'time', 'datetime', 'datetime-local'];
 
   protected inputRef = createRef<HTMLInputElement>();
@@ -61,7 +64,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
   protected allowFill = false;
   protected cachedInput = '';
 
-  constructor(props: Props<T>) {
+  constructor(props: TypeaheadProps<T>) {
     super(props);
     this.validator = new Validator(props.validators);
     this.state = {
@@ -80,7 +83,7 @@ export default class Typeahead<T extends TypeaheadResult = TypeaheadResult> exte
     this.updateValidity(this.props.value);
   }
 
-  componentDidUpdate(prevProps: Props<T>) {
+  componentDidUpdate(prevProps: TypeaheadProps<T>) {
     if (!Object.is(this.props.validators, prevProps.validators))
       this.validator.replaceValidators(this.props.validators || []);
     if (this.props.value !== prevProps.value) this.updateValidity(this.props.value);

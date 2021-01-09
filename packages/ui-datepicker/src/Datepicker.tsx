@@ -18,7 +18,7 @@ export interface DateValue {
   secondaryDate?: Date;
 }
 
-interface Props {
+export interface DatepickerProps {
   id?: string;
   className?: string;
   name?: string;
@@ -41,7 +41,7 @@ interface Props {
   onChange?: (event: DateValue | undefined) => void;
 }
 
-interface State {
+export interface DatepickerState {
   id: string;
   invalid: boolean;
   focused: boolean;
@@ -51,7 +51,7 @@ interface State {
   errors: string[];
 }
 
-export default class Datepicker extends Component<Props, State> {
+export default class Datepicker extends Component<DatepickerProps, DatepickerState> {
   protected inputRef = createRef<HTMLInputElement>();
   protected dateRefs: { [timestamp: number]: HTMLSpanElement | null } = {};
   protected validator: Validator<DateValue>;
@@ -61,7 +61,7 @@ export default class Datepicker extends Component<Props, State> {
 
   protected selectingSpan = false;
 
-  constructor(props: Props) {
+  constructor(props: DatepickerProps) {
     super(props);
     this.todaysDate = new Date();
     this.todaysDate.setHours(0, 0, 0, 0);
@@ -88,7 +88,7 @@ export default class Datepicker extends Component<Props, State> {
     this.updateValidity(this.props.value);
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: DatepickerProps) {
     if (!Object.is(this.props.validators, prevProps.validators))
       this.validator.replaceValidators(this.props.validators || []);
     if (this.props.value !== prevProps.value) {

@@ -2,11 +2,13 @@ import './base.css';
 
 import React from 'react';
 
-export default {
-  title: 'Base',
-};
+import { Meta, Story } from '@storybook/react';
 
-export const basic = () => (
+export default {
+  title: 'UI-Core/Base',
+} as Meta;
+
+const Template: Story = () => (
   <div id="top" className="tu-container" role="document">
     <header role="banner">
       <h1>HTML5 Test Page</h1>
@@ -583,3 +585,6 @@ export const article = () => (
     </p>
   </div>
 );
+
+export const Basic = Template.bind({});
+Basic.args = {};

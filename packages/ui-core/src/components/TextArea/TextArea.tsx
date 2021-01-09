@@ -5,7 +5,7 @@ import React, { Component, FocusEvent, FormEvent } from 'react';
 import { ValidationExpression } from '../../framework/models';
 import { Validator } from '../../framework/validator';
 
-interface Props {
+export interface TextAreaProps {
   id?: string;
   className?: string;
   name?: string;
@@ -18,17 +18,17 @@ interface Props {
   onChange?: (event: string) => void;
 }
 
-interface State {
+export interface TextAreaState {
   id: string;
   invalid: boolean;
   focused: boolean;
   errors: string[];
 }
 
-export default class TextArea extends Component<Props, State> {
+export default class TextArea extends Component<TextAreaProps, TextAreaState> {
   protected validator: Validator<string>;
 
-  constructor(props: Props) {
+  constructor(props: TextAreaProps) {
     super(props);
     this.validator = new Validator(this.props.validators);
     this.state = {
@@ -44,7 +44,7 @@ export default class TextArea extends Component<Props, State> {
     this.updateValidity(this.props.value);
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: TextAreaProps) {
     if (!Object.is(this.props.validators, prevProps.validators))
       this.validator.replaceValidators(this.props.validators || []);
     if (this.props.value !== prevProps.value) this.updateValidity(this.props.value);

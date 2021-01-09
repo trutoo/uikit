@@ -7,7 +7,7 @@ import { Icon } from '@trutoo/ui-icons';
 import { ValidationExpression } from '../../framework/models';
 import { Validator } from '../../framework/validator';
 
-interface Props {
+export interface TextFieldProps {
   id?: string;
   className?: string;
   name?: string;
@@ -21,7 +21,7 @@ interface Props {
   onChange?: (event: string) => void;
 }
 
-interface State {
+export interface TextFieldState {
   id: string;
   invalid: boolean;
   focused: boolean;
@@ -29,12 +29,12 @@ interface State {
   showHelp: boolean;
 }
 
-export default class TextField extends Component<Props, State> {
+export default class TextField extends Component<TextFieldProps, TextFieldState> {
   static ALWAYS_FLOATING = ['date', 'time', 'datetime', 'datetime-local'];
 
   protected validator: Validator<string>;
 
-  constructor(props: Props) {
+  constructor(props: TextFieldProps) {
     super(props);
     this.validator = new Validator(this.props.validators);
     this.state = {
@@ -51,7 +51,7 @@ export default class TextField extends Component<Props, State> {
     this.updateValidity(this.props.value);
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: TextFieldProps) {
     if (!Object.is(this.props.validators, prevProps.validators))
       this.validator.replaceValidators(this.props.validators || []);
     if (this.props.value !== prevProps.value) this.updateValidity(this.props.value);

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Meta, Story } from '@storybook/react';
+
 /* Styles added by individual stories */
 import Button from './Button/Button';
 import CheckBox from './CheckBox/CheckBox';
@@ -9,8 +11,8 @@ import TextArea from './TextArea/TextArea';
 import TextField from './TextField/TextField';
 
 export default {
-  title: 'Form',
-};
+  title: 'UI-Core/Form',
+} as Meta;
 
 const options = [
   {
@@ -28,7 +30,7 @@ const options = [
   },
 ];
 
-export const basic = () => (
+const Template: Story = () => (
   <form className="tu-grid">
     <TextField label="Text field" />
     <Select label="Select field" options={options} />
@@ -60,3 +62,6 @@ export const basic = () => (
     </menu>
   </form>
 );
+
+export const Basic = Template.bind({});
+Basic.args = {};

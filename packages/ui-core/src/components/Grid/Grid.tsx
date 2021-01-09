@@ -1,6 +1,6 @@
 import React, { Component, HTMLAttributes } from 'react';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface GridProps extends HTMLAttributes<HTMLDivElement> {
   columns?: number | number[];
   columnsSM?: number;
   columnsMD?: number;
@@ -8,10 +8,10 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   columnsXL?: number;
 }
 
-interface State {}
+export interface GridState {}
 
-export default class Grid extends Component<Props, State> {
-  constructor(props: Props) {
+export default class Grid extends Component<GridProps, GridState> {
+  constructor(props: GridProps) {
     super(props);
 
     this.state = {};

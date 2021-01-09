@@ -17,7 +17,7 @@ export interface OptionGroup {
   options: Option[];
 }
 
-interface Props {
+export interface SelectProps {
   id?: string;
   className?: string;
   name?: string;
@@ -31,17 +31,17 @@ interface Props {
   onChange?: (event: string) => void;
 }
 
-interface State {
+export interface SelectState {
   id: string;
   invalid: boolean;
   focused: boolean;
   errors: string[];
 }
 
-export default class Select extends Component<Props, State> {
+export default class Select extends Component<SelectProps, SelectState> {
   protected validator: Validator<string>;
 
-  constructor(props: Props) {
+  constructor(props: SelectProps) {
     super(props);
     this.validator = new Validator(this.props.validators);
     this.state = {
@@ -57,7 +57,7 @@ export default class Select extends Component<Props, State> {
     this.updateValidity(this.props.value);
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: SelectProps) {
     if (!Object.is(this.props.validators, prevProps.validators))
       this.validator.replaceValidators(this.props.validators || []);
     if (this.props.value !== prevProps.value) this.updateValidity(this.props.value);

@@ -15,6 +15,7 @@ export interface ButtonState {
   id: string;
 }
 
+/** This is a basic button implementation */
 export default class Button extends Component<ButtonProps, ButtonState> {
   constructor(props: ButtonProps) {
     super(props);

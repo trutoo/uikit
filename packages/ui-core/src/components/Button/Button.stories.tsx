@@ -28,13 +28,13 @@ Link.args = {
   type: 'link',
 };
 
-export const DisabledButton = Template.bind({});
-DisabledButton.args = {
+export const Disabled = Template.bind({});
+Disabled.args = {
   disabled: true,
 };
 
-export const DisabledLink = Template.bind({});
-DisabledLink.args = {
+export const LinkDisabled = Template.bind({});
+LinkDisabled.args = {
   type: 'link',
   disabled: true,
 };

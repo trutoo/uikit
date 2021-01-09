@@ -13,9 +13,13 @@ export default {
 } as Meta;
 
 const Template: Story<RangeSliderProps> = (props: RangeSliderProps) => (
-  <RangeSlider {...props} label="Text here!" validators={[Validator.required()]} />
+  <RangeSlider
+    {...props}
+    label="Text here!"
+    validators={[Validator.required()]}
+    //onChange={state => store.set({ value: state })}
+  />
 );
-//onChange={state => store.set({ value: state })}
 
 export const Basic = Template.bind({});
 Basic.args = {};

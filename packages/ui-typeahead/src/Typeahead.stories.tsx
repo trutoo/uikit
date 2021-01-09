@@ -2,14 +2,10 @@ import './Typeahead.css';
 
 import React from 'react';
 
-import { Store, withState } from '@sambego/storybook-state';
+import { Meta, Story } from '@storybook/react';
 
 import mock from './mock.json';
-import Typeahead, { TypeaheadResult, TypeaheadService } from './Typeahead';
-
-const store = new Store({
-  value: { id: '', view: '' } as TypeaheadResult,
-});
+import Typeahead, { TypeaheadProps, TypeaheadResult, TypeaheadService } from './Typeahead';
 
 const typeaheadMock: TypeaheadService = {
   search(query: string) {
@@ -22,36 +18,32 @@ const typeaheadMock: TypeaheadService = {
 };
 
 export default {
-  title: 'Typeahead',
-  decorators: [withState()],
-  parameters: { state: { store } },
+  title: 'UI-Typeahead/Typeahead',
+  component: Typeahead,
+} as Meta;
+
+const Template: Story<TypeaheadProps> = (props: TypeaheadProps) => (
+  <Typeahead
+    {...props}
+    service={typeaheadMock}
+    //onChange={(state) => store.set({ value: state })}
+    validators={[(value) => (!value || !value.id ? { required: true } : null)]}
+  />
+);
+
+export const Basic = Template.bind({});
+Basic.args = {
+  label: 'Typeahead',
 };
 
-export const basic = () => (
-  <Typeahead
-    service={typeaheadMock}
-    label="Typeahead"
-    onChange={(state) => store.set({ value: state })}
-    validators={[(value) => (!value || !value.id ? { required: true } : null)]}
-  />
-);
+export const Inline = Template.bind({});
+Inline.args = {
+  ...Basic.args,
+  inline: true,
+};
 
-export const inline = () => (
-  <Typeahead
-    service={typeaheadMock}
-    label="Typeahead"
-    inline={true}
-    onChange={(state) => store.set({ value: state })}
-    validators={[(value) => (!value || !value.id ? { required: true } : null)]}
-  />
-);
-
-export const searchOnFocus = () => (
-  <Typeahead
-    service={typeaheadMock}
-    label="Typeahead"
-    searchOnFocus={true}
-    onChange={(state) => store.set({ value: state })}
-    validators={[(value) => (!value || !value.id ? { required: true } : null)]}
-  />
-);
+export const SearchOnFocus = Template.bind({});
+Inline.args = {
+  ...Basic.args,
+  searchOnFocus: true,
+};

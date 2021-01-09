@@ -1,11 +1,11 @@
 import React, { Component, HTMLAttributes } from 'react';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {}
+export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {}
 
-interface State {}
+export interface ContainerState {}
 
-export default class Container extends Component<Props, State> {
-  constructor(props: Props) {
+export default class Container extends Component<ContainerProps, ContainerState> {
+  constructor(props: ContainerProps) {
     super(props);
 
     this.state = {};

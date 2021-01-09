@@ -1,14 +1,15 @@
 import React from 'react';
 
+import { Meta, Story } from '@storybook/react';
 import { Icon } from '@trutoo/ui-icons';
 
 import { base } from '../../postcss.variables.js';
 
 export default {
-  title: 'Colors',
-};
+  title: 'UI-Core/Colors',
+} as Meta;
 
-export const basic = () => (
+const Template: Story = () => (
   <div className="tu-grid style-uniform" tu-columns="2" tu-columns-sm="3" tu-columns-md="4" tu-columns-lg="5">
     {Object.keys(base)
       .filter((key) => key.startsWith('--c_'))
@@ -23,3 +24,6 @@ export const basic = () => (
       ))}
   </div>
 );
+
+export const Basic = Template.bind({});
+Basic.args = {};

@@ -2,49 +2,42 @@ import './Datepicker.css';
 
 import React from 'react';
 
-import { Store, withState } from '@sambego/storybook-state';
+import { Meta, Story } from '@storybook/react';
 
-import Datepicker, { DateValue } from './Datepicker';
+import Datepicker, { DatepickerProps } from './Datepicker';
 
 const date = new Date();
 date.setDate(date.getDate() + 2);
 const secondaryDate = new Date();
 secondaryDate.setDate(secondaryDate.getDate() + 5);
-const store = new Store({
-  value: { date, secondaryDate } as DateValue,
-});
 
 export default {
-  title: 'Datepicker',
-  decorators: [withState()],
-  parameters: { state: { store } },
+  title: 'UI-Datepicker/Datepicker',
+} as Meta;
+
+const Template: Story<DatepickerProps> = (props: DatepickerProps) => (
+  <Datepicker
+    {...props}
+    label="Datepicker"
+    weekday="short"
+    //onChange={(state) => store.set({ value: state })}
+    validators={[(value) => (!value || !value.date ? { required: true } : null)]}
+  />
+);
+
+export const Basic = Template.bind({});
+Basic.args = {
+  weekday: 'short',
 };
 
-export const basic = () => (
-  <Datepicker
-    label="Datepicker"
-    weekday="short"
-    onChange={(state) => store.set({ value: state })}
-    validators={[(value) => (!value || !value.date ? { required: true } : null)]}
-  />
-);
+export const Past = Template.bind({});
+Past.args = {
+  ...Basic.args,
+  enablePastDates: true,
+};
 
-export const past = () => (
-  <Datepicker
-    label="Datepicker"
-    weekday="short"
-    enablePastDates={true}
-    onChange={(state) => store.set({ value: state })}
-    validators={[(value) => (!value || !value.date ? { required: true } : null)]}
-  />
-);
-
-export const span = () => (
-  <Datepicker
-    label="Datepicker"
-    weekday="short"
-    span={true}
-    onChange={(state) => store.set({ value: state })}
-    validators={[(value) => (!value || !value.date ? { required: true } : null)]}
-  />
-);
+export const Span = Template.bind({});
+Span.args = {
+  ...Basic.args,
+  span: true,
+};

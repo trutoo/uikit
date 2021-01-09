@@ -13,7 +13,7 @@ cssVars({
 });
 
 export const parameters = {
-  layout: 'centered',
+  layout: 'fullscreen',
   controls: { expanded: true },
   actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: {
@@ -34,13 +34,14 @@ export const decorators = [
   (storyFn, context) => {
     return (
       <div className="tu-container" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
-        <div className="tu-elevation-1" style={{ padding: '1rem' }}>
-          <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: icons }}></div>
-          <h1 style={{ fontSize: '1.5em' }}>{context.kind}</h1>
-          <strong style={{ color: 'var(--c_text_low)' }}>{context.name}</strong>
-          <hr />
-          {storyFn()}
-        </div>
+        <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: icons }}></div>
+        <span style={{ textTransform: 'lowercase', color: 'var(--c_text_low)' }}>@{context.kind.split('/')[0]}</span>
+        <h1 style={{ marginTop: 0, fontSize: '1.5em' }}>
+          <span style={{ color: 'var(--c_beta)' }}>{context.kind.split('/')[1]} </span>
+          <span>{context.name}</span>
+        </h1>
+        <hr />
+        {storyFn()}
       </div>
     );
   },
