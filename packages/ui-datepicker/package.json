@@ -34,7 +34,7 @@
   "dependencies": {
     "@trutoo/ui-core": "^1.18.2",
     "@trutoo/ui-icons": "^1.18.1",
-    "moment": "2.24.0",
+    "moment": "2.29.4",
     "scroll-into-view-if-needed": "^2.2.20"
   }
 }
