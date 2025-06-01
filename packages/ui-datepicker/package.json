@@ -35,6 +35,6 @@
     "@trutoo/ui-core": "^1.18.2",
     "@trutoo/ui-icons": "^1.18.1",
     "moment": "2.24.0",
-    "scroll-into-view-if-needed": "^2.2.20"
+    "scroll-into-view-if-needed": "^3.0.0"
   }
 }
